@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fitnessstudio;
+package de.marcelhuber.fitnessstudio;
 
 import java.util.*;
 import java.util.logging.*;
@@ -19,7 +19,7 @@ public class Hauptprogramm {
     }
 
     void go() {
-        goTestFallMitglieder();
+        //goTestFallMitglieder();
         goTestFallTrainer();
         goTestFallChefs();
     }
