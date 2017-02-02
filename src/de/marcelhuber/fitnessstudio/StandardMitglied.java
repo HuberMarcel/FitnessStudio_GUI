@@ -5,30 +5,68 @@
  */
 package de.marcelhuber.fitnessstudio;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Huber, Marcel
  */
-class StandardMitglied extends Person {
+class StandardMitglied extends Person implements Cloneable {
 
     private double zuZahlenderMonatsBeitrag;
-    private long standardMitgliedsNummer;
+    private long standardMitgliedNummer;
+    // vielleicht wäre bei der MitgliedsNummer eine Lösung mit MAP besser 
+    // und einfacher gewesen
+    FitnessStudio fitnessStudio;
 
+    /*
+    Kleiner Kommentar, warum ich das FitnessStudio hier mitübergeben lasse:
+    Für jedes Fitness-Studio will ich eine eindeutige Mitgliedsnummer
+    generieren, die einfach nach oben gezählt wird, wenn ein neues Mitglied
+    hinzukommt, aber auch ein ehemaliges Mitglied wird wieder mit einer neuen
+    Nummer versehen. Mit dem Fitness-Studio-Objekt kann ich dies händeln, da
+    diese Information dort gehändelt wird
+     */
     public StandardMitglied() {
     }
 
     public StandardMitglied(String nachName, String vorName, int plz, String wohnort,
-            int alter, double zuZahlenderMonatsBeitrag, long mitgliedsNummer) {
+            int alter, double zuZahlenderMonatsBeitrag) {
         super(nachName, vorName, plz, wohnort, alter);
         this.zuZahlenderMonatsBeitrag = zuZahlenderMonatsBeitrag;
-        this.standardMitgliedsNummer = mitgliedsNummer;
+        //this.standardMitgliedNummer = (long) (fitnessStudio.getLetzteMitgliedsNummer() + 1);
+    }
+
+    public StandardMitglied(String nachName, String vorName, int plz, String wohnort,
+            int alter, double zuZahlenderMonatsBeitrag, FitnessStudio fitnessStudio) {
+        super(nachName, vorName, plz, wohnort, alter);
+        this.zuZahlenderMonatsBeitrag = zuZahlenderMonatsBeitrag;
+        this.standardMitgliedNummer = (long) (fitnessStudio.getLetzteMitgliedsNummer() + 1);
+        this.fitnessStudio = fitnessStudio;
     }
 
     @Override
     public String toString() {
         return String.format("[Nachname = %s, Vorname = %s, Wohnort: %s, "
-                + "Alter: %d]", this.getNachname(), this.getVorname(), this.getWohnort(),
-                this.getPlz(), this.getAlter());
+                + "PLZ: %s Alter: %d, Mitgliedsnummer: %d]", this.getNachname(), this.getVorname(),
+                this.getWohnort(), this.getPlz(), this.getAlter(), this.getMitgliedNummer());
+    }
+
+    public long getMitgliedNummer() {
+        return standardMitgliedNummer;
+    }
+
+    public void setMitgliedNummer(long mitgliedNummer) {
+        standardMitgliedNummer = mitgliedNummer;
+    }
+
+    public FitnessStudio getFitnessStudio() {
+        return fitnessStudio;
+    }
+
+    public double getZuZahlenderMonatsBeitrag() {
+        return zuZahlenderMonatsBeitrag;
     }
 
 }

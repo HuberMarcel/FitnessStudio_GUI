@@ -6,6 +6,8 @@
 package de.marcelhuber.fitnessstudio;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,9 +17,9 @@ public class FitnessStudio {
 
     // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
     // sein - Implementierung von beiden rein zu Test- und Kontrollzwecken
-    private static long mitgliedsAnzahlberechner;
-    private static long mitgliedsZaehler = 0;
-    private static long letzteMitgliedsNummer = (long) 0;
+    private static int mitgliedsAnzahlberechner;
+    private static int mitgliedsZaehler = 0;
+    private static int letzteMitgliedsNummer = 0;
     /* 
      Unterschied zwischen MitgliedsNummer und MitgliedsZaehler der
      FitnessStudio-Klasse: Die mitgliedsNummer wird mit jedem neuen
@@ -28,7 +30,7 @@ public class FitnessStudio {
     private String name;       // Objekte werden im Konstruktor erzeugt
     private String standort;
     private int gruendungsjahr;
-    private List<StandardMitglied> standardMitglied; 
+    private List<StandardMitglied> standardMitglieder;
     private List<Chef> chefs;
 
     /*
@@ -41,13 +43,12 @@ public class FitnessStudio {
         name = "";
         standort = "";
         gruendungsjahr = 0;
-        standardMitglied = new ArrayList<>();
+        standardMitglieder = new ArrayList<>();
         chefs = new ArrayList<>();
     }
 
-    FitnessStudio(String name, String standort,
-            int gruendungsjahr) {
-        standardMitglied = new ArrayList<>();
+    FitnessStudio(String name, String standort, int gruendungsjahr) {
+        standardMitglieder = new ArrayList<>();
         chefs = new ArrayList<>();
         this.name = name;
         this.standort = standort;
@@ -78,11 +79,11 @@ public class FitnessStudio {
         }
     }
 
-    long getMitgliedsZaehler() {
+    int getMitgliedsZaehler() {
         return mitgliedsZaehler;
     }
 
-    long getLetzteMitgliedsNummer() {
+    public int getLetzteMitgliedsNummer() {
         return letzteMitgliedsNummer;
     }
 
@@ -99,30 +100,64 @@ public class FitnessStudio {
     }
 
     void addStandardMitglied(StandardMitglied neuesStandardMitglied) {
+        StandardMitglied anzulegendesStandardMitglied = new StandardMitglied();
+        // hier stellen wir sicher, dass das neue Mitglied auch wirklich
+        // die nächst-mögliche Mitgliedsnummer erhält;
+        // doppelt eingefügte Mitglieder werden auch doppelt erfasst
+        // sie sollen aber durch die MitgliedNummer unterscheidbar sein
+        // Hinweis: clone (zum Kopieren eines Standard-Objektes) habe
+        // ich nicht fehlerfrei implementiert bekommen
+
+        anzulegendesStandardMitglied = new StandardMitglied(neuesStandardMitglied.getNachname(),
+                neuesStandardMitglied.getVorname(), neuesStandardMitglied.getPlz(),
+                neuesStandardMitglied.getWohnort(), neuesStandardMitglied.getAlter(),
+                neuesStandardMitglied.getZuZahlenderMonatsBeitrag(),
+                neuesStandardMitglied.getFitnessStudio());
+        //standardMitglieder.add(anzulegendesStandardMitglied);
+        standardMitglieder.add(anzulegendesStandardMitglied);
         ++FitnessStudio.mitgliedsZaehler;
         ++FitnessStudio.letzteMitgliedsNummer;
-        // unfertig: Wie füge ich ein neues Mitglied hier ein???
-        //this.standardMitglied.add
-        standardMitglied.add(neuesStandardMitglied);
     }
 
-    void removeStandardMitglied(StandardMitglied altesStandardMitglied) {
-        if (FitnessStudio.mitgliedsZaehler > 0) {
+    void removeStandardMitglied(int mitgliedsnummer) {
+        int helpIndex = -1;
+        if (FitnessStudio.mitgliedsZaehler == 0) {
+            System.out.print("OHNE Mitglieder kann man KEINES entfernen!!! ");
+        } else if ((mitgliedsnummer >= 0) && (mitgliedsnummer <= FitnessStudio.letzteMitgliedsNummer)) {
+            /* die folgende Suche kann man beschleunigen auf O(n log n)
+               zum Test aber einfach mal straight forward 
+             */
+            for (StandardMitglied standardMitglied : standardMitglieder) {
+                if (standardMitglied.getMitgliedNummer() == mitgliedsnummer) {
+                    helpIndex = standardMitglieder.indexOf(standardMitglied);
+                    /* Ausgabe der Stelle, wo das entsprechende Mitglied aus der
+                       ArrayList zu entfernen ist */
+ /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
+                       soll/darf(?) man die ArrayList standardMitglieder nicht
+                       verkleinern --- bzw. gibt es einen Befehl, um dann früher
+                       diese zu verlassen?? Nachschlagen!
+                     */
+                }
+            }
+        }
+        if (helpIndex != -1) {
+            // s.o.: Erst Entfernen NACH dem gaanzen ArrayList-Durchlauf
+            System.out.println("Zu entfernen ist das folgende Mitglied:");
+            System.out.println(standardMitglieder.get(helpIndex));
+            standardMitglieder.remove(standardMitglieder.get(helpIndex));
             --FitnessStudio.mitgliedsZaehler;
         } else {
-            System.out.print("OHNE Mitglieder kann man KEINES entfernen!!! ");
+            System.out.println("Bitte kontrollieren Sie die Mitgliedsnummer:"
+                    + " EINE SOLCHE MITGLIEDSNUMMER GIBT ES IN DIESEM STUDIO "
+                    + "NICHT!!\n\n\n");
         }
-        // unfertig: Wie füge ich ein neues Mitglied hier ein???
-        //this.standardMitglied.add
-        standardMitglied.remove(altesStandardMitglied);
-        mitgliedsAnzahlberechner = standardMitglied.size();
     }
 
     void addChef(Chef neuerChef) {
         chefs.add(neuerChef);
     }
 
-    long getChefsZaehler() {
+    int getChefsZaehler() {
         return chefs.size();
     }
 
@@ -130,8 +165,8 @@ public class FitnessStudio {
     void anzeigeStandardMitglieder() {
         System.out.println("Wir führen momentan folgende " + mitgliedsZaehler
                 + " (Standard-)Mitglieder: ");
-        System.out.println(standardMitglied.toString());
-        mitgliedsAnzahlberechner = standardMitglied.size();
+        System.out.println(standardMitglieder.toString());
+        mitgliedsAnzahlberechner = standardMitglieder.size();
         System.out.println("Das sind " + mitgliedsAnzahlberechner
                 + " Mitglieder.");
     }

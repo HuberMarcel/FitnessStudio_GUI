@@ -49,7 +49,7 @@ class Trainer extends Person {
         spezialisierungsBereiche.add(neuerSpezialisierungsBereich);
     }
 
-    long getAnzahlDerSpezialGebiete() {
+    int getAnzahlDerSpezialGebiete() {
         return spezialisierungsBereiche.size();
     }
 

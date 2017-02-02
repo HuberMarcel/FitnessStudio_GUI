@@ -19,9 +19,9 @@ public class Hauptprogramm {
     }
 
     void go() {
-        //goTestFallMitglieder();
-        goTestFallTrainer();
-        goTestFallChefs();
+        goTestFallMitglieder();
+        //goTestFallTrainer();
+        //goTestFallChefs();
     }
 
     void goTestFallChefs() {
@@ -61,12 +61,8 @@ public class Hauptprogramm {
     }
 
     void goTestFallMitglieder() {
-
-        long mitgliederAnzahl;
-        long mitgliedsNummer = 0;
+        int mitgliederAnzahl;
         StandardMitglied standardMitglied;
-        standardMitglied = new StandardMitglied("Huber", "S.", 54926, "Trier",
-                38, 19.98, mitgliedsNummer);
 
         // wir legen ein Fitness-Studio an
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
@@ -74,78 +70,131 @@ public class Hauptprogramm {
         huberFitness.anzeigeFitnessStudio();
         System.out.println("Zum Test nochmal das Gründungsjahr: "
                 + huberFitness.getGruendungsjahr() + "\n");
+
+        standardMitglied = new StandardMitglied("Huber", "S.", 54926, "Trier",
+                38, 19.98, huberFitness);
+        System.out.println(standardMitglied.toString());
+        System.out.println("VORSICHT, das potentielle Mitglied wurde noch nicht "
+                + "geaddet, damit ergibt sich die folgende \n"
+                + "Ausgabe der tatsächlichen Mitglieder: ");
         huberFitness.anzeigeStandardMitglieder();
-        for (int k = 0; k < 5; k++) {
-            System.out.println(k);
-            Pause1Sekunde();
-        }
+        pause(3);
+
+        standardMitglied = new StandardMitglied("Huber", "P.", 54926, "Trier",
+                24, 19.98, huberFitness);
+        System.out.println(standardMitglied.toString());
+        huberFitness.addStandardMitglied(standardMitglied);
+        System.out.println("Dieses potentielle Mitglied wurde geaddet!");
+        huberFitness.anzeigeStandardMitglieder();
+        pause(3);
+
+        standardMitglied = new StandardMitglied("Huber", "Marcel", 54926, "Trier",
+                36, 0.00, huberFitness);
+        System.out.println(standardMitglied.toString());
+        huberFitness.addStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(5);
+
+        System.out.println("\nWir adden das letzte Mitglied nochmal!");
+        huberFitness.addStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(5);
+
+        standardMitglied = new StandardMitglied("Huber", "S", 54926, "Trier",
+                38, 0.00, huberFitness);
+        System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();
         mitgliederAnzahl = huberFitness.getMitgliedsZaehler();
 
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
+        pause(3);
         System.out.println("\nWir versuchen einmal, Mitglieder zu entfernen");
-        Pause1Sekunde();
-        huberFitness.removeStandardMitglied(standardMitglied);
-        System.out.println("Die letzte Mitgliedsnummer ist: "
-                + huberFitness.getLetzteMitgliedsNummer() + ".");
-        huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 0:");
+ 
+        System.out.println("Vor dem Entfernen sehen wir folgende Mitglieder:");
+        huberFitness.anzeigeStandardMitglieder();
+        
+        huberFitness.removeStandardMitglied(0);
+        System.out.println("Nach dem Entfernen sehen wir folgende Mitgliederliste:");
+        huberFitness.anzeigeStandardMitglieder();
+        pause(5);
         System.out.println("\nJetzt fügen wir ein Mitglied hinzu...");
-        Pause1Sekunde();
+        pause(3);
         huberFitness.addStandardMitglied(standardMitglied);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
         System.out.println("\nJetzt fügen wir ein weiteres Mitglied hinzu...");
-        Pause1Sekunde();
+        pause(1);
         huberFitness.addStandardMitglied(standardMitglied);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
-        System.out.println("\nJetzt entfernen wir ein Mitglied...");
-        Pause1Sekunde();
-        huberFitness.removeStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. -1:");
+        pause(1);
+        huberFitness.removeStandardMitglied(-1);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
         System.out.println("\nJetzt fügen wir ein weiteres Mitglied hinzu...");
-        Pause1Sekunde();
+        pause(1);
         huberFitness.addStandardMitglied(standardMitglied);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
-        System.out.println("\nJetzt entfernen wir ein Mitglied...");
-        Pause1Sekunde();
-        huberFitness.removeStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 3:");
+        pause(1);
+        huberFitness.removeStandardMitglied(3);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
-        System.out.println("\nJetzt entfernen wir ein Mitglied...");
-        Pause1Sekunde();
-        huberFitness.removeStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 6:");
+        pause(1);
+        huberFitness.removeStandardMitglied(6);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
-        Pause1Sekunde();
-        System.out.println("\nJetzt entfernen wir ein Mitglied...");
-        huberFitness.removeStandardMitglied(standardMitglied);
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 12:");
+        huberFitness.removeStandardMitglied(12);
         System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
                 + huberFitness.getLetzteMitgliedsNummer() + ".");
         huberFitness.getAusgabeMitgliederAnzahl();
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 1:");
+        huberFitness.removeStandardMitglied(1);
+        System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
+                + huberFitness.getLetzteMitgliedsNummer() + ".");
+        huberFitness.getAusgabeMitgliederAnzahl();
+        huberFitness.anzeigeStandardMitglieder();
+        pause(1);
+        System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 1:");
+        huberFitness.removeStandardMitglied(1);
+        System.out.println("Jetzt ist die letzte Mitgliedsnummer: "
+                + huberFitness.getLetzteMitgliedsNummer() + ".");
+        huberFitness.getAusgabeMitgliederAnzahl();
+        huberFitness.anzeigeStandardMitglieder();
     }
 
-    void Pause1Sekunde() {
+    void pause(long j) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(j * 1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hauptprogramm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 }
