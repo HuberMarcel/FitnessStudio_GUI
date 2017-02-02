@@ -1,0 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fitnessstudio;
+
+/**
+ *
+ * @author Huber, Marcel
+ */
+public class Chef extends Person {
+
+    public Chef() {
+    }
+
+    public Chef(String nachName, String vorName, String wohnort, int alter) {
+        super(nachName, vorName, wohnort, alter);
+    }
+}
