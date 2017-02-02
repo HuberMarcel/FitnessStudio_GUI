@@ -5,6 +5,7 @@
  */
 package fitnessstudio;
 
+import java.util.*;
 import java.util.logging.*;
 
 /**
@@ -18,8 +19,23 @@ public class Hauptprogramm {
     }
 
     void go() {
-        //goTestFallMitglieder();
+        goTestFallMitglieder();
         goTestFallTrainer();
+        goTestFallChefs();
+    }
+
+    void goTestFallChefs() {
+        FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
+                (int) 2017);
+        huberFitness.anzeigeFitnessStudio();
+        Chef huberMarcel;
+        huberMarcel = new Chef("Huber", "Marcel", 54294, "Trier", 36);
+        //huberFitness.addChef(huberMarcel);
+        System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
+                + " Chefs.");
+        huberFitness.addChef(huberMarcel);
+        System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
+                + " Chefs.");
     }
 
     void goTestFallTrainer() {
@@ -66,7 +82,7 @@ public class Hauptprogramm {
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();
         mitgliederAnzahl = huberFitness.getMitgliedsZaehler();
-        
+
         huberFitness.getAusgabeMitgliederAnzahl();
         Pause1Sekunde();
         System.out.println("\nWir versuchen einmal, Mitglieder zu entfernen");

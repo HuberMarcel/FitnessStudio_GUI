@@ -25,10 +25,11 @@ public class FitnessStudio {
      Abo beenden - der Mitgliedszaehler hingegen sinkt auch, wenn
      Mitglieder austreten
      */
-    private String name;
+    private String name;       // Objekte werden im Konstruktor erzeugt
     private String standort;
     private int gruendungsjahr;
-    private List<StandardMitglied> standardMitglied;
+    private List<StandardMitglied> standardMitglied; 
+    private List<Chef> chefs;
 
     /*
      private Chef[] chefFeld  = new Chef[2]; // das FitnessStudio soll 2 Chefs/Leiter haben 
@@ -41,11 +42,13 @@ public class FitnessStudio {
         standort = "";
         gruendungsjahr = 0;
         standardMitglied = new ArrayList<>();
+        chefs = new ArrayList<>();
     }
 
     FitnessStudio(String name, String standort,
             int gruendungsjahr) {
         standardMitglied = new ArrayList<>();
+        chefs = new ArrayList<>();
         this.name = name;
         this.standort = standort;
         this.gruendungsjahr = gruendungsjahr;
@@ -113,6 +116,14 @@ public class FitnessStudio {
         //this.standardMitglied.add
         standardMitglied.remove(altesStandardMitglied);
         mitgliedsAnzahlberechner = standardMitglied.size();
+    }
+
+    void addChef(Chef neuerChef) {
+        chefs.add(neuerChef);
+    }
+
+    long getChefsZaehler() {
+        return chefs.size();
     }
 
     // die folgende Methode zeigt die aktuell vorhandenen Mitglieder an

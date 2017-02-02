@@ -14,8 +14,8 @@ abstract class Person {
 
     private String nachName;
     private String vorName;
+    private int plz;       // bekanntes Kürzel für Postleitzahl
     private String wohnort;
-    private int plz; // bekanntes Kürzel für Postleitzahl
     private int alter;
 
     public Person() {
