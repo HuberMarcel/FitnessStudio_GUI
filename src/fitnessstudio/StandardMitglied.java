@@ -17,11 +17,18 @@ class StandardMitglied extends Person {
     public StandardMitglied() {
     }
 
-    public StandardMitglied(String nachName, String vorName, String wohnort, int alter,
-            double zuZahlenderMonatsBeitrag, long mitgliedsNummer) {
-        super(nachName, vorName, wohnort, alter);
+    public StandardMitglied(String nachName, String vorName, int plz, String wohnort,
+            int alter, double zuZahlenderMonatsBeitrag, long mitgliedsNummer) {
+        super(nachName, vorName, plz, wohnort, alter);
         this.zuZahlenderMonatsBeitrag = zuZahlenderMonatsBeitrag;
         this.standardMitgliedsNummer = mitgliedsNummer;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[Nachname = %s, Vorname = %s, Wohnort: %s, "
+                + "Alter: %d]", this.getNachname(), this.getVorname(), this.getWohnort(),
+                this.getPlz(), this.getAlter());
     }
 
 }

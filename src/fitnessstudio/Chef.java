@@ -14,7 +14,7 @@ public class Chef extends Person {
     public Chef() {
     }
 
-    public Chef(String nachName, String vorName, String wohnort, int alter) {
-        super(nachName, vorName, wohnort, alter);
+    public Chef(String nachName, String vorName, int plz, String wohnort, int alter) {
+        super(nachName, vorName, plz, wohnort, alter);
     }
 }

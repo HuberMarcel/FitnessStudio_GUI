@@ -9,8 +9,7 @@ import java.util.logging.*;
 
 /**
  *
- * @author Huber, Marcel
- * Heute ist der 01.02.2017
+ * @author Huber, Marcel Heute ist der 01.02.2017
  */
 public class Hauptprogramm {
 
@@ -28,7 +27,7 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
                 (int) 2017);
         huberFitness.anzeigeFitnessStudio();
-        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294 TRIER", 36);
+        Trainer marcelHuber = new Trainer("Huber", "Marcel", 54294, "TRIER", 36);
         System.out.println(marcelHuber.getSpezialisierungsBereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
@@ -42,7 +41,7 @@ public class Hauptprogramm {
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
         System.out.println(marcelHuber);
-        
+
     }
 
     void goTestFallMitglieder() {
@@ -50,7 +49,7 @@ public class Hauptprogramm {
         long mitgliederAnzahl;
         long mitgliedsNummer = 0;
         StandardMitglied standardMitglied;
-        standardMitglied = new StandardMitglied("Huber", "S.", "54926 Trier",
+        standardMitglied = new StandardMitglied("Huber", "S.", 54926, "Trier",
                 38, 19.98, mitgliedsNummer);
 
         // wir legen ein Fitness-Studio an
@@ -67,6 +66,7 @@ public class Hauptprogramm {
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();
         mitgliederAnzahl = huberFitness.getMitgliedsZaehler();
+        
         huberFitness.getAusgabeMitgliederAnzahl();
         Pause1Sekunde();
         System.out.println("\nWir versuchen einmal, Mitglieder zu entfernen");
