@@ -25,8 +25,7 @@ public class Hauptprogramm {
     }
 
     void goTestFallChefs() {
-        FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
-                (int) 2017);
+        FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier", 2017);
         huberFitness.anzeigeFitnessStudio();
         Chef huberMarcel;
         huberMarcel = new Chef("Huber", "Marcel", 54294, "Trier", 36);
@@ -41,7 +40,7 @@ public class Hauptprogramm {
     void goTestFallTrainer() {
 
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
-                (int) 2017);
+                2017);
         huberFitness.anzeigeFitnessStudio();
         Trainer marcelHuber = new Trainer("Huber", "Marcel", 54294, "TRIER", 36);
         System.out.println(marcelHuber.getSpezialisierungsBereiche());
@@ -111,10 +110,10 @@ public class Hauptprogramm {
         pause(3);
         System.out.println("\nWir versuchen einmal, Mitglieder zu entfernen");
         System.out.println("AUSTRITT von Mitglied mit Mitglieds-Nr. 0:");
- 
+
         System.out.println("Vor dem Entfernen sehen wir folgende Mitglieder:");
         huberFitness.anzeigeStandardMitglieder();
-        
+
         huberFitness.removeStandardMitglied(0);
         System.out.println("Nach dem Entfernen sehen wir folgende Mitgliederliste:");
         huberFitness.anzeigeStandardMitglieder();

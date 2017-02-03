@@ -18,7 +18,8 @@ public class FitnessStudio {
     // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
     // sein - Implementierung von beiden rein zu Test- und Kontrollzwecken
     private static int mitgliedsAnzahlberechner;
-    private static int mitgliedsZaehler = 0;
+    private static int mitgliedsZaehler = 0; // Wäre als Zähler für eine Studiokette
+                                             // geeignet
     private static int letzteMitgliedsNummer = 0;
     /* 
      Unterschied zwischen MitgliedsNummer und MitgliedsZaehler der
@@ -30,8 +31,11 @@ public class FitnessStudio {
     private String name;       // Objekte werden im Konstruktor erzeugt
     private String standort;
     private int gruendungsjahr;
+    // TODO: Einzige Mitgliederliste: Mitglied (abstrakte Klasse) --> Premium- 
+    //       und Standardmitglied...
     private List<StandardMitglied> standardMitglieder;
-    private List<Chef> chefs;
+    private List<Chef> chefs;  // TODO: abstrakte Klasse: Beschäftige... (Chef, Trainer,...) 
+    
 
     /*
      private Chef[] chefFeld  = new Chef[2]; // das FitnessStudio soll 2 Chefs/Leiter haben 
@@ -40,11 +44,7 @@ public class FitnessStudio {
      * @param args the command line arguments
      */
     FitnessStudio() {
-        name = "";
-        standort = "";
-        gruendungsjahr = 0;
-        standardMitglieder = new ArrayList<>();
-        chefs = new ArrayList<>();
+        this("","",0);
     }
 
     FitnessStudio(String name, String standort, int gruendungsjahr) {
