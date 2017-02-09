@@ -18,7 +18,7 @@ public class Hauptprogramm {
         new Hauptprogramm().go();
     }
 
-    void go() {
+    public void go() {
         goTestFallMitglieder();
         //goTestFallTrainer();
         //goTestFallChefs();
