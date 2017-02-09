@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.marcelhuber.fitnessstudio;
+package de.marcelhuber.fitnessstudiogui;
 
 import java.util.*;
 import java.util.logging.*;
@@ -14,11 +14,10 @@ import java.util.logging.*;
  */
 public class Hauptprogramm {
 
-    public static void main(String[] args) {
-        new Hauptprogramm().go();
-    }
-
-    public void go() {
+//    public static void main(String[] args) {
+//        new Hauptprogramm().go();
+//    }
+    void go() {
         goTestFallMitglieder();
         //goTestFallTrainer();
         //goTestFallChefs();

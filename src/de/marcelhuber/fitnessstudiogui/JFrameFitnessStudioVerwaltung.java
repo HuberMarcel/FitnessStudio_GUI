@@ -7,7 +7,6 @@ package de.marcelhuber.fitnessstudiogui;
  */
 
 
-import de.marcelhuber.fitnessstudio.Hauptprogramm;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -70,7 +69,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addContainerGap(222, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPane1.addTab("Tests", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
