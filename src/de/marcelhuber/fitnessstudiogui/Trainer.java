@@ -25,12 +25,12 @@ class Trainer extends Person {
     Trainer() {
     }
 
-    Trainer(String nachName, String vorName, int plz, String wohnort, int alter) {
+    Trainer(String nachName, String vorName, String plz, String wohnort, int alter) {
         super(nachName, vorName, plz, wohnort, alter);
         this.spezialisierungsBereiche = new ArrayList<>();
     }
 
-    Trainer(String nachName, String vorName, int plz, String wohnort, int alter,
+    Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
             String neuerSpezialisierungsBereich) {
         this(nachName, vorName, plz, wohnort, alter); /* zum Anlegen eines Trainers, der
          bislang noch keine Spezialisierung angegeben hat bzw. die noch nicht bekannt
@@ -57,7 +57,7 @@ class Trainer extends Person {
     public String toString() {
         String personenInformationen;
         personenInformationen = String.format("Trainer[Nachname = %s, Vorname = %s, "
-                + "PLZ:%d, Wohnort: %s, Alter: %d", this.getNachname(), this.getVorname(),
+                + "PLZ:%s, Wohnort: %s, Alter: %d", this.getNachname(), this.getVorname(),
                 this.getPlz(), this.getWohnort(), this.getAlter());
         return personenInformationen + spezialisierungsBereiche;
     }

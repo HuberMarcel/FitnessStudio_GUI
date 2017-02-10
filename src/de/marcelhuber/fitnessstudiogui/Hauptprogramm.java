@@ -14,20 +14,50 @@ import java.util.logging.*;
  */
 public class Hauptprogramm {
 
-//    public static void main(String[] args) {
-//        new Hauptprogramm().go();
-//    }
-    void go() {
-        goTestFallMitglieder();
-        //goTestFallTrainer();
-        //goTestFallChefs();
+    public static void main(String[] args) {
+        int schalter = 7;
+        new Hauptprogramm().go(schalter);
+    }
+
+    void go(int k) {
+        switch (k) {
+            case 1:
+                goTestFallChefs();
+                break;
+            case 2:
+                goTestFallTrainer();
+                break;
+            case 3:
+                goTestFallMitglieder();
+                break;
+            case 4:
+                goTestFallChefs();
+                goTestFallTrainer();
+                break;
+            case 5:
+                goTestFallChefs();
+                goTestFallMitglieder();
+                break;
+            case 6:
+                goTestFallTrainer();
+                goTestFallMitglieder();
+            case 7:
+                goTestFallChefs();
+                goTestFallTrainer();
+                goTestFallMitglieder();
+
+            default:
+                System.out.println("Keine gültige Zahl!");
+                break;
+        }
+
     }
 
     void goTestFallChefs() {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier", 2017);
         huberFitness.anzeigeFitnessStudio();
         Chef huberMarcel;
-        huberMarcel = new Chef("Huber", "Marcel", 54294, "Trier", 36);
+        huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier", 36);
         //huberFitness.addChef(huberMarcel);
         System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
                 + " Chefs.");
@@ -41,7 +71,7 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
                 2017);
         huberFitness.anzeigeFitnessStudio();
-        Trainer marcelHuber = new Trainer("Huber", "Marcel", 54294, "TRIER", 36);
+        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER", 36);
         System.out.println(marcelHuber.getSpezialisierungsBereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
@@ -69,7 +99,7 @@ public class Hauptprogramm {
         System.out.println("Zum Test nochmal das Gründungsjahr: "
                 + huberFitness.getGruendungsjahr() + "\n");
 
-        standardMitglied = new StandardMitglied("Huber", "S.", 54926, "Trier",
+        standardMitglied = new StandardMitglied("Huber", "S.", "54926", "Trier",
                 38, 19.98, huberFitness);
         System.out.println(standardMitglied.toString());
         System.out.println("VORSICHT, das potentielle Mitglied wurde noch nicht "
@@ -78,7 +108,7 @@ public class Hauptprogramm {
         huberFitness.anzeigeStandardMitglieder();
         pause(3);
 
-        standardMitglied = new StandardMitglied("Huber", "P.", 54926, "Trier",
+        standardMitglied = new StandardMitglied("Huber", "P.", "54926", "Trier",
                 24, 19.98, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
@@ -86,7 +116,7 @@ public class Hauptprogramm {
         huberFitness.anzeigeStandardMitglieder();
         pause(3);
 
-        standardMitglied = new StandardMitglied("Huber", "Marcel", 54926, "Trier",
+        standardMitglied = new StandardMitglied("Huber", "Marcel", "54926", "Trier",
                 36, 0.00, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
@@ -98,7 +128,7 @@ public class Hauptprogramm {
         huberFitness.anzeigeStandardMitglieder();
         pause(5);
 
-        standardMitglied = new StandardMitglied("Huber", "S", 54926, "Trier",
+        standardMitglied = new StandardMitglied("Huber", "S", "54926", "Trier",
                 38, 0.00, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);

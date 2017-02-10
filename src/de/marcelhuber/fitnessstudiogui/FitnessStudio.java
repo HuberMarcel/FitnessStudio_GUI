@@ -18,8 +18,9 @@ public class FitnessStudio {
     // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
     // sein - Implementierung von beiden rein zu Test- und Kontrollzwecken
     private static int mitgliedsAnzahlberechner;
-    private static int mitgliedsZaehler = 0; // Wäre als Zähler für eine Studiokette
-                                             // geeignet
+    private static int mitgliedsZaehler = 0; // Wäre in dieser Form als Zähler für 
+    // eine Studiokette geeignet, die in 
+    // der Klasse FitnessStudio liegt
     private static int letzteMitgliedsNummer = 0;
     /* 
      Unterschied zwischen MitgliedsNummer und MitgliedsZaehler der
@@ -35,7 +36,9 @@ public class FitnessStudio {
     //       und Standardmitglied...
     private List<StandardMitglied> standardMitglieder;
     private List<Chef> chefs;  // TODO: abstrakte Klasse: Beschäftige... (Chef, Trainer,...) 
-    
+    private final int fitnessStudioMitgliedsZaehler = 0; // Zähler für die Anzahl der
+    // Mitglieder eines einzelnen
+    // Studio(-Objektes)
 
     /*
      private Chef[] chefFeld  = new Chef[2]; // das FitnessStudio soll 2 Chefs/Leiter haben 
@@ -44,7 +47,7 @@ public class FitnessStudio {
      * @param args the command line arguments
      */
     FitnessStudio() {
-        this("","",0);
+        this("", "", 0);
     }
 
     FitnessStudio(String name, String standort, int gruendungsjahr) {
@@ -125,17 +128,17 @@ public class FitnessStudio {
             System.out.print("OHNE Mitglieder kann man KEINES entfernen!!! ");
         } else if ((mitgliedsnummer >= 0) && (mitgliedsnummer <= FitnessStudio.letzteMitgliedsNummer)) {
             /* die folgende Suche kann man beschleunigen auf O(n log n)
-               zum Test aber einfach mal straight forward 
+             zum Test aber einfach mal straight forward 
              */
             for (StandardMitglied standardMitglied : standardMitglieder) {
                 if (standardMitglied.getMitgliedNummer() == mitgliedsnummer) {
                     helpIndex = standardMitglieder.indexOf(standardMitglied);
                     /* Ausgabe der Stelle, wo das entsprechende Mitglied aus der
-                       ArrayList zu entfernen ist */
- /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
-                       soll/darf(?) man die ArrayList standardMitglieder nicht
-                       verkleinern --- bzw. gibt es einen Befehl, um dann früher
-                       diese zu verlassen?? Nachschlagen!
+                     ArrayList zu entfernen ist */
+                    /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
+                     soll/darf(?) man die ArrayList standardMitglieder nicht
+                     verkleinern --- bzw. gibt es einen Befehl, um dann früher
+                     diese zu verlassen?? Nachschlagen!
                      */
                 }
             }

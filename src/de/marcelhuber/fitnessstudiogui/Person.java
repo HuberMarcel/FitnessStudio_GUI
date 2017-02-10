@@ -14,14 +14,14 @@ abstract class Person {
 
     private String nachName;
     private String vorName;
-    private int plz;       // bekanntes Kürzel für Postleitzahl
+    private String plz;       // bekanntes Kürzel für Postleitzahl
     private String wohnort;
     private int alter;
 
     public Person() {
     }
 
-    public Person(String nachName, String vorName, int plz,
+    public Person(String nachName, String vorName, String plz,
             String wohnort, int alter) {
         this.nachName = nachName;
         this.vorName = vorName;
@@ -46,7 +46,7 @@ abstract class Person {
         return alter;
     }
 
-    public int getPlz() {
+    public String getPlz() {
         return plz;
     }
 }

@@ -31,14 +31,14 @@ class StandardMitglied extends Person implements Cloneable {
     public StandardMitglied() {
     }
 
-    public StandardMitglied(String nachName, String vorName, int plz, String wohnort,
+    public StandardMitglied(String nachName, String vorName, String plz, String wohnort,
             int alter, double zuZahlenderMonatsBeitrag) {
         super(nachName, vorName, plz, wohnort, alter);
         this.zuZahlenderMonatsBeitrag = zuZahlenderMonatsBeitrag;
         //this.standardMitgliedNummer = (long) (fitnessStudio.getLetzteMitgliedsNummer() + 1);
     }
 
-    public StandardMitglied(String nachName, String vorName, int plz, String wohnort,
+    public StandardMitglied(String nachName, String vorName, String plz, String wohnort,
             int alter, double zuZahlenderMonatsBeitrag, FitnessStudio fitnessStudio) {
         super(nachName, vorName, plz, wohnort, alter);
         this.zuZahlenderMonatsBeitrag = zuZahlenderMonatsBeitrag;
