@@ -114,7 +114,6 @@ public class FitnessStudio {
         anzulegendesStandardMitglied = new StandardMitglied(neuesStandardMitglied.getNachname(),
                 neuesStandardMitglied.getVorname(), neuesStandardMitglied.getPlz(),
                 neuesStandardMitglied.getWohnort(), neuesStandardMitglied.getAlter(),
-                neuesStandardMitglied.getZuZahlenderMonatsBeitrag(),
                 neuesStandardMitglied.getFitnessStudio());
         //standardMitglieder.add(anzulegendesStandardMitglied);
         standardMitglieder.add(anzulegendesStandardMitglied);
@@ -135,7 +134,7 @@ public class FitnessStudio {
                     helpIndex = standardMitglieder.indexOf(standardMitglied);
                     /* Ausgabe der Stelle, wo das entsprechende Mitglied aus der
                      ArrayList zu entfernen ist */
-                    /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
+ /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
                      soll/darf(?) man die ArrayList standardMitglieder nicht
                      verkleinern --- bzw. gibt es einen Befehl, um dann früher
                      diese zu verlassen?? Nachschlagen!
@@ -172,6 +171,10 @@ public class FitnessStudio {
         mitgliedsAnzahlberechner = standardMitglieder.size();
         System.out.println("Das sind " + mitgliedsAnzahlberechner
                 + " Mitglieder.");
+    }
+
+    String getFitnessStudioName() {
+        return name;
     }
 
 }

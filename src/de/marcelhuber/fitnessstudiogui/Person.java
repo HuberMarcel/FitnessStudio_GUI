@@ -38,15 +38,23 @@ abstract class Person {
         return vorName; // alternativ: return this.name
     }
 
-    public String getWohnort() {
-        return wohnort;
-    }
-
     public int getAlter() {
         return alter;
     }
 
     public String getPlz() {
         return plz;
+    }
+
+    public String getWohnort() {
+        return wohnort;
+    }
+
+    public String toString() {
+
+//        return (getNachname() + ", " + getVorname() + ", " + getAlter() + ", "
+//                + "" + getPlz() + ", " + getWohnort());
+        return (nachName + ", " + vorName + ", " + alter + ", "
+                + "" + plz + ", " + wohnort);
     }
 }

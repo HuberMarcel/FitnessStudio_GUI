@@ -63,7 +63,8 @@ public class Hauptprogramm {
                 + " Chefs.");
         huberFitness.addChef(huberMarcel);
         System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
-                + " Chefs.");
+                + " Chefs:");
+        System.out.println(huberMarcel.toString());
     }
 
     void goTestFallTrainer() {
@@ -100,7 +101,7 @@ public class Hauptprogramm {
                 + huberFitness.getGruendungsjahr() + "\n");
 
         standardMitglied = new StandardMitglied("Huber", "S.", "54926", "Trier",
-                38, 19.98, huberFitness);
+                38, huberFitness);
         System.out.println(standardMitglied.toString());
         System.out.println("VORSICHT, das potentielle Mitglied wurde noch nicht "
                 + "geaddet, damit ergibt sich die folgende \n"
@@ -109,7 +110,7 @@ public class Hauptprogramm {
         pause(3);
 
         standardMitglied = new StandardMitglied("Huber", "P.", "54926", "Trier",
-                24, 19.98, huberFitness);
+                24, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         System.out.println("Dieses potentielle Mitglied wurde geaddet!");
@@ -117,7 +118,7 @@ public class Hauptprogramm {
         pause(3);
 
         standardMitglied = new StandardMitglied("Huber", "Marcel", "54926", "Trier",
-                36, 0.00, huberFitness);
+                36, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();
@@ -128,8 +129,8 @@ public class Hauptprogramm {
         huberFitness.anzeigeStandardMitglieder();
         pause(5);
 
-        standardMitglied = new StandardMitglied("Huber", "S", "54926", "Trier",
-                38, 0.00, huberFitness);
+        standardMitglied = new StandardMitglied("Huber", "H.", "54926", "Trier",
+                63, huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();

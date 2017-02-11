@@ -16,7 +16,7 @@ import javax.swing.Timer;
  */
 public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
-    private MyListModel mlm;
+//    private MyListModel mlm;
 
     /**
      * Creates new form JFrameFitnessStudioVerwaltung
@@ -88,7 +88,6 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("KonsolenausgabeDemoStart", jPanel1);
 
-        jListMitglieder.setModel(mlm);
         jScrollPane1.setViewportView(jListMitglieder);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -197,6 +196,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField textMethodenNummer;
     // End of variables declaration//GEN-END:variables
 
+    
+    /*
     class MyListModel extends AbstractListModel<String> {
 
         private List<String> models;
@@ -223,5 +224,5 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
     private Map<String, List<String>> cars;
 
-    
+    */
 }
