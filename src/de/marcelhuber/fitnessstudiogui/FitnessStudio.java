@@ -18,7 +18,8 @@ public class FitnessStudio {
     // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
     // sein - Implementierung von beiden rein zu Test- und Kontrollzwecken
     private static int mitgliedsAnzahlberechner;
-    private static int mitgliedsZaehler = 0; // Wäre in dieser Form als Zähler für 
+    private static int kettenMitgliedsZaehler = 0;
+    // Wäre in dieser Form als Zähler für 
     // eine Studiokette geeignet, die in 
     // der Klasse FitnessStudio liegt
     private static int letzteMitgliedsNummer = 0;
@@ -36,7 +37,8 @@ public class FitnessStudio {
     //       und Standardmitglied...
     private List<StandardMitglied> standardMitglieder;
     private List<Chef> chefs;  // TODO: abstrakte Klasse: Beschäftige... (Chef, Trainer,...) 
-    private final int fitnessStudioMitgliedsZaehler = 0; // Zähler für die Anzahl der
+    private int mitgliedsZaehler = 0;
+    // Zähler für die Anzahl der
     // Mitglieder eines einzelnen
     // Studio(-Objektes)
 
@@ -117,13 +119,14 @@ public class FitnessStudio {
                 neuesStandardMitglied.getFitnessStudio());
         //standardMitglieder.add(anzulegendesStandardMitglied);
         standardMitglieder.add(anzulegendesStandardMitglied);
-        ++FitnessStudio.mitgliedsZaehler;
+        ++mitgliedsZaehler;
+        ++FitnessStudio.kettenMitgliedsZaehler;
         ++FitnessStudio.letzteMitgliedsNummer;
     }
 
-    void removeStandardMitglied(int mitgliedsnummer) {
+    int removeStandardMitglied(int mitgliedsnummer) {
         int helpIndex = -1;
-        if (FitnessStudio.mitgliedsZaehler == 0) {
+        if (FitnessStudio.kettenMitgliedsZaehler == 0) {
             System.out.print("OHNE Mitglieder kann man KEINES entfernen!!! ");
         } else if ((mitgliedsnummer >= 0) && (mitgliedsnummer <= FitnessStudio.letzteMitgliedsNummer)) {
             /* die folgende Suche kann man beschleunigen auf O(n log n)
@@ -147,12 +150,14 @@ public class FitnessStudio {
             System.out.println("Zu entfernen ist das folgende Mitglied:");
             System.out.println(standardMitglieder.get(helpIndex));
             standardMitglieder.remove(standardMitglieder.get(helpIndex));
-            --FitnessStudio.mitgliedsZaehler;
+            --FitnessStudio.kettenMitgliedsZaehler;
+            --mitgliedsZaehler;
         } else {
             System.out.println("Bitte kontrollieren Sie die Mitgliedsnummer:"
                     + " EINE SOLCHE MITGLIEDSNUMMER GIBT ES IN DIESEM STUDIO "
                     + "NICHT!!\n\n\n");
         }
+        return helpIndex;
     }
 
     void addChef(Chef neuerChef) {
@@ -177,4 +182,7 @@ public class FitnessStudio {
         return name;
     }
 
+    List getStandardMitglieder() {
+        return standardMitglieder;
+    }
 }

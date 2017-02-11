@@ -15,7 +15,7 @@ import java.util.logging.*;
 public class Hauptprogramm {
 
     public static void main(String[] args) {
-        int schalter = 1; // Nur Werte von 0 bis 7 sinnvoll
+        int schalter = 3; // Nur Werte von 0 bis 7 sinnvoll
         new Hauptprogramm().go(schalter);
     }
 
@@ -45,7 +45,7 @@ public class Hauptprogramm {
                 goTestFallChefs();
                 goTestFallTrainer();
                 goTestFallMitglieder();
-
+                break;
             default:
                 System.out.println("Keine gültige Zahl!");
                 break;
