@@ -16,7 +16,9 @@ public class Hauptprogramm {
 
     public static void main(String[] args) {
         int schalter = 2; // Nur Werte von 0 bis 7 sinnvoll
-        new Hauptprogramm().go(schalter);
+//        new Hauptprogramm().go(schalter);
+        new de.marcelhuber.fitnessstudiogui.Hauptprogramm().go(schalter);
+        /* Einfach mal, um einen Aufruf mit Paketnamen gesehen zu haben */
     }
 
     void go(int k) {
