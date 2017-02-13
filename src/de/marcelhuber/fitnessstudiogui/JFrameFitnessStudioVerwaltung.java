@@ -35,14 +35,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        javax.swing.JTabbedPane jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabelHauptprogramm = new javax.swing.JLabel();
         jButtonStartHauptprogramm = new javax.swing.JButton();
         textMethodenNummer = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListMitglieder = new javax.swing.JList();
+        jListMitglieder = new javax.swing.JList<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,11 +190,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonStartHauptprogramm;
     private javax.swing.JLabel jLabelHauptprogramm;
-    private javax.swing.JList jListMitglieder;
+    private javax.swing.JList<String> jListMitglieder;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField textMethodenNummer;
     // End of variables declaration//GEN-END:variables
 
