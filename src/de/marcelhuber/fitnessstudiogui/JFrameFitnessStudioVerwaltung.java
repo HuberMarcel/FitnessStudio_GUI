@@ -199,10 +199,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
     class MyStandardMitgliederListModel extends AbstractListModel<String> {
 
-        private List<String> standardMitglieder;
+        private List<String> standardMitgliederListe;
 
         public MyStandardMitgliederListModel() {
-            standardMitglieder = new ArrayList<>();
+            standardMitgliederListe = new ArrayList<>();
             FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness",
                     "54294 Trier", (int) 2017);
 
@@ -228,7 +228,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             List<StandardMitglied> huberFitnessStandardMitglieder
                     = huberFitness.getStandardMitglieder();
             for (StandardMitglied standardMitglied1 : huberFitnessStandardMitglieder) {
-                standardMitglieder.add(standardMitglied1.toString());
+                standardMitgliederListe.add(standardMitglied1.toString());
             }
 
             entferneMitgliedMitMitgliedNummer(2, huberFitness);
@@ -239,16 +239,16 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
         @Override
         public int getSize() {
-            return standardMitglieder.size();
+            return standardMitgliederListe.size();
         }
 
         @Override
         public String getElementAt(int index) {
-            return standardMitglieder.get(index);
+            return standardMitgliederListe.get(index);
         }
 
         public void setStudioPersonen(List<String> models) {
-            this.standardMitglieder = models;
+            this.standardMitgliederListe = models;
             fireContentsChanged(this, 0, getSize());
         }
 
@@ -257,13 +257,13 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             int indexImStandardMitgliederArray
                     = fitnessStudio.removeStandardMitglied(mitgliedNummer);
             if ((0 <= indexImStandardMitgliederArray)
-                    && (indexImStandardMitgliederArray < standardMitglieder.size())) {
-                standardMitglieder.remove(indexImStandardMitgliederArray);
+                    && (indexImStandardMitgliederArray < standardMitgliederListe.size())) {
+                standardMitgliederListe.remove(indexImStandardMitgliederArray);
             } else {
                 System.out.println("Da kann was mit dem Index nicht stimmen: Ich "
                         + "soll an der Stelle " + indexImStandardMitgliederArray + " "
                         + "etwas entfernen?! Das Feld hat Länge "
-                        + standardMitglieder.size() + "!");
+                        + standardMitgliederListe.size() + "!");
             }
         }
     }
