@@ -9,6 +9,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
+import javax.swing.table.*;
 
 /**
  *
@@ -16,13 +17,16 @@ import javax.swing.Timer;
  */
 public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
+    private Map<Integer, List<String>> standardMitgliederMap;
     private MyStandardMitgliederListModel msmlm;
+    private MyTableModel mtm;
 
     /**
      * Creates new form JFrameFitnessStudioVerwaltung
      */
     public JFrameFitnessStudioVerwaltung() {
         msmlm = new MyStandardMitgliederListModel();
+        mtm = new MyTableModel();
         initComponents();
     }
 
@@ -43,6 +47,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListMitglieder = new javax.swing.JList<String>();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableMitglieder = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +91,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addComponent(jButtonStartHauptprogramm)
                         .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabelHauptprogramm))
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("KonsolenausgabeDemoStart", jPanel1);
@@ -106,10 +113,32 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dialogfenster", jPanel2);
+        jTabbedPane1.addTab("MitgliederListenAusgabe", jPanel2);
+
+        jTableMitglieder.setModel(mtm);
+        jScrollPane2.setViewportView(jTableMitglieder);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("MitgliederTabelle", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,44 +222,67 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JList<String> jListMitglieder;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableMitglieder;
     private javax.swing.JTextField textMethodenNummer;
     // End of variables declaration//GEN-END:variables
 
+    class MyTableModel extends AbstractTableModel {
+
+        @Override
+        public int getRowCount() {
+            return 15;
+        }
+
+        @Override
+        public int getColumnCount() {
+            return 3;
+        }
+
+        @Override
+        public String getColumnName(int columnIndex) {
+            return "Spalte " + columnIndex;
+        }
+
+        @Override
+        public Class<?> getColumnClass(int columnIndex) {
+            return Object.class;
+        }
+
+        @Override
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return true;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            return "Z" + rowIndex + "/S" + columnIndex;
+        }
+
+        @Override
+        public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+            System.out.println("Zelle: Z" + rowIndex + "/S" + columnIndex + ": " + aValue);
+        }
+
+//        @Override
+//        public void addTableModelListener(TableModelListener l) {
+//        }
+//
+//        @Override
+//        public void removeTableModelListener(TableModelListener l) {
+//        }
+    }
+
     class MyStandardMitgliederListModel extends AbstractListModel<String> {
 
-        private List<String> standardMitgliederListe;
+        private List<String> standardMitgliederListe = new ArrayList<>();
 
         public MyStandardMitgliederListModel() {
-            standardMitgliederListe = new ArrayList<>();
             FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness",
                     "54294 Trier", (int) 2017);
-
-            StandardMitglied standardMitglied = new StandardMitglied("Huber",
-                    "K.", "54441", "Wellen", 83, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-            standardMitglied = new StandardMitglied("Huber",
-                    "H.", "54441", "Wellen", 63, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-            standardMitglied = new StandardMitglied("Huber",
-                    "G.", "54441", "Wellen", 62, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-            standardMitglied = new StandardMitglied("Huber",
-                    "S.", "54926", "Trier", 38, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-            standardMitglied = new StandardMitglied("Huber",
-                    "Marcel", "54924", "Trier", 36, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-            standardMitglied = new StandardMitglied("Huber",
-                    "P.", "54924", "Trier", 24, huberFitness);
-            huberFitness.addStandardMitglied(standardMitglied);
-
-            List<StandardMitglied> huberFitnessStandardMitglieder
-                    = huberFitness.getStandardMitglieder();
-            for (StandardMitglied standardMitglied1 : huberFitnessStandardMitglieder) {
-                standardMitgliederListe.add(standardMitglied1.toString());
-            }
-
+            standardMitgliederListe = erstelleTestStandardMitgliederListe(huberFitness);
             entferneMitgliedMitMitgliedNummer(2, huberFitness);
             entferneMitgliedMitMitgliedNummer(7, huberFitness);
             entferneMitgliedMitMitgliedNummer(0, huberFitness);
@@ -266,5 +318,37 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         + standardMitgliederListe.size() + "!");
             }
         }
+
+        public List<String> erstelleTestStandardMitgliederListe(FitnessStudio fitnessStudio) {
+            List<String> testStandardMitgliederListe = new ArrayList<>();
+
+            StandardMitglied standardMitglied = new StandardMitglied("Huber",
+                    "K.", "54441", "Wellen", 83, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+            standardMitglied = new StandardMitglied("Huber",
+                    "H.", "54441", "Wellen", 63, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+            standardMitglied = new StandardMitglied("Huber",
+                    "G.", "54441", "Wellen", 62, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+            standardMitglied = new StandardMitglied("Huber",
+                    "S.", "54926", "Trier", 38, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+            standardMitglied = new StandardMitglied("Huber",
+                    "Marcel", "54924", "Trier", 36, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+            standardMitglied = new StandardMitglied("Huber",
+                    "P.", "54924", "Trier", 24, fitnessStudio);
+            fitnessStudio.addStandardMitglied(standardMitglied);
+
+            List<StandardMitglied> huberFitnessStandardMitglieder
+                    = fitnessStudio.getStandardMitglieder();
+            for (StandardMitglied standardMitglied1 : huberFitnessStandardMitglieder) {
+                testStandardMitgliederListe.add(standardMitglied1.toString());
+            }
+
+            return testStandardMitgliederListe;
+        }
+
     }
 }
