@@ -15,7 +15,7 @@ import java.util.logging.*;
 public class Hauptprogramm {
 
     public static void main(String[] args) {
-        int schalter = 1; // Nur Werte von 0 bis 7 sinnvoll
+        int schalter = 2; // Nur Werte von 0 bis 7 sinnvoll
         new Hauptprogramm().go(schalter);
     }
 
@@ -25,25 +25,25 @@ public class Hauptprogramm {
                 goTestFallChefs();
                 break;
             case 2:
-                goTestFallTrainer();
+                goTestFallMitarbeiter();
                 break;
             case 3:
                 goTestFallMitglieder();
                 break;
             case 4:
                 goTestFallChefs();
-                goTestFallTrainer();
+                goTestFallMitarbeiter();
                 break;
             case 5:
                 goTestFallChefs();
                 goTestFallMitglieder();
                 break;
             case 6:
-                goTestFallTrainer();
+                goTestFallMitarbeiter();
                 goTestFallMitglieder();
             case 7:
                 goTestFallChefs();
-                goTestFallTrainer();
+                goTestFallMitarbeiter();
                 goTestFallMitglieder();
                 break;
             default:
@@ -66,26 +66,73 @@ public class Hauptprogramm {
         System.out.println(huberMarcel.toString());
     }
 
-    void goTestFallTrainer() {
-
+    void goTestFallMitarbeiter() {
+        System.out.println("!!! Testfall TRAINER !!!");
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
                 2017);
         huberFitness.anzeigeFitnessStudio();
         Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER", 36);
-        System.out.println(marcelHuber.getSpezialisierungsBereiche());
+        System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
-        marcelHuber.addSpezialisierungsBereich("Muskelaufbau");
-        System.out.println(marcelHuber.getSpezialisierungsBereiche());
+        marcelHuber.addSpezialisierungsbereich("Muskelaufbau");
+        System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
         String s = "Krafttraining";
-        marcelHuber.addSpezialisierungsBereich(s);
-        System.out.println(marcelHuber.getSpezialisierungsBereiche());
+        marcelHuber.addSpezialisierungsbereich(s);
+        s = "Ausdauertraining";
+        marcelHuber.addSpezialisierungsbereich(s);
+        System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
         System.out.println(marcelHuber);
-
+        System.out.println("Wir entfernen das Gebiet Krafttraining!");
+        s = "Krafttrainindfsg";
+        if (marcelHuber.removeSpezialisierungsbereich(s)) {
+            System.out.println("Das Entfernen des Spezialisierungsgebietes " + s
+                    + " war erfolgreich");
+        } else {
+            System.out.println("\n\n!!!Prüfen Sie die "
+                    + "Schreibweise des zu entfernenden Spezialisierungsgebiets: "
+                    + "Ihre Eingabe war: " + s + " !!!\n\n");
+        };
+        System.out.println("Anzahl der Spezialgebiete "
+                + marcelHuber.getAnzahlDerSpezialGebiete());
+        System.out.println(marcelHuber);
+        System.out.println("\n\nHinzufügen des Aufgabenbereichs \"Verwaltung\"!");
+        marcelHuber.addNeuerAufgabenbereich("Verwaltung");
+        System.out.println(marcelHuber);
+        System.out.println("\n\nEntfernen des Aufgabenbereichs \"Trainer\"!");
+        marcelHuber.removeAufgabenbereich("Trainer");
+        System.out.println(marcelHuber);
+        // Hinweis: Das ist so natürlich rein zu demonstrativen Zwecken. Ein
+        // Trainer sollte immer auch seinen Aufgabenbereich innehalten bzw.
+        // es würde vielleicht nur Sinn ergeben, den Aufgabenbereich "Trainer" 
+        //eines Trainers zu löschen, wenn dieses Trainerobjekt gelöscht wird?!
+        System.out.println("\n\n\n");
+        System.out.println("Testfall VERWALTUNGSANGESTELLTER:");
+        Verwaltungsangestellter huberS = new Verwaltungsangestellter("Huber",
+                "S.", "54292", "Trier", 38);
+        System.out.println(huberS);
+        huberS.addAufgabenbereich("Kundenbetreuung");
+        System.out.println(huberS);
+        if (huberS.removeAufgabenbereich("Verwaltung")) {
+            System.out.println("Das Entfernen des Bereichs \"Verwaltung "
+                    + "\" ist von Erfolg gekrönt");
+        } else {
+            System.out.println("\"Verwaltung\" wurde NICHT aus dem Aufgabenbereich"
+                    + "entfernt");
+        };
+        System.out.println(huberS);
+        if (huberS.removeAufgabenbereich("Verwaltung")) {
+            System.out.println("Das Entfernen des Bereichs \"Verwaltung "
+                    + "\" ist von Erfolg gekrönt");
+        } else {
+            System.out.println("\"Verwaltung\" wurde NICHT aus dem Aufgabenbereich"
+                    + "entfernt");
+        };
+        System.out.println(huberS);
     }
 
     void goTestFallMitglieder() {

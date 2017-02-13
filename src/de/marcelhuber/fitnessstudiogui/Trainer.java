@@ -11,9 +11,10 @@ import java.util.*;
  *
  * @author Huber, Marcel
  */
-class Trainer extends Person {
+class Trainer extends AbstraktMitarbeiter {
 
-    private ArrayList<String> spezialisierungsBereiche;
+    private ArrayList<String> spezialisierungsbereiche;
+
     /* TODOs: 
      - das aktuelle Monats-Brutto-Gehalt; 
      - die Zeit, wie lange der Trainer schon für uns arbeitet;
@@ -26,31 +27,43 @@ class Trainer extends Person {
     }
 
     Trainer(String nachName, String vorName, String plz, String wohnort, int alter) {
-        super(nachName, vorName, plz, wohnort, alter);
-        this.spezialisierungsBereiche = new ArrayList<>();
+        super(nachName, vorName, plz, wohnort, alter, "Trainer");
+        this.spezialisierungsbereiche = new ArrayList<>();
     }
 
     Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
-            String neuerSpezialisierungsBereich) {
-        this(nachName, vorName, plz, wohnort, alter); /* zum Anlegen eines Trainers, der
+            String neuerAufgabenbereich, String neuerSpezialisierungsbereich) {
+        this(nachName, vorName, plz, wohnort, alter);
+        /* zum Anlegen eines Trainers, der
          bislang noch keine Spezialisierung angegeben hat bzw. die noch nicht bekannt
          ist
          */
-
-        this.addSpezialisierungsBereich(neuerSpezialisierungsBereich);
+        this.addNeuerAufgabenbereich(neuerAufgabenbereich);
+        this.addSpezialisierungsbereich(neuerSpezialisierungsbereich);
     }
 
-    ArrayList<String> getSpezialisierungsBereiche() {
-        return spezialisierungsBereiche;
+    ArrayList<String> getSpezialisierungsbereiche() {
+        return spezialisierungsbereiche;
     }
 
-    void addSpezialisierungsBereich(String neuerSpezialisierungsBereich) {
-
-        spezialisierungsBereiche.add(neuerSpezialisierungsBereich);
+    void addSpezialisierungsbereich(String neuerSpezialisierungsbereich) {
+        spezialisierungsbereiche.add(neuerSpezialisierungsbereich);
     }
-
+    
+    boolean removeSpezialisierungsbereich(String alterSpezialisierungsbereich){
+        return spezialisierungsbereiche.remove(alterSpezialisierungsbereich);
+    }
+    
+    void addNeuerAufgabenbereich(String neuerAufgabenbereich){
+      aufgabenbereiche.add(neuerAufgabenbereich);
+    }
+    
+    boolean removeAufgabenbereich(String alterAufgabenbereich){
+        return aufgabenbereiche.remove(alterAufgabenbereich);
+    }
+    
     int getAnzahlDerSpezialGebiete() {
-        return spezialisierungsBereiche.size();
+        return spezialisierungsbereiche.size();
     }
 
     @Override
@@ -59,7 +72,7 @@ class Trainer extends Person {
         personenInformationen = String.format("Trainer[Nachname = %s, Vorname = %s, "
                 + "PLZ:%s, Wohnort: %s, Alter: %d", this.getNachname(), this.getVorname(),
                 this.getPlz(), this.getWohnort(), this.getAlter());
-        return personenInformationen + spezialisierungsBereiche;
+        return personenInformationen + spezialisierungsbereiche + aufgabenbereiche;
     }
 
 }
