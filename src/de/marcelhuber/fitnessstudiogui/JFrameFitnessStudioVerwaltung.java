@@ -20,6 +20,13 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private Map<Integer, List<String>> standardMitgliederMap;
     private MyStandardMitgliederListModel msmlm;
     private MyTableModel mtm;
+    FitnessStudio fitnessstudio = new FitnessStudio("Huber-Fitness",
+            "54294 Trier", 2017);
+    private String dummyNachname;
+    private String dummyVorname;
+    private String dummyPlz;
+    private String dummyWohnort;
+    private int dummyAlter = -1;
 
     /**
      * Creates new form JFrameFitnessStudioVerwaltung
@@ -52,6 +59,22 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMitglieder = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
+        jLabelMitgliedsdatenUeberschrift = new javax.swing.JLabel();
+        jLabelNachName = new javax.swing.JLabel();
+        jLabelVorname = new javax.swing.JLabel();
+        jLabelPostleitzahl = new javax.swing.JLabel();
+        jLabelWohnort = new javax.swing.JLabel();
+        jLabelMitgliedsnummer = new javax.swing.JLabel();
+        jTextNachname = new javax.swing.JTextField();
+        jTextVorname = new javax.swing.JTextField();
+        jTextPostleitzahl = new javax.swing.JTextField();
+        jTextWohnort = new javax.swing.JTextField();
+        jLabelErrechneteMitgliedsnummer = new javax.swing.JLabel();
+        jButtonMitgliedVorbereiten = new javax.swing.JButton();
+        jLabelAlter = new javax.swing.JLabel();
+        jTextAlter = new javax.swing.JTextField();
+        jTextErrechneteMitgliedsnummer = new javax.swing.JTextField();
+        jButtonMitgliedsdatenSpeichern = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +105,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addComponent(jButtonStartHauptprogramm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(417, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +116,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addComponent(jButtonStartHauptprogramm)
                         .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabelHauptprogramm))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Demo auf Konsole", jPanel1);
@@ -107,7 +130,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -115,10 +138,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("MitgliederListenAusgabe", jPanel2);
+        jTabbedPane1.addTab("Mitglieder: Listenausgabe", jPanel2);
 
         jTableMitglieder.setModel(mtm);
         jScrollPane2.setViewportView(jTableMitglieder);
@@ -130,30 +153,143 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("MitgliederTabelle", jPanel3);
+        jTabbedPane1.addTab("Mitglieder: Tabelle", jPanel3);
+
+        jLabelMitgliedsdatenUeberschrift.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabelMitgliedsdatenUeberschrift.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMitgliedsdatenUeberschrift.setText("Mitgliedsdateneingabe");
+        jLabelMitgliedsdatenUeberschrift.setPreferredSize(new java.awt.Dimension(69, 18));
+
+        jLabelNachName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelNachName.setText("Nachname");
+
+        jLabelVorname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVorname.setText("Vorname");
+
+        jLabelPostleitzahl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelPostleitzahl.setText("Postleitzahl");
+
+        jLabelWohnort.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelWohnort.setText("Wohnort");
+
+        jLabelMitgliedsnummer.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelMitgliedsnummer.setText("Mitgliedsnummer");
+
+        jLabelErrechneteMitgliedsnummer.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        jButtonMitgliedVorbereiten.setText("Mitglied vorbereiten");
+        jButtonMitgliedVorbereiten.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jButtonMitgliedVorbereiten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMitgliedVorbereitenActionPerformed(evt);
+            }
+        });
+
+        jLabelAlter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelAlter.setText("Alter");
+
+        jTextAlter.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextAlterFocusGained(evt);
+            }
+        });
+
+        jTextErrechneteMitgliedsnummer.setEditable(false);
+        jTextErrechneteMitgliedsnummer.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextErrechneteMitgliedsnummer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextErrechneteMitgliedsnummerActionPerformed(evt);
+            }
+        });
+
+        jButtonMitgliedsdatenSpeichern.setText("Mitgliedsdaten speichern");
+        jButtonMitgliedsdatenSpeichern.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jButtonMitgliedsdatenSpeichern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMitgliedsdatenSpeichernActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelPostleitzahl, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                        .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelAlter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextErrechneteMitgliedsnummer)
+                    .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextNachname, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextVorname, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextPostleitzahl, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextWohnort, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextAlter, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))
+                .addGap(182, 182, 182))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonMitgliedVorbereiten, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNachName)
+                    .addComponent(jTextNachname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelVorname)
+                    .addComponent(jTextVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPostleitzahl)
+                    .addComponent(jTextPostleitzahl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelWohnort)
+                    .addComponent(jTextWohnort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelAlter))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelMitgliedsnummer)
+                    .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jButtonMitgliedVorbereiten)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Mitglied Erstellen", jPanel4);
+        jTabbedPane1.addTab("Mitglied erstellen", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,6 +331,64 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textMethodenNummerActionPerformed
 
+    private void jButtonMitgliedVorbereitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedVorbereitenActionPerformed
+
+        dummyNachname = jTextNachname.getText();
+        dummyVorname = jTextVorname.getText();
+        dummyPlz = jTextPostleitzahl.getText();
+        dummyWohnort = jTextWohnort.getText();
+
+        try {
+            dummyAlter = (int) Integer.parseInt(jTextAlter.getText());
+            StandardMitglied stdmgld = new StandardMitglied(dummyNachname,
+                    dummyVorname, dummyPlz, dummyWohnort, dummyAlter,
+                    fitnessstudio);
+            // Vorsicht: Hier nur Ausgabe, wie die Daten eines potentiellen 
+            // neuen Standardmitglieds aussehen
+            jLabelErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
+            jTextErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
+        } catch (NumberFormatException ex) {
+            System.out.println("Fehler beim Konvertieren des Alters, Ihre "
+                    + "merkwürdige Eingabe war " + jTextAlter.getText());
+            System.out.println("\n!!! Korrigieren Sie bitte Ihre Eingabe!!!\n");
+            if (jTextAlter.getText().isEmpty()) {
+                jTextAlter.setText("" + dummyAlter);
+            }
+            jTextAlter.requestFocus();
+        }
+    }//GEN-LAST:event_jButtonMitgliedVorbereitenActionPerformed
+
+    private void jTextErrechneteMitgliedsnummerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextErrechneteMitgliedsnummerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextErrechneteMitgliedsnummerActionPerformed
+
+    private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
+        if (dummyAlter >= 0) {
+            fitnessstudio.addStandardMitglied(new StandardMitglied(dummyNachname,
+                    dummyVorname, dummyPlz, dummyWohnort, dummyAlter, fitnessstudio));
+            fitnessstudio.anzeigeStandardMitglieder();
+            dummyAlter = -1;
+            clearAllMitgliedTabVisibleTextFields();
+        } else {
+            System.out.println("Korrigieren Sie Ihre Eingabe - wenigstens das "
+                    + "Alter: " + dummyAlter + " kann nicht korrekt sein!");
+            jTextAlter.requestFocus();
+        }
+    }//GEN-LAST:event_jButtonMitgliedsdatenSpeichernActionPerformed
+
+    private void jTextAlterFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAlterFocusGained
+        jTextAlter.selectAll();
+    }//GEN-LAST:event_jTextAlterFocusGained
+    void clearAllMitgliedTabVisibleTextFields() {
+        jTextNachname.setText("");
+        jTextVorname.setText("");
+        jTextPostleitzahl.setText("");
+        jTextWohnort.setText("");
+        jTextAlter.setText("");
+        jTextErrechneteMitgliedsnummer.setText("");
+        jLabelErrechneteMitgliedsnummer.setText("");
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -209,16 +403,24 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -232,8 +434,18 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonMitgliedVorbereiten;
+    private javax.swing.JButton jButtonMitgliedsdatenSpeichern;
     private javax.swing.JButton jButtonStartHauptprogramm;
+    private javax.swing.JLabel jLabelAlter;
+    private javax.swing.JLabel jLabelErrechneteMitgliedsnummer;
     private javax.swing.JLabel jLabelHauptprogramm;
+    private javax.swing.JLabel jLabelMitgliedsdatenUeberschrift;
+    private javax.swing.JLabel jLabelMitgliedsnummer;
+    private javax.swing.JLabel jLabelNachName;
+    private javax.swing.JLabel jLabelPostleitzahl;
+    private javax.swing.JLabel jLabelVorname;
+    private javax.swing.JLabel jLabelWohnort;
     private javax.swing.JList<String> jListMitglieder;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -242,6 +454,12 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableMitglieder;
+    private javax.swing.JTextField jTextAlter;
+    private javax.swing.JTextField jTextErrechneteMitgliedsnummer;
+    private javax.swing.JTextField jTextNachname;
+    private javax.swing.JTextField jTextPostleitzahl;
+    private javax.swing.JTextField jTextVorname;
+    private javax.swing.JTextField jTextWohnort;
     private javax.swing.JTextField textMethodenNummer;
     // End of variables declaration//GEN-END:variables
 

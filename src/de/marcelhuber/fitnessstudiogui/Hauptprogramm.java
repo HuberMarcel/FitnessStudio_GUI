@@ -127,8 +127,8 @@ public class Hauptprogramm {
             System.out.println("Das Entfernen des Bereichs \"Verwaltung "
                     + "\" ist von Erfolg gekrönt");
         } else {
-            System.out.println("\"Verwaltung\" wurde NICHT aus dem Aufgabenbereich"
-                    + "entfernt");
+            System.out.println("\"Verwaltung\" wurde NICHT aus dem "
+                    + "Aufgabenbereich entfernt");
         };
         System.out.println(huberS);
         if (huberS.removeAufgabenbereich("Verwaltung")) {

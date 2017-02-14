@@ -15,14 +15,17 @@ import java.util.logging.Logger;
  */
 public class FitnessStudio {
 
-    // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
-    // sein - Implementierung von beiden rein zu Test- und Kontrollzwecken
-    private static int mitgliedsAnzahlberechner;
     private static int kettenMitgliedsZaehler = 0;
     // Wäre in dieser Form als Zähler für 
     // eine Studiokette geeignet, die in 
     // der Klasse FitnessStudio liegt
     private static int letzteMitgliedsNummer = 0;
+        // mitgliedsAnzahlberechner und mitgliedsZaehler sollten immer identisch 
+    // sein, da wir hier nur ein Fitness-Studio behandeln
+    // momentane Implementierung von beiden rein zu Test- und Kontrollzwecken
+    // mitgliedsAnzahlberechner    
+    private int mitgliedsAnzahlberechner;
+    
     /* 
      Unterschied zwischen MitgliedsNummer und MitgliedsZaehler der
      FitnessStudio-Klasse: Die mitgliedsNummer wird mit jedem neuen
@@ -137,7 +140,7 @@ public class FitnessStudio {
                     helpIndex = standardMitglieder.indexOf(standardMitglied);
                     /* Ausgabe der Stelle, wo das entsprechende Mitglied aus der
                      ArrayList zu entfernen ist */
- /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
+                    /* Wichtige Beobachtung: Innerhalb der foreach-Schleife
                      soll/darf(?) man die ArrayList standardMitglieder nicht
                      verkleinern --- bzw. gibt es einen Befehl, um dann früher
                      diese zu verlassen?? Nachschlagen!

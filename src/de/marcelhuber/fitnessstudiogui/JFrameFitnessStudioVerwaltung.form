@@ -64,7 +64,7 @@
                       <Component id="jButtonStartHauptprogramm" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="textMethodenNummer" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace pref="307" max="32767" attributes="0"/>
+                      <EmptySpace pref="417" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -79,7 +79,7 @@
                           </Group>
                           <Component id="jLabelHauptprogramm" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="236" max="32767" attributes="0"/>
+                      <EmptySpace pref="253" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -114,8 +114,8 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="MitgliederListenAusgabe">
-                <Property name="tabTitle" type="java.lang.String" value="MitgliederListenAusgabe"/>
+              <JTabbedPaneConstraints tabName="Mitglieder: Listenausgabe">
+                <Property name="tabTitle" type="java.lang.String" value="Mitglieder: Listenausgabe"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -125,7 +125,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="482" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="592" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -135,7 +135,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="98" max="-2" attributes="0"/>
-                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                      <EmptySpace pref="122" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -165,8 +165,8 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="MitgliederTabelle">
-                <Property name="tabTitle" type="java.lang.String" value="MitgliederTabelle"/>
+              <JTabbedPaneConstraints tabName="Mitglieder: Tabelle">
+                <Property name="tabTitle" type="java.lang.String" value="Mitglieder: Tabelle"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -177,7 +177,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="399" max="-2" attributes="0"/>
-                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                      <EmptySpace pref="161" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -186,7 +186,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="173" max="-2" attributes="0"/>
-                      <EmptySpace pref="53" max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -213,8 +213,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Mitglied Erstellen">
-                <Property name="tabTitle" type="java.lang.String" value="Mitglied Erstellen"/>
+              <JTabbedPaneConstraints tabName="Mitglied erstellen">
+                <Property name="tabTitle" type="java.lang.String" value="Mitglied erstellen"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -222,15 +222,193 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="502" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabelPostleitzahl" alignment="0" pref="105" max="32767" attributes="0"/>
+                              <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextNachname" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jTextVorname" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jTextPostleitzahl" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jTextWohnort" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jTextAlter" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jLabelMitgliedsdatenUeberschrift" alignment="1" pref="270" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonMitgliedVorbereiten" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonMitgliedsdatenSpeichern" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jLabelMitgliedsdatenUeberschrift" min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelNachName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextNachname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelVorname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextVorname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelPostleitzahl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextPostleitzahl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelWohnort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextWohnort" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextAlter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelAlter" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelMitgliedsnummer" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextErrechneteMitgliedsnummer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonMitgliedsdatenSpeichern" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelMitgliedsdatenUeberschrift">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Mitgliedsdateneingabe"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[69, 18]"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelNachName">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nachname"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelVorname">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Vorname"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelPostleitzahl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Postleitzahl"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelWohnort">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Wohnort"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelMitgliedsnummer">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mitgliedsnummer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextNachname">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextVorname">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextPostleitzahl">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextWohnort">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelErrechneteMitgliedsnummer">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonMitgliedVorbereiten">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mitglied vorbereiten"/>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMitgliedVorbereitenActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelAlter">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Alter"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextAlter">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextAlterFocusGained"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextErrechneteMitgliedsnummer">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextErrechneteMitgliedsnummerActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonMitgliedsdatenSpeichern">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mitgliedsdaten speichern"/>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMitgliedsdatenSpeichernActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

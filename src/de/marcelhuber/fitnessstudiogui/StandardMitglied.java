@@ -13,7 +13,9 @@ public class StandardMitglied extends AbstraktMitglied {
 
     private FitnessStudio fitnessStudio;
     private long mitgliedNummer;
-    static double monatsBeitrag = 19.99;
+    static double monatsBeitrag = 19.99; // alle Fitness-Studios dieser
+    // Kette sollen gleichen Betrag
+    // kosten
 
     public StandardMitglied() {
         super();
@@ -39,9 +41,9 @@ public class StandardMitglied extends AbstraktMitglied {
     @Override
     public String toString() {
         String standardmitgliedsDatenString = super.toString();
-        standardmitgliedsDatenString = "\nFitnessStudio-Name:" 
-                + fitnessStudio.getFitnessStudioName()+ "; Mitgliedsnummer: " 
-                + mitgliedNummer + "|| "+standardmitgliedsDatenString;
+        standardmitgliedsDatenString = "\nFitnessStudio-Name:"
+                + fitnessStudio.getFitnessStudioName() + "; Mitgliedsnummer: "
+                + mitgliedNummer + "|| " + standardmitgliedsDatenString;
         return standardmitgliedsDatenString;
     }
 }

@@ -48,5 +48,5 @@ class AbstraktMitglied extends AbstraktPerson {
         this(nachName, vorName, plz, wohnort, alter);
         this.fitnessStudio = fitnessStudio;
     }
-
+    
 }
