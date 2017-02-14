@@ -22,21 +22,21 @@ class Trainer extends AbstraktMitarbeiter {
      - ...
      sollen auch noch in dem Trainer-Objekt festgehalten werden.
      */
-
     Trainer() {
     }
 
-    Trainer(String nachName, String vorName, String plz, String wohnort, int alter) {
-        super(nachName, vorName, plz, wohnort, alter, "Trainer");
+    Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
+            KontoDaten kontodatenTrainer) {
+        super(nachName, vorName, plz, wohnort, alter, "Trainer", kontodatenTrainer);
         this.spezialisierungsbereiche = new ArrayList<>();
     }
 
     Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
-            String neuerAufgabenbereich, String neuerSpezialisierungsbereich) {
-        this(nachName, vorName, plz, wohnort, alter);
-        /* zum Anlegen eines Trainers, der
-         bislang noch keine Spezialisierung angegeben hat bzw. die noch nicht bekannt
-         ist
+            String neuerAufgabenbereich, String neuerSpezialisierungsbereich,
+            KontoDaten kontoDaten) {
+        this(nachName, vorName, plz, wohnort, alter, kontoDaten);
+        /* zum Anlegen eines Trainers, der schon eine Spezialisierungen angegeben 
+         hat und zusätzliche Aufgabenbereiche bekommt
          */
         this.addNeuerAufgabenbereich(neuerAufgabenbereich);
         this.addSpezialisierungsbereich(neuerSpezialisierungsbereich);
@@ -49,19 +49,19 @@ class Trainer extends AbstraktMitarbeiter {
     void addSpezialisierungsbereich(String neuerSpezialisierungsbereich) {
         spezialisierungsbereiche.add(neuerSpezialisierungsbereich);
     }
-    
-    boolean removeSpezialisierungsbereich(String alterSpezialisierungsbereich){
+
+    boolean removeSpezialisierungsbereich(String alterSpezialisierungsbereich) {
         return spezialisierungsbereiche.remove(alterSpezialisierungsbereich);
     }
-    
-    void addNeuerAufgabenbereich(String neuerAufgabenbereich){
-      aufgabenbereiche.add(neuerAufgabenbereich);
+
+    void addNeuerAufgabenbereich(String neuerAufgabenbereich) {
+        aufgabenbereiche.add(neuerAufgabenbereich);
     }
-    
-    boolean removeAufgabenbereich(String alterAufgabenbereich){
+
+    boolean removeAufgabenbereich(String alterAufgabenbereich) {
         return aufgabenbereiche.remove(alterAufgabenbereich);
     }
-    
+
     int getAnzahlDerSpezialGebiete() {
         return spezialisierungsbereiche.size();
     }
@@ -69,10 +69,10 @@ class Trainer extends AbstraktMitarbeiter {
     @Override
     public String toString() {
         String personenInformationen;
-        personenInformationen = String.format("Trainer[Nachname = %s, Vorname = %s, "
-                + "PLZ:%s, Wohnort: %s, Alter: %d", this.getNachname(), this.getVorname(),
-                this.getPlz(), this.getWohnort(), this.getAlter());
-        return personenInformationen + spezialisierungsbereiche + aufgabenbereiche;
+        personenInformationen = super.toString();
+        return (personenInformationen
+                + "\nSpezialisierungsbereiche: " + spezialisierungsbereiche
+                + "\nAufgabenbereiche: " + aufgabenbereiche);
     }
 
 }

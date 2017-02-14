@@ -16,8 +16,9 @@ public class Verwaltungsangestellter extends AbstraktMitarbeiter {
     Verwaltungsangestellter() {
     }
 
-    Verwaltungsangestellter(String nachName, String vorName, String plz, String wohnort, int alter) {
-        super(nachName, vorName, plz, wohnort, alter, "Verwaltung");
+    Verwaltungsangestellter(String nachName, String vorName, String plz, 
+            String wohnort, int alter, KontoDaten kontodatenVerwaltungsangestellter) {
+        super(nachName, vorName, plz, wohnort, alter, "Verwaltung", kontodatenVerwaltungsangestellter);
     }
 
     @Override

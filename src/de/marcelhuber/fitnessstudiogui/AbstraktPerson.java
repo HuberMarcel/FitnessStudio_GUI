@@ -10,7 +10,7 @@ package de.marcelhuber.fitnessstudiogui;
  * @author Huber, Marcel
  */
 //abstract 
-abstract class Person {
+abstract class AbstraktPerson {
 
     private String nachName;
     private String vorName;
@@ -18,10 +18,10 @@ abstract class Person {
     private String wohnort;
     private int alter;
 
-    public Person() {
+    public AbstraktPerson() {
     }
 
-    public Person(String nachName, String vorName, String plz,
+    public AbstraktPerson(String nachName, String vorName, String plz,
             String wohnort, int alter) {
         this.nachName = nachName;
         this.vorName = vorName;

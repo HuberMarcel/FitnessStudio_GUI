@@ -15,7 +15,7 @@ import java.util.logging.*;
 public class Hauptprogramm {
 
     public static void main(String[] args) {
-        int schalter = 1; // Nur Werte von 0 bis 7 sinnvoll
+        int schalter = 2; // Nur Werte von 0 bis 7 sinnvoll
 //        new Hauptprogramm().go(schalter);
         new de.marcelhuber.fitnessstudiogui.Hauptprogramm().go(schalter);
         /* Einfach mal, um einen Aufruf mit Paketnamen gesehen zu haben */
@@ -58,7 +58,9 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier", 2017);
         huberFitness.anzeigeFitnessStudio();
         Chef huberMarcel;
-        huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier", 36);
+        huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier", 36,
+                new KontoDaten("bic von huberMarcel", "iban von huberMarcel",
+                        "name (Bank) von huberMarcel"));
         //huberFitness.addChef(huberMarcel);
         System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
                 + " Chefs.");
@@ -73,7 +75,8 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
                 2017);
         huberFitness.anzeigeFitnessStudio();
-        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER", 36);
+        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER", 36,
+                new KontoDaten("bic", "iban", "name (Bank)"));
         System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
@@ -115,7 +118,8 @@ public class Hauptprogramm {
         System.out.println("\n\n\n");
         System.out.println("Testfall VERWALTUNGSANGESTELLTER:");
         Verwaltungsangestellter huberS = new Verwaltungsangestellter("Huber",
-                "S.", "54292", "Trier", 38);
+                "S.", "54292", "Trier", 38, new KontoDaten("bic von Huber S.",
+                        "iban von Huber S.", "name (Bank) von Huber S."));
         System.out.println(huberS);
         huberS.addAufgabenbereich("Kundenbetreuung");
         System.out.println(huberS);

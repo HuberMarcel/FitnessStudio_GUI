@@ -16,20 +16,20 @@ import java.util.logging.Logger;
  *
  * @author Huber, Marcel
  */
-class AbstraktMitglied extends Person {
+class AbstraktMitglied extends AbstraktPerson {
 
     // vielleicht wäre bei der MitgliedsNummer eine Lösung mit MAP besser 
     // und einfacher gewesen
     FitnessStudio fitnessStudio;
-
     /*
-    Kleiner Kommentar, warum ich das FitnessStudio hier mitübergeben lasse:
-    Für jedes Fitness-Studio will ich eine eindeutige Mitgliedsnummer
-    generieren, die einfach nach oben gezählt wird, wenn ein neues Mitglied
-    hinzukommt, aber auch ein ehemaliges Mitglied wird wieder mit einer neuen
-    Nummer versehen. Mit dem Fitness-Studio-Objekt kann ich dies händeln, da
-    diese Information dort gehändelt wird
+     Kleiner Kommentar, warum ich das FitnessStudio hier mitübergeben lasse:
+     Für jedes Fitness-Studio will ich eine eindeutige Mitgliedsnummer
+     generieren, die einfach nach oben gezählt wird, wenn ein neues Mitglied
+     hinzukommt, aber auch ein ehemaliges Mitglied wird wieder mit einer neuen
+     Nummer versehen. Mit dem Fitness-Studio-Objekt kann ich dies händeln, da
+     diese Information dort gehändelt wird
      */
+
     public AbstraktMitglied() {
     }
 

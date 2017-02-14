@@ -9,13 +9,20 @@ package de.marcelhuber.fitnessstudiogui;
  *
  * @author Huber, Marcel
  */
-public class Chef extends Person {
+public class Chef extends AbstraktMitarbeiter {
 
     public Chef() {
     }
 
-    public Chef(String nachName, String vorName, String plz, String wohnort, int alter) {
-        super(nachName, vorName, plz, wohnort, alter);
+    public Chef(String nachName, String vorName, String plz, String wohnort,
+            int alter, KontoDaten kontodaten) {
+        super(nachName, vorName, plz, wohnort, alter, "Chef", kontodaten);
     }
 
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += "\n" + this.kontoDaten().toString();
+        return str;
+    }
 }

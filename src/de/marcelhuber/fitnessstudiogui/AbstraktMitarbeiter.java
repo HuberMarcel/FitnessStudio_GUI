@@ -12,8 +12,11 @@ import java.util.List;
  *
  * @author Marcel
  */
-abstract class AbstraktMitarbeiter extends Person {
+abstract class AbstraktMitarbeiter extends AbstraktPerson {
 
+    private KontoDaten kontodaten; // Mitarbeiter sollen nicht
+    // bar bezahlt werden, sondern bekommen ihr 
+    // Gehalt überwiesen
     List<String> aufgabenbereiche = new ArrayList<>();
     // bspw. kann ein AbstraktMitarbeiter in der
     // Verwaltung & als Trainer etc. tätig sein
@@ -21,16 +24,17 @@ abstract class AbstraktMitarbeiter extends Person {
     AbstraktMitarbeiter() {
     }
 
-    AbstraktMitarbeiter(String nachName, String vorName, String plz, String wohnort, 
-            int alter, String aufgabenbereich) {
+    AbstraktMitarbeiter(String nachName, String vorName, String plz, String wohnort,
+            int alter, String aufgabenbereich, KontoDaten kontodaten) {
         super(nachName, vorName, plz, wohnort, alter);
         aufgabenbereiche.add(aufgabenbereich);
+        this.kontodaten = kontodaten;
     }
 
     void addAufgabenbereich(String aufgabenbereich) {
         this.aufgabenbereiche.add(aufgabenbereich);
     }
-    
+
     boolean removeAufgabenbereich(String aufgabenbereich) {
         return this.aufgabenbereiche.remove(aufgabenbereich);
     }
@@ -39,4 +43,7 @@ abstract class AbstraktMitarbeiter extends Person {
         return aufgabenbereiche;
     }
 
+    public KontoDaten kontoDaten() {
+        return kontodaten;
+    }
 }

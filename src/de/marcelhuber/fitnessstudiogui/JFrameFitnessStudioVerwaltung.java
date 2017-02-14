@@ -95,7 +95,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addContainerGap(236, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("KonsolenausgabeDemoStart", jPanel1);
+        jTabbedPane1.addTab("Demo auf Konsole", jPanel1);
 
         jListMitglieder.setModel(msmlm);
         jScrollPane1.setViewportView(jListMitglieder);
