@@ -14,7 +14,6 @@ public class StandardMitglied extends AbstraktMitglied {
     private FitnessStudio fitnessStudio;
     private long mitgliedNummer;
     static double monatsBeitrag = 19.99;
-    private long ibanMitglied;
 
     public StandardMitglied() {
         super();
