@@ -460,9 +460,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             clearAllMitgliedTabVisibleTextFields();
             clearAllMitgliedTabVisibleTextVorschauFields();
         } else {
-            System.out.println("Korrigieren Sie Ihre Eingabe - wenigstens das "
-                    + "Alter: " + dummyAlter + " kann nicht korrekt sein!");
-            jTextAlter.requestFocus();
+            System.out.println("Vervollständigen Sie Ihre Angaben und prüfen "
+                    + "Sie ggf., ob der Eintrag im Feld \"Alter\" sinnvoll ist!");
+            System.out.println("Tipp: Drücken Sie den \"Mitglied vorbereiten\""
+                    + "-Button!");
         }
     }//GEN-LAST:event_jButtonMitgliedsdatenSpeichernActionPerformed
 
