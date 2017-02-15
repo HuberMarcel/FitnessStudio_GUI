@@ -15,14 +15,14 @@ public class Chef extends AbstraktMitarbeiter {
     }
 
     public Chef(String nachName, String vorName, String plz, String wohnort,
-            int alter, KontoDaten kontodaten) {
-        super(nachName, vorName, plz, wohnort, alter, "Chef", kontodaten);
+            int alter, IBankDaten bankdaten) {
+        super(nachName, vorName, plz, wohnort, alter, "Chef", bankdaten);
     }
 
     @Override
     public String toString() {
         String str = super.toString();
-        str += "\n" + this.kontoDaten().toString();
+        str += "\n" + this.getBankdaten().toString();
         return str;
     }
 }

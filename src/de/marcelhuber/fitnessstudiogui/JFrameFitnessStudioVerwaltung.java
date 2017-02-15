@@ -388,7 +388,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         dummyNachname = jTextNachname.getText();
         clearAllMitgliedTabVisibleTextVorschauFields();
 
-        dummyWohnort = jTextWohnort.getText();
+        dummyWohnort = jTextWohnort.getText(); // --> eigene Methode schreiben
         if ((dummyWohnort.isEmpty())
                 || (dummyWohnort.indexOf(" ") == 0)) {
             System.out.println("Bitte einen Wohnort eingeben!");

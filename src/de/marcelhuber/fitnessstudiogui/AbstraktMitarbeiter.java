@@ -14,7 +14,8 @@ import java.util.List;
  */
 abstract class AbstraktMitarbeiter extends AbstraktPerson {
 
-    private KontoDaten kontodaten; // Mitarbeiter sollen nicht
+            //--> InterfaceTyp nutzen
+    private IBankDaten bankdaten; // Mitarbeiter sollen nicht
     // bar bezahlt werden, sondern bekommen ihr 
     // Gehalt überwiesen
     List<String> aufgabenbereiche = new ArrayList<>();
@@ -25,10 +26,10 @@ abstract class AbstraktMitarbeiter extends AbstraktPerson {
     }
 
     AbstraktMitarbeiter(String nachName, String vorName, String plz, String wohnort,
-            int alter, String aufgabenbereich, KontoDaten kontodaten) {
+            int alter, String aufgabenbereich, IBankDaten bankdaten) {
         super(nachName, vorName, plz, wohnort, alter);
         aufgabenbereiche.add(aufgabenbereich);
-        this.kontodaten = kontodaten;
+        this.bankdaten = bankdaten;
     }
 
     void addAufgabenbereich(String aufgabenbereich) {
@@ -43,7 +44,7 @@ abstract class AbstraktMitarbeiter extends AbstraktPerson {
         return aufgabenbereiche;
     }
 
-    public KontoDaten kontoDaten() {
-        return kontodaten;
+    public IBankDaten getBankdaten() {
+        return bankdaten;
     }
 }

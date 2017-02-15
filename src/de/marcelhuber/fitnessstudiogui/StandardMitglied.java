@@ -21,6 +21,7 @@ public class StandardMitglied extends AbstraktMitglied {
         super();
     }
 
+    // --> Abfragen nach Fehlerquellen
     public StandardMitglied(String nachName, String vorName, String plz, String wohnort,
             int alter, FitnessStudio fitnessStudio) {
         super(nachName, vorName, plz, wohnort, alter);

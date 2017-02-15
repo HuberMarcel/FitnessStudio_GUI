@@ -60,7 +60,7 @@ public class Hauptprogramm {
         Chef huberMarcel;
         huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier", 36,
                 new KontoDaten("bic von huberMarcel", "iban von huberMarcel",
-                        "name (Bank) von huberMarcel"));
+                        "name (Bank) von huberMarcel")); 
         //huberFitness.addChef(huberMarcel);
         System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
                 + " Chefs.");
