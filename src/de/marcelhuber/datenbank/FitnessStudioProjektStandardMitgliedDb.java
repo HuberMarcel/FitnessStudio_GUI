@@ -7,6 +7,7 @@ package de.marcelhuber.datenbank;
 
 import java.sql.*;
 import java.util.*;
+import de.marcelhuber.fitnessstudiogui.*;
 
 public class FitnessStudioProjektStandardMitgliedDb {
 
@@ -18,6 +19,13 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     // ResultSet-Objekt / Liefert Informationen VON der datenbank
     private ResultSet resultSet;
+
+    private String dummyNachname;
+    private String dummyVorname;
+    private String dummyPlz;
+    private String dummyWohnort;
+    private int dummyAlter;
+    private FitnessStudio fitnessstudio;
 
     public static void main(String[] args) {
         new FitnessStudioProjektStandardMitgliedDb().go();
@@ -39,8 +47,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
 //        insert();
 //        update();
-        delete();
-        preparedStatement();
+        delete(9);
+//        preparedStatement();
 
         close();
     }
@@ -191,6 +199,36 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     }
 
+    public void insert(StandardMitglied neuesStandardMitglied) {
+        connect();
+        statement();
+        dummyNachname = neuesStandardMitglied.getNachname();
+        dummyVorname = neuesStandardMitglied.getVorname();
+        dummyPlz = neuesStandardMitglied.getPlz();
+        dummyWohnort = neuesStandardMitglied.getWohnort();
+        dummyAlter = neuesStandardMitglied.getAlter();
+        fitnessstudio = neuesStandardMitglied.getFitnessStudio();
+
+        String mysqlDatenbankTabelle = "fitnessstudioprojektstandardmitglied";
+        String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
+                + "Plz, Wohnort, MitgliedsAlter) "
+                + "VALUES ('" + dummyNachname + "', "
+                + "'" + dummyVorname + "', "
+                + "'" + dummyPlz + "', "
+                + "'" + dummyWohnort + "', "
+                + "'" + dummyAlter + "')";
+
+        System.out.println("So sieht mein sql-Befehl aus: \n" + sql);
+        try {
+            System.out.println("\n" + statement.executeUpdate(sql) + " Sätze eingefügt");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return;
+        }
+
+        System.out.println("\ndatensatz eingefügt");
+    }
+
     private void insert() {
 //        String eingabe = "\'); DROP TABLE kontakt; #";
         String eingabe = "Müller";
@@ -222,8 +260,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\ndatensatz updated");
     }
 
-    private void delete() {
-        String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '2'";
+    private void delete(int id) {
+        String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '"+id+"'";
 
         try {
             System.out.println("\n" + statement.executeUpdate(sql) + " Sätze gelöscht");

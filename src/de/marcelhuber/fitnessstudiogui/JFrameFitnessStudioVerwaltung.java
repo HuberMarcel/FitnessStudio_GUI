@@ -10,6 +10,7 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
 import javax.swing.table.*;
+import de.marcelhuber.datenbank.*;
 
 /**
  *
@@ -454,8 +455,11 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
     private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
         if (mitgliedErzeugbar) {
-            fitnessstudio.addStandardMitglied(new StandardMitglied(dummyNachname,
-                    dummyVorname, dummyPlz, dummyWohnort, dummyAlter, fitnessstudio));
+            StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
+                    dummyVorname, dummyPlz, dummyWohnort, dummyAlter, fitnessstudio);
+            fitnessstudio.addStandardMitglied(neuesStandardMitglied);
+            FitnessStudioProjektStandardMitgliedDb test = new FitnessStudioProjektStandardMitgliedDb();
+            test.insert(neuesStandardMitglied);
             fitnessstudio.anzeigeStandardMitglieder();
             clearAllMitgliedTabVisibleTextFields();
             clearAllMitgliedTabVisibleTextVorschauFields();
