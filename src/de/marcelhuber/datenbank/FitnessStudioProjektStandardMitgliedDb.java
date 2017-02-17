@@ -14,10 +14,10 @@ public class FitnessStudioProjektStandardMitgliedDb {
     // Verbindungs-Objekt
     private Connection connection;
 
-    // Statement-Objekt / Transport von Informationen ZUR datenbank
+    // Statement-Objekt / Transport von Informationen ZUR Datenbank
     private Statement statement;
 
-    // ResultSet-Objekt / Liefert Informationen VON der datenbank
+    // ResultSet-Objekt / Liefert Informationen VON der Datenbank
     private ResultSet resultSet;
 
     private String dummyNachname;
