@@ -224,6 +224,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
         } catch (SQLException ex) {
             System.out.println(ex);
             return;
+        } finally{
+            close();
         }
 
         System.out.println("\ndatensatz eingefügt");
@@ -260,7 +262,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\ndatensatz updated");
     }
 
-    private void delete(int id) {
+    private void delete(int id) { // connect() und close() mit einfügen
+                                  
         String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '"+id+"'";
 
         try {
