@@ -79,7 +79,7 @@
                           </Group>
                           <Component id="jLabelHauptprogramm" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="266" max="32767" attributes="0"/>
+                      <EmptySpace pref="268" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -132,7 +132,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="98" max="-2" attributes="0"/>
-                      <EmptySpace pref="135" max="32767" attributes="0"/>
+                      <EmptySpace pref="137" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,7 +183,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="173" max="-2" attributes="0"/>
-                      <EmptySpace pref="83" max="32767" attributes="0"/>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -210,8 +210,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Mitglied erstellen">
-                <Property name="tabTitle" type="java.lang.String" value="Mitglied erstellen"/>
+              <JTabbedPaneConstraints tabName="Std-Mitglieder verwalten ">
+                <Property name="tabTitle" type="java.lang.String" value="Std-Mitglieder verwalten "/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -234,25 +234,34 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelPlz" alignment="0" pref="105" max="32767" attributes="0"/>
-                                              <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jButtonDelete_ID" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextDelete_ID" min="-2" pref="63" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jTextAlter" alignment="0" pref="226" max="32767" attributes="0"/>
-                                              <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelPlz" alignment="0" pref="105" max="32767" attributes="0"/>
+                                                      <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jTextAlter" alignment="0" pref="226" max="32767" attributes="0"/>
+                                                      <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabelErrechneteMitgliedsnummer" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Component id="jLabelErrechneteMitgliedsnummer" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -322,7 +331,11 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButtonMitgliedsdatenSpeichern" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" pref="25" max="32767" attributes="0"/>
+                          <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -478,6 +491,25 @@
                   <Dimension value="[69, 18]"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonDelete_ID">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Delete (ID)"/>
+                <Property name="actionCommand" type="java.lang.String" value="jButtonDelete (ID)"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDelete_IDActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextDelete_ID">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextDelete_IDFocusGained"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextDelete_IDActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
