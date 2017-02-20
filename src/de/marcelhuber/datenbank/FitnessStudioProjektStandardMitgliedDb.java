@@ -47,7 +47,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
 //        insert();
 //        update();
-        delete(9);
+//        delete();
 //        preparedStatement();
 
         close();
@@ -199,32 +199,30 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     }
 
-    public void insert(StandardMitglied neuesStandardMitglied) {
+    public void insert(StandardMitglied neuesStdMitglied) {
         connect();
         statement();
-        dummyNachname = neuesStandardMitglied.getNachname();
-        dummyVorname = neuesStandardMitglied.getVorname();
-        dummyPlz = neuesStandardMitglied.getPlz();
-        dummyWohnort = neuesStandardMitglied.getWohnort();
-        dummyAlter = neuesStandardMitglied.getAlter();
-        fitnessstudio = neuesStandardMitglied.getFitnessStudio();
+
+        fitnessstudio = neuesStdMitglied.getFitnessStudio();
 
         String mysqlDatenbankTabelle = "fitnessstudioprojektstandardmitglied";
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
                 + "Plz, Wohnort, MitgliedsAlter) "
-                + "VALUES ('" + dummyNachname + "', "
-                + "'" + dummyVorname + "', "
-                + "'" + dummyPlz + "', "
-                + "'" + dummyWohnort + "', "
-                + "'" + dummyAlter + "')";
+                + "VALUES ('" + neuesStdMitglied.getNachname() + "', "
+                + "'" + neuesStdMitglied.getVorname() + "', "
+                + "'" + neuesStdMitglied.getPlz() + "', "
+                + "'" + neuesStdMitglied.getWohnort() + "', "
+                + "'" + neuesStdMitglied.getAlter() + "')";
 
         System.out.println("So sieht mein sql-Befehl aus: \n" + sql);
         try {
-            System.out.println("\n" + statement.executeUpdate(sql) + " Sätze eingefügt");
+            System.out.println("\n" + statement.executeUpdate(sql) + " Sätze "
+                    + "in's Fitness-Studio " + fitnessstudio.getName()
+                    + " eingefügt");
         } catch (SQLException ex) {
             System.out.println(ex);
             return;
-        } finally{
+        } finally {
             close();
         }
 
@@ -233,11 +231,11 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     private void insert() {
 //        String eingabe = "\'); DROP TABLE kontakt; #";
-        String eingabe = "Müller";
+        String eingabe = "DummyHuber";
 
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
                 + "Plz, Wohnort, MitgliedsAlter) "
-                + "VALUES ('" + eingabe + "', 'Volker', '54294', 'Trier', 62)";
+                + "VALUES ('" + eingabe + "', 'DummyMarcel', 'Dummy54294', 'DummyTrier', 36)";
 
         try {
             System.out.println("\n" + statement.executeUpdate(sql) + " Sätze eingefügt");
@@ -262,18 +260,40 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\ndatensatz updated");
     }
 
-    private void delete(int id) { // connect() und close() mit einfügen
-                                  
-        String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '"+id+"'";
+    public void delete(int id) { // connect() und close() mit einfügen
+        connect();
+        statement();
+        String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
 
         try {
             System.out.println("\n" + statement.executeUpdate(sql) + " Sätze gelöscht");
         } catch (SQLException ex) {
             System.out.println(ex);
             return;
+        } finally {
+            close();
         }
 
-        System.out.println("\ndatensatz deleted");
+    }
+
+    private void delete() { // connect() und close() mit einfügen
+//
+//        String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
+//
+//        try {
+//            System.out.println("\n" + statement.executeUpdate(sql) + " Sätze gelöscht");
+//        } catch (SQLException ex) {
+//            System.out.println(ex);
+//            return;
+//        }
+//
+//        System.out.println("\ndatensatz deleted");
+        
+        // zu Testzwecken kann diese Methode verwendet werden, wobei man die id
+        // von Hand einzustellen hat. Da SQL bei 1 mit dem Zählen beginnt, hat
+        // die Voreinstellung id = 0 keine Auswirkung
+        int id = 0;
+        this.delete(id);
     }
 
     private void databaseMetaData() {

@@ -95,7 +95,7 @@ public class FitnessStudio {
         return letzteMitgliedsNummer;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
