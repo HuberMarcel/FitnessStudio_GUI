@@ -529,6 +529,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             new FitnessStudioProjektStandardMitgliedDb().delete(Integer.parseInt(jTextDelete_ID.getText()));
         } catch (NumberFormatException ex) {
             jTextDelete_ID.setText("0");
+            jTextDelete_ID.requestFocus(); 
             System.out.println("Fehlerhafte ID-Eingabe!");
         }
     }//GEN-LAST:event_jButtonDelete_IDActionPerformed
