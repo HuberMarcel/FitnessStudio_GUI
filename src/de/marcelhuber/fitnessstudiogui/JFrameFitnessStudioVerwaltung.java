@@ -9,7 +9,7 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
-import javax.swing.table.*;
+//import javax.swing.table.*;
 import de.marcelhuber.datenbank.*;
 
 /**
