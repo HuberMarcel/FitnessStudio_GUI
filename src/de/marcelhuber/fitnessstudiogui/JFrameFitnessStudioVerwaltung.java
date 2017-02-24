@@ -551,7 +551,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         }
         if (!EingabeSinnvoll) {
             JOptionPane.showMessageDialog(jDialogFehlerhafteIDEingabe, "Ihre ID-"
-                    + "Eingabe ist entweder \nSINNFREI oder FEHLERHAFT!");
+                    + "Eingabe ist entweder \nSINNFREI oder FEHLERHAFT!",
+                    "Eingabe-Fehler!!", JOptionPane.WARNING_MESSAGE);
             jTextDelete_ID.setText("0");
             jTextDelete_ID.requestFocus();
         }
