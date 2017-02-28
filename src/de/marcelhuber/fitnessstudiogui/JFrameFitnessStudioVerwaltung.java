@@ -437,8 +437,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         if ((dummyWohnort.isEmpty())
                 || (dummyWohnort.indexOf(" ") == 0)) {
             System.out.println("Bitte einen Wohnort eingeben!");
-            jTextWohnort.requestFocus();
-            dummyWohnort = jTextWohnort.getText();
+            getJtextfeldTextWithFocusRequest(jTextWohnort);
             mitgliedErzeugbar = false;
         }
 
@@ -446,8 +445,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         if ((dummyPlz.isEmpty())
                 || (dummyPlz.indexOf(" ") == 0)) {
             System.out.println("Bitte eine Postleitzahl eingeben!");
-            jTextPlz.requestFocus();
-            dummyPlz = jTextPlz.getText();
+            getJtextfeldTextWithFocusRequest(jTextPlz);
             mitgliedErzeugbar = false;
         }
 
@@ -455,16 +453,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         if ((dummyVorname.isEmpty())
                 || (dummyVorname.indexOf(" ") == 0)) {
             System.out.println("Bitte einen Vornamen eingeben!");
-            jTextVorname.requestFocus();
-            dummyVorname = jTextVorname.getText();
+            getJtextfeldTextWithFocusRequest(jTextVorname);
             mitgliedErzeugbar = false;
         }
 
         if ((dummyNachname.isEmpty())
                 || (dummyNachname.indexOf(" ") == 0)) {
             System.out.println("Bitte einen Nachnamen eingeben!");
-            jTextNachname.requestFocus();
-            dummyNachname = jTextNachname.getText();
+            getJtextfeldTextWithFocusRequest(jTextNachname);
             mitgliedErzeugbar = false;
         }
 
@@ -627,6 +623,11 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 new JFrameFitnessStudioVerwaltung().setVisible(true);
             }
         });
+    }
+
+    private String getJtextfeldTextWithFocusRequest(JTextField textfeld) {
+        textfeld.requestFocus();
+        return textfeld.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
