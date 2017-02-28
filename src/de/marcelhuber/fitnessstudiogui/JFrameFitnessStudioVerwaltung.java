@@ -29,6 +29,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private String dummyWohnort;
     private int dummyAlter;
     private boolean mitgliedErzeugbar;
+    private List<JTextField> jTextfeldListe = new ArrayList<>();
+    /* eigentlich wäre ein Array
+     angebrachter, aber ArrayList zum Testen */
 
     /**
      * Creates new form JFrameFitnessStudioVerwaltung
@@ -86,6 +89,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelMitgliedsdatenUeberschrift1 = new javax.swing.JLabel();
         jButtonDelete_ID = new javax.swing.JButton();
         jTextDelete_ID = new javax.swing.JTextField();
+        jButtonMitgliedEditierbar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialogFehlerhafteIDEingabeLayout = new javax.swing.GroupLayout(jDialogFehlerhafteIDEingabe.getContentPane());
         jDialogFehlerhafteIDEingabe.getContentPane().setLayout(jDialogFehlerhafteIDEingabeLayout);
@@ -292,6 +296,13 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             }
         });
 
+        jButtonMitgliedEditierbar.setText("Mitgliedsdaten bearbeiten");
+        jButtonMitgliedEditierbar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMitgliedEditierbarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelStd_MitgliederVerwaltenLayout = new javax.swing.GroupLayout(jPanelStd_MitgliederVerwalten);
         jPanelStd_MitgliederVerwalten.setLayout(jPanelStd_MitgliederVerwaltenLayout);
         jPanelStd_MitgliederVerwaltenLayout.setHorizontalGroup(
@@ -299,45 +310,50 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                .addComponent(jButtonDelete_ID)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()
+                                .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
                                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                        .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelAlter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextAlter, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                        .addComponent(jTextWohnort)
-                                        .addComponent(jTextPlz)
-                                        .addComponent(jTextVorname)
-                                        .addComponent(jTextNachname))
-                                    .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextErrechneteMitgliedsnummer)
-                        .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextNachnameVorschau)
-                        .addComponent(jTextVornameVorschau)
-                        .addComponent(jTextPlzVorschau)
-                        .addComponent(jTextWohnortVorschau)
-                        .addComponent(jTextAlterVorschau))
-                    .addComponent(jButtonMitgliedVorbereiten, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                        .addComponent(jButtonDelete_ID)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                                .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelAlter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(25, 25, 25)
+                                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButtonMitgliedEditierbar)
+                                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextAlter, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                                                    .addComponent(jTextWohnort)
+                                                    .addComponent(jTextPlz)
+                                                    .addComponent(jTextVorname)
+                                                    .addComponent(jTextNachname))
+                                                .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(jTextNachnameVorschau)
+                            .addComponent(jTextVornameVorschau)
+                            .addComponent(jTextPlzVorschau)
+                            .addComponent(jTextWohnortVorschau)
+                            .addComponent(jTextAlterVorschau)
+                            .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonMitgliedVorbereiten)))
                 .addContainerGap())
         );
         jPanelStd_MitgliederVerwaltenLayout.setVerticalGroup(
@@ -376,9 +392,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                         .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
+                        .addGap(32, 32, 32)
                         .addComponent(jButtonMitgliedVorbereiten)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonDelete_ID)
@@ -387,6 +403,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonMitgliedEditierbar)
                         .addContainerGap())))
         );
 
@@ -432,36 +450,37 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         mitgliedErzeugbar = true;
         dummyNachname = jTextNachname.getText();
         clearAllMitgliedTabVisibleTextVorschauFields();
-
-        dummyWohnort = jTextWohnort.getText(); // --> eigene Methode schreiben
-        if ((dummyWohnort.isEmpty())
-                || (dummyWohnort.indexOf(" ") == 0)) {
-            System.out.println("Bitte einen Wohnort eingeben!");
-            getJtextfeldTextWithFocusRequest(jTextWohnort);
-            mitgliedErzeugbar = false;
-        }
-
-        dummyPlz = jTextPlz.getText();
-        if ((dummyPlz.isEmpty())
-                || (dummyPlz.indexOf(" ") == 0)) {
-            System.out.println("Bitte eine Postleitzahl eingeben!");
-            getJtextfeldTextWithFocusRequest(jTextPlz);
-            mitgliedErzeugbar = false;
-        }
-
-        dummyVorname = jTextVorname.getText();
-        if ((dummyVorname.isEmpty())
-                || (dummyVorname.indexOf(" ") == 0)) {
-            System.out.println("Bitte einen Vornamen eingeben!");
-            getJtextfeldTextWithFocusRequest(jTextVorname);
-            mitgliedErzeugbar = false;
-        }
-
-        if ((dummyNachname.isEmpty())
-                || (dummyNachname.indexOf(" ") == 0)) {
-            System.out.println("Bitte einen Nachnamen eingeben!");
-            getJtextfeldTextWithFocusRequest(jTextNachname);
-            mitgliedErzeugbar = false;
+        /* folgende Codezeilen sind reine Testspielereien */
+        /*
+         jTextfeldListe.set(0, jTextNachname);
+         jTextfeldListe.set(1, jTextWohnort);
+         jTextfeldListe.set(2, jTextPlz);
+         jTextfeldListe.set(3, jTextWohnort);
+         jTextfeldListe.remove(4);
+         jTextfeldListe.add(jTextAlter);
+         jTextfeldListe.add(1, jTextVorname);
+         jTextfeldListe.remove(2);
+         jTextfeldListe.remove(4);       
+         */
+        setInitialWertejTextFeldListe();
+        /*
+         // Testausgabe
+         for (int i = 0; i < jTextfeldListe.size(); i++) {
+         System.out.println("jTextFeld " + i + ": "
+         + (jTextfeldListe.get(i)).getText());
+         }
+         */
+        // die folgende erweiterte for-Schleife hat Redundanzen entfernt; ihr Sinn
+        // ist es, dass der User die fehlerhaften Eingaben von oben nach unten 
+        // abarbeiten kann: Ein String darf NICHT mit einem Leerzeichen anfangen
+        // und die Eingabe des Alters soll eine Integerzahl >= 0 beinhalten
+        for (JTextField jTextfeld : jTextfeldListe) {
+            if (((jTextfeld.getText()).isEmpty())
+                    || ((jTextfeld.getText()).indexOf(" ") == 0)) {
+                getJtextfeldTextWithFocusRequest(jTextfeld);
+                mitgliedErzeugbar = false;
+                break;
+            }
         }
 
         if (mitgliedErzeugbar) {
@@ -475,6 +494,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                     // neuen Standardmitglieds aussehen
                     jLabelErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
                     jTextErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
+                    // für ein erzeugbares Mitglied sollen die bisher benutzten Eingabe nicht
+                    // ohne das Verwenden eines Extra-Button wieder editierbar sein
+                    setAllJtextfeldTextEditableFalse(jTextfeldListe);
                 } else {
                     mitgliedErzeugbar = false;
                     jTextAlter.requestFocus();
@@ -495,6 +517,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
     private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
         if (mitgliedErzeugbar) {
+            dummyVorname = jTextVorname.getText();
+            dummyPlz = jTextPlz.getText();
+            dummyWohnort = jTextWohnort.getText();
             StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
                     dummyVorname, dummyPlz, dummyWohnort, dummyAlter, fitnessstudio);
             fitnessstudio.addStandardMitglied(neuesStandardMitglied);
@@ -503,6 +528,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             fitnessstudio.anzeigeStandardMitglieder();
             clearAllMitgliedTabVisibleTextFields();
             clearAllMitgliedTabVisibleTextVorschauFields();
+            setAllJtextfeldTextEditableTrue(jTextfeldListe);
         } else {
             System.out.println("Vervollständigen Sie Ihre Angaben und prüfen "
                     + "Sie ggf., ob der Eintrag im Feld \"Alter\" sinnvoll ist!");
@@ -563,6 +589,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextDelete_ID.selectAll();
     }//GEN-LAST:event_jTextDelete_IDActionPerformed
 
+    private void jButtonMitgliedEditierbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedEditierbarActionPerformed
+        setAllJtextfeldTextEditableTrue(jTextfeldListe);
+    }//GEN-LAST:event_jButtonMitgliedEditierbarActionPerformed
+
     void clearAllMitgliedTabVisibleTextFields() {
         jTextNachname.setText("");
         jTextVorname.setText("");
@@ -579,6 +609,31 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextPlzVorschau.setText(jTextPlz.getText());
         jTextWohnortVorschau.setText(jTextWohnort.getText());
         jTextAlterVorschau.setText(jTextAlter.getText());
+    }
+
+    private String getJtextfeldTextWithFocusRequest(JTextField jTextfeld) {
+        jTextfeld.requestFocus();
+        return jTextfeld.getText();
+    }
+
+    private void setAllJtextfeldTextEditableTrue(List<JTextField> jTextfeldListe) {
+        for (JTextField jTextfeld : jTextfeldListe) {
+            jTextfeld.setEditable(true);
+        }
+    }
+
+    private void setAllJtextfeldTextEditableFalse(List<JTextField> jTextfeldListe) {
+        for (JTextField jTextfeld : jTextfeldListe) {
+            jTextfeld.setEditable(false);
+        }
+    }
+
+    private void setInitialWertejTextFeldListe() {
+        jTextfeldListe.add(jTextNachname);
+        jTextfeldListe.add(jTextVorname);
+        jTextfeldListe.add(jTextPlz);
+        jTextfeldListe.add(jTextWohnort);
+        jTextfeldListe.add(jTextAlter);
     }
 
     /**
@@ -625,13 +680,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         });
     }
 
-    private String getJtextfeldTextWithFocusRequest(JTextField textfeld) {
-        textfeld.requestFocus();
-        return textfeld.getText();
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDelete_ID;
+    private javax.swing.JButton jButtonMitgliedEditierbar;
     private javax.swing.JButton jButtonMitgliedVorbereiten;
     private javax.swing.JButton jButtonMitgliedsdatenSpeichern;
     private javax.swing.JButton jButtonStartHauptprogramm;

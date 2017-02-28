@@ -238,57 +238,65 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabelMitgliedsdatenUeberschrift1" min="-2" pref="385" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButtonDelete_ID" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextDelete_ID" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabelMitgliedsdatenUeberschrift1" min="-2" pref="385" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelPlz" alignment="0" pref="105" max="32767" attributes="0"/>
-                                              <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jButtonDelete_ID" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextDelete_ID" min="-2" pref="63" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jTextAlter" alignment="0" pref="226" max="32767" attributes="0"/>
-                                              <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelPlz" alignment="0" pref="105" max="32767" attributes="0"/>
+                                                      <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jButtonMitgliedEditierbar" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="jTextAlter" alignment="0" pref="226" max="32767" attributes="0"/>
+                                                          <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jLabelErrechneteMitgliedsnummer" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                          <Component id="jLabelErrechneteMitgliedsnummer" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabelMitgliedsdatenUeberschrift" max="32767" attributes="0"/>
+                                  <Component id="jButtonMitgliedsdatenSpeichern" alignment="0" pref="169" max="32767" attributes="0"/>
+                                  <Component id="jTextNachnameVorschau" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextVornameVorschau" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextPlzVorschau" max="32767" attributes="0"/>
+                                  <Component id="jTextWohnortVorschau" max="32767" attributes="0"/>
+                                  <Component id="jTextAlterVorschau" max="32767" attributes="0"/>
+                                  <Component id="jTextErrechneteMitgliedsnummer" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                      </Group>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextErrechneteMitgliedsnummer" max="32767" attributes="0"/>
-                              <Component id="jLabelMitgliedsdatenUeberschrift" max="32767" attributes="0"/>
-                              <Component id="jButtonMitgliedsdatenSpeichern" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextNachnameVorschau" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextVornameVorschau" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextPlzVorschau" max="32767" attributes="0"/>
-                              <Component id="jTextWohnortVorschau" max="32767" attributes="0"/>
-                              <Component id="jTextAlterVorschau" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButtonMitgliedVorbereiten" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -336,9 +344,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jTextErrechneteMitgliedsnummer" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" max="32767" attributes="0"/>
                                   <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -350,6 +358,8 @@
                                   <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabelMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonMitgliedEditierbar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -526,6 +536,14 @@
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextDelete_IDFocusGained"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextDelete_IDActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonMitgliedEditierbar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mitgliedsdaten bearbeiten"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMitgliedEditierbarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
