@@ -40,6 +40,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         msmlm = new MyStandardMitgliederListModel();
         mtm = new MyTableModel();
         initComponents();
+        setLocationRelativeTo(null);
         System.out.println(mtm.getColumnClass(2));
     }
 
