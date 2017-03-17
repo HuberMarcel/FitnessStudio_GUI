@@ -5,7 +5,7 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
@@ -16,9 +16,11 @@ public class Verwaltungsangestellter extends AbstraktMitarbeiter {
     Verwaltungsangestellter() {
     }
 
-    Verwaltungsangestellter(String nachName, String vorName, String plz, 
-            String wohnort, int alter, KontoDaten kontodatenVerwaltungsangestellter) {
-        super(nachName, vorName, plz, wohnort, alter, "Verwaltung", kontodatenVerwaltungsangestellter);
+    Verwaltungsangestellter(String nachName, String vorName, String plz,
+            String wohnort, GregorianCalendar tagDerGeburt,
+            KontoDaten kontodatenVerwaltungsangestellter) {
+        super(nachName, vorName, plz, wohnort, tagDerGeburt, "Verwaltung",
+                kontodatenVerwaltungsangestellter);
     }
 
     @Override

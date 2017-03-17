@@ -9,6 +9,7 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,14 +39,14 @@ class AbstraktMitglied extends AbstraktPerson {
     // Momentan dient er vielleicht der Übersichtlichkeit für den darauf
     // folgenden Konstruktor
     public AbstraktMitglied(String nachName, String vorName, String plz, String wohnort,
-            int alter) {
-        super(nachName, vorName, plz, wohnort, alter);
+            GregorianCalendar tagDerGeburt) {
+        super(nachName, vorName, plz, wohnort, tagDerGeburt);
         //this.standardMitgliedNummer = (long) (fitnessStudio.getLetzteMitgliedsNummer() + 1);
     }
 
     public AbstraktMitglied(String nachName, String vorName, String plz, String wohnort,
-            int alter, FitnessStudio fitnessStudio) {
-        this(nachName, vorName, plz, wohnort, alter);
+            GregorianCalendar tagDerGeburt, FitnessStudio fitnessStudio) {
+        this(nachName, vorName, plz, wohnort, tagDerGeburt);
         this.fitnessStudio = fitnessStudio;
     }
     

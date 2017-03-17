@@ -5,8 +5,7 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import javax.swing.AbstractListModel;
 
 /**
@@ -60,7 +59,7 @@ class MyStandardMitgliederListModel extends AbstractListModel<String> {
         try {
             standardMitgliederListe.remove(indexImStandardMitgliederArray);
         } catch (ArrayIndexOutOfBoundsException ex) {
-            System.out.println(ex+"\nEs existiert kein Mitglied mit einer solchen "
+            System.out.println(ex + "\nEs existiert kein Mitglied mit einer solchen "
                     + "Mitgliedsnummer, meine Rechereche liefert einen Index "
                     + "außerhalb der Feldindizes!");
         };
@@ -71,22 +70,22 @@ class MyStandardMitgliederListModel extends AbstractListModel<String> {
         List<String> testStandardMitgliederListe = new ArrayList<>();
 
         StandardMitglied standardMitglied = new StandardMitglied("Huber",
-                "K.", "54441", "Wellen", 83, fitnessStudio);
+                "K.", "54441", "Wellen", new GregorianCalendar(1933, 2, 20), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
         standardMitglied = new StandardMitglied("Huber",
-                "H.", "54441", "Wellen", 63, fitnessStudio);
+                "H.", "54441", "Wellen", new GregorianCalendar(1953, 11, 14), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
         standardMitglied = new StandardMitglied("Huber",
-                "G.", "54441", "Wellen", 62, fitnessStudio);
+                "G.", "54441", "Wellen", new GregorianCalendar(1954, 8, 19), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
         standardMitglied = new StandardMitglied("Huber",
-                "S.", "54926", "Trier", 38, fitnessStudio);
+                "S.", "54926", "Trier", new GregorianCalendar(1978, 9, 13), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
         standardMitglied = new StandardMitglied("Huber",
-                "Marcel", "54924", "Trier", 36, fitnessStudio);
+                "Marcel", "54924", "Trier", new GregorianCalendar(1980, 12, 27), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
         standardMitglied = new StandardMitglied("Huber",
-                "P.", "54924", "Trier", 24, fitnessStudio);
+                "P.", "54924", "Trier", new GregorianCalendar(1992, 9, 15), fitnessStudio);
         fitnessStudio.addStandardMitglied(standardMitglied);
 
         List<StandardMitglied> huberFitnessStandardMitglieder

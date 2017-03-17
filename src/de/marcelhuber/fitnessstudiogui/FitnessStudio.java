@@ -118,7 +118,7 @@ public class FitnessStudio {
 
         anzulegendesStandardMitglied = new StandardMitglied(neuesStandardMitglied.getNachname(),
                 neuesStandardMitglied.getVorname(), neuesStandardMitglied.getPlz(),
-                neuesStandardMitglied.getWohnort(), neuesStandardMitglied.getAlter(),
+                neuesStandardMitglied.getWohnort(), neuesStandardMitglied.getTagDerGeburt(),
                 neuesStandardMitglied.getFitnessStudio());
         //standardMitglieder.add(anzulegendesStandardMitglied);
         standardMitglieder.add(anzulegendesStandardMitglied);

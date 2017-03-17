@@ -27,6 +27,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private String dummyVorname;
     private String dummyPlz;
     private String dummyWohnort;
+    private String dummyGeburtstagsString;
+    private int dummyTagDerGeburt, dummyMonatDerGeburt, dummyJahrDerGeburt;
     private int dummyAlter;
     private boolean mitgliedErzeugbar;
     private List<JTextField> jTextfeldListe = new ArrayList<>();
@@ -91,6 +93,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jButtonDelete_ID = new javax.swing.JButton();
         jTextDelete_ID = new javax.swing.JTextField();
         jButtonMitgliedEditierbar = new javax.swing.JButton();
+        jFormattedTextGeburtstag = new javax.swing.JFormattedTextField();
+        jLabelMitgliedsnummer1 = new javax.swing.JLabel();
+        jFormattedTextGeburtstagVorschau = new javax.swing.JFormattedTextField();
 
         javax.swing.GroupLayout jDialogFehlerhafteIDEingabeLayout = new javax.swing.GroupLayout(jDialogFehlerhafteIDEingabe.getContentPane());
         jDialogFehlerhafteIDEingabe.getContentPane().setLayout(jDialogFehlerhafteIDEingabeLayout);
@@ -128,7 +133,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addComponent(jButtonStartHauptprogramm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(433, Short.MAX_VALUE))
+                .addContainerGap(475, Short.MAX_VALUE))
         );
         jPanelDemoAufKonsoleLayout.setVerticalGroup(
             jPanelDemoAufKonsoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +144,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addComponent(jButtonStartHauptprogramm)
                         .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabelHauptprogramm))
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Demo auf Konsole", jPanelDemoAufKonsole);
@@ -153,7 +158,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             jPanelMitglieder_ListenausgabeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMitglieder_ListenausgabeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelMitglieder_ListenausgabeLayout.setVerticalGroup(
@@ -161,7 +166,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelMitglieder_ListenausgabeLayout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mitglieder: Listenausgabe", jPanelMitglieder_Listenausgabe);
@@ -176,14 +181,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelMitglieder_TabelleLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanelMitglieder_TabelleLayout.setVerticalGroup(
             jPanelMitglieder_TabelleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMitglieder_TabelleLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mitglieder: Tabelle", jPanelMitglieder_Tabelle);
@@ -263,12 +268,32 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         });
 
         jTextNachnameVorschau.setEditable(false);
+        jTextNachnameVorschau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNachnameVorschauActionPerformed(evt);
+            }
+        });
 
         jTextVornameVorschau.setEditable(false);
+        jTextVornameVorschau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextVornameVorschauActionPerformed(evt);
+            }
+        });
 
         jTextPlzVorschau.setEditable(false);
+        jTextPlzVorschau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextPlzVorschauActionPerformed(evt);
+            }
+        });
 
         jTextWohnortVorschau.setEditable(false);
+        jTextWohnortVorschau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextWohnortVorschauActionPerformed(evt);
+            }
+        });
 
         jTextAlterVorschau.setEditable(false);
 
@@ -305,6 +330,23 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             }
         });
 
+        jFormattedTextGeburtstag.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
+        jFormattedTextGeburtstag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextGeburtstagActionPerformed(evt);
+            }
+        });
+
+        jLabelMitgliedsnummer1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelMitgliedsnummer1.setText("Geburtstag");
+
+        jFormattedTextGeburtstagVorschau.setToolTipText("");
+        jFormattedTextGeburtstagVorschau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextGeburtstagVorschauActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelStd_MitgliederVerwaltenLayout = new javax.swing.GroupLayout(jPanelStd_MitgliederVerwalten);
         jPanelStd_MitgliederVerwalten.setLayout(jPanelStd_MitgliederVerwaltenLayout);
         jPanelStd_MitgliederVerwaltenLayout.setHorizontalGroup(
@@ -312,51 +354,54 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                        .addComponent(jButtonDelete_ID)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                                .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabelAlter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGap(25, 25, 25)
-                                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButtonMitgliedEditierbar)
-                                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jTextAlter, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                                    .addComponent(jTextWohnort)
-                                                    .addComponent(jTextPlz)
-                                                    .addComponent(jTextVorname)
-                                                    .addComponent(jTextNachname))
-                                                .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMitgliedsnummer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabelAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonDelete_ID))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jFormattedTextGeburtstag, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextWohnort, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                                .addComponent(jTextPlz, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextVorname, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextNachname, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                            .addComponent(jTextNachnameVorschau)
-                            .addComponent(jTextVornameVorschau)
-                            .addComponent(jTextPlzVorschau)
-                            .addComponent(jTextWohnortVorschau)
-                            .addComponent(jTextAlterVorschau)
-                            .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                                    .addComponent(jTextNachnameVorschau)
+                                    .addComponent(jTextVornameVorschau)
+                                    .addComponent(jTextPlzVorschau)
+                                    .addComponent(jTextWohnortVorschau)
+                                    .addComponent(jTextAlterVorschau)
+                                    .addComponent(jFormattedTextGeburtstagVorschau))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonMitgliedVorbereiten)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButtonMitgliedVorbereiten)
+                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))))
         );
         jPanelStd_MitgliederVerwaltenLayout.setVerticalGroup(
             jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,27 +432,30 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                     .addComponent(jTextWohnortVorschau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAlter)
-                    .addComponent(jTextAlterVorschau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelMitgliedsnummer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jFormattedTextGeburtstag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextGeburtstagVorschau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButtonMitgliedVorbereiten)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonDelete_ID)
-                            .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonMitgliedEditierbar)
-                        .addContainerGap())))
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelMitgliedsnummer)
+                        .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAlter)
+                    .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextAlterVorschau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonMitgliedVorbereiten)
+                    .addComponent(jButtonMitgliedEditierbar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonDelete_ID)
+                    .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Std-Mitglieder verwalten ", jPanelStd_MitgliederVerwalten);
@@ -416,7 +464,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,10 +496,83 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonStartHauptprogrammActionPerformed
 
+    private void jButtonMitgliedEditierbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedEditierbarActionPerformed
+        setAllJtextfeldTextEditableTrue(jTextfeldListe);
+    }//GEN-LAST:event_jButtonMitgliedEditierbarActionPerformed
+
+    private void jTextDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDelete_IDActionPerformed
+        jTextDelete_ID.selectAll();
+    }//GEN-LAST:event_jTextDelete_IDActionPerformed
+
+    private void jTextDelete_IDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDelete_IDFocusGained
+        jTextDelete_ID.selectAll();
+    }//GEN-LAST:event_jTextDelete_IDFocusGained
+
+    private void jButtonDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDelete_IDActionPerformed
+        boolean EingabeSinnvoll = false;
+        // boolsche Variable, um zu sehen, ob die Eingabe
+        // syntaktisch sinvoll ist
+        System.out.println("Boolsche Variable hat momentan den Wert: " + EingabeSinnvoll);
+        try {
+            int id = Integer.parseInt(jTextDelete_ID.getText());
+            if (id >= 1) {
+                EingabeSinnvoll = true;
+                new FitnessStudioProjektStandardMitgliedDb().delete(id);
+            }
+        } catch (NumberFormatException ex) {
+            System.out.println("Fehlerhafte ID-Eingabe!");
+        }
+        if (!EingabeSinnvoll) {
+            JOptionPane.showMessageDialog(jDialogFehlerhafteIDEingabe, "Ihre ID-"
+                    + "Eingabe ist entweder \nSINNFREI oder FEHLERHAFT!",
+                    "Eingabe-Fehler!!", JOptionPane.WARNING_MESSAGE);
+            jTextDelete_ID.setText("0");
+            jTextDelete_ID.requestFocus();
+        }
+    }//GEN-LAST:event_jButtonDelete_IDActionPerformed
+
+    private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
+        if (mitgliedErzeugbar) {
+            dummyVorname = jTextVorname.getText();
+            dummyPlz = jTextPlz.getText();
+            dummyWohnort = jTextWohnort.getText();
+
+            StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
+                    dummyVorname, dummyPlz, dummyWohnort,
+                    new GregorianCalendar(dummyJahrDerGeburt, dummyMonatDerGeburt - 1,
+                            dummyTagDerGeburt), fitnessstudio);
+            fitnessstudio.addStandardMitglied(neuesStandardMitglied);
+            FitnessStudioProjektStandardMitgliedDb test = new FitnessStudioProjektStandardMitgliedDb();
+            test.insert(neuesStandardMitglied);
+            fitnessstudio.anzeigeStandardMitglieder();
+            clearAllMitgliedTabVisibleTextFields();
+            clearAllMitgliedTabVisibleTextVorschauFields();
+            setAllJtextfeldTextEditableTrue(jTextfeldListe);
+        } else {
+            System.out.println("Vervollständigen Sie Ihre Angaben und prüfen "
+                    + "Sie ggf., ob der Eintrag im Feld \"Alter\" sinnvoll ist!");
+            System.out.println("Tipp: Drücken Sie den \"Mitglied vorbereiten\""
+                    + "-Button!");
+        }
+    }//GEN-LAST:event_jButtonMitgliedsdatenSpeichernActionPerformed
+
+    private void jTextAlterFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAlterFocusGained
+        jTextAlter.selectAll();
+    }//GEN-LAST:event_jTextAlterFocusGained
+
     private void jButtonMitgliedVorbereitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedVorbereitenActionPerformed
         mitgliedErzeugbar = true;
         dummyNachname = jTextNachname.getText();
+        jFormattedTextGeburtstagVorschau.setText(jFormattedTextGeburtstag.getText());
+        dummyGeburtstagsString = jFormattedTextGeburtstag.getText();
         clearAllMitgliedTabVisibleTextVorschauFields();
+        dummyTagDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(0, 2));
+        dummyMonatDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(3, 5));
+        dummyJahrDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(6, 10));
+        Date now = new Date();
+        System.out.println("Aktuelles Datum: "+Calendar.YEAR+"-"+Calendar.MONTH+""
+                + "-"+Calendar.DAY_OF_MONTH);
+        // die letzten zwei Zeilen sind QUATSCH - TODO
         /* folgende Codezeilen sind reine Testspielereien */
         /*
          jTextfeldListe.set(0, jTextNachname);
@@ -462,7 +583,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
          jTextfeldListe.add(jTextAlter);
          jTextfeldListe.add(1, jTextVorname);
          jTextfeldListe.remove(2);
-         jTextfeldListe.remove(4);       
+         jTextfeldListe.remove(4);
          */
         setInitialWertejTextFeldListe();
         /*
@@ -473,7 +594,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
          }
          */
         // die folgende erweiterte for-Schleife hat Redundanzen entfernt; ihr Sinn
-        // ist es, dass der User die fehlerhaften Eingaben von oben nach unten 
+        // ist es, dass der User die fehlerhaften Eingaben von oben nach unten
         // abarbeiten kann: Ein String darf NICHT mit einem Leerzeichen anfangen
         // und die Eingabe des Alters soll eine Integerzahl >= 0 beinhalten
         for (JTextField jTextfeld : jTextfeldListe) {
@@ -489,10 +610,12 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             try {
                 dummyAlter = (int) Integer.parseInt(jTextAlter.getText());
                 if (dummyAlter >= 0) {
+                    System.out.println("HALLO");
                     StandardMitglied stdmgld = new StandardMitglied(dummyNachname,
-                            dummyVorname, dummyPlz, dummyWohnort, dummyAlter,
-                            fitnessstudio);
-                    // Vorsicht: Hier nur Ausgabe, wie die Daten eines potentiellen 
+                            dummyVorname, dummyPlz, dummyWohnort,
+                            new GregorianCalendar(dummyJahrDerGeburt, dummyMonatDerGeburt - 1,
+                                    dummyTagDerGeburt), fitnessstudio);
+                    // Vorsicht: Hier nur Ausgabe, wie die Daten eines potentiellen
                     // neuen Standardmitglieds aussehen
                     jLabelErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
                     jTextErrechneteMitgliedsnummer.setText("" + stdmgld.getMitgliedNummer());
@@ -517,83 +640,45 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         clearAllMitgliedTabVisibleTextVorschauFields();
     }//GEN-LAST:event_jButtonMitgliedVorbereitenActionPerformed
 
-    private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
-        if (mitgliedErzeugbar) {
-            dummyVorname = jTextVorname.getText();
-            dummyPlz = jTextPlz.getText();
-            dummyWohnort = jTextWohnort.getText();
-            StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
-                    dummyVorname, dummyPlz, dummyWohnort, dummyAlter, fitnessstudio);
-            fitnessstudio.addStandardMitglied(neuesStandardMitglied);
-            FitnessStudioProjektStandardMitgliedDb test = new FitnessStudioProjektStandardMitgliedDb();
-            test.insert(neuesStandardMitglied);
-            fitnessstudio.anzeigeStandardMitglieder();
-            clearAllMitgliedTabVisibleTextFields();
-            clearAllMitgliedTabVisibleTextVorschauFields();
-            setAllJtextfeldTextEditableTrue(jTextfeldListe);
-        } else {
-            System.out.println("Vervollständigen Sie Ihre Angaben und prüfen "
-                    + "Sie ggf., ob der Eintrag im Feld \"Alter\" sinnvoll ist!");
-            System.out.println("Tipp: Drücken Sie den \"Mitglied vorbereiten\""
-                    + "-Button!");
-        }
-    }//GEN-LAST:event_jButtonMitgliedsdatenSpeichernActionPerformed
-
-    private void jTextAlterFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAlterFocusGained
-        jTextAlter.selectAll();
-    }//GEN-LAST:event_jTextAlterFocusGained
-
-    private void jTextNachnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNachnameFocusGained
-        jTextNachname.selectAll();
-    }//GEN-LAST:event_jTextNachnameFocusGained
-
-    private void jTextVornameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextVornameFocusGained
-        jTextVorname.selectAll();
-    }//GEN-LAST:event_jTextVornameFocusGained
+    private void jTextWohnortFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextWohnortFocusGained
+        jTextWohnort.selectAll();
+    }//GEN-LAST:event_jTextWohnortFocusGained
 
     private void jTextPlzFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextPlzFocusGained
         jTextPlz.selectAll();
     }//GEN-LAST:event_jTextPlzFocusGained
 
-    private void jTextWohnortFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextWohnortFocusGained
-        jTextWohnort.selectAll();
-    }//GEN-LAST:event_jTextWohnortFocusGained
+    private void jTextVornameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextVornameFocusGained
+        jTextVorname.selectAll();
+    }//GEN-LAST:event_jTextVornameFocusGained
 
-    private void jButtonDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDelete_IDActionPerformed
-        boolean EingabeSinnvoll = false;
-        // boolsche Variable, um zu sehen, ob die Eingabe
-        // syntaktisch sinvoll ist
-        System.out.println("Boolsche Variable hat momentan den Wert: " + EingabeSinnvoll);
-        try {
-            int id = Integer.parseInt(jTextDelete_ID.getText());
-            if (id >= 1) {
-                EingabeSinnvoll = true;
-                new FitnessStudioProjektStandardMitgliedDb().delete(id);
-            }
-        } catch (NumberFormatException ex) {
-            System.out.println("Fehlerhafte ID-Eingabe!");
-        }
-        if (!EingabeSinnvoll) {
-            JOptionPane.showMessageDialog(jDialogFehlerhafteIDEingabe, "Ihre ID-"
-                    + "Eingabe ist entweder \nSINNFREI oder FEHLERHAFT!",
-                    "Eingabe-Fehler!!", JOptionPane.WARNING_MESSAGE);
-            jTextDelete_ID.setText("0");
-            jTextDelete_ID.requestFocus();
-        }
+    private void jTextNachnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNachnameFocusGained
+        jTextNachname.selectAll();
+    }//GEN-LAST:event_jTextNachnameFocusGained
 
-    }//GEN-LAST:event_jButtonDelete_IDActionPerformed
+    private void jFormattedTextGeburtstagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextGeburtstagActionPerformed
 
-    private void jTextDelete_IDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDelete_IDFocusGained
-        jTextDelete_ID.selectAll();
-    }//GEN-LAST:event_jTextDelete_IDFocusGained
+    private void jFormattedTextGeburtstagVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagVorschauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextGeburtstagVorschauActionPerformed
 
-    private void jTextDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDelete_IDActionPerformed
-        jTextDelete_ID.selectAll();
-    }//GEN-LAST:event_jTextDelete_IDActionPerformed
+    private void jTextWohnortVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextWohnortVorschauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextWohnortVorschauActionPerformed
 
-    private void jButtonMitgliedEditierbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedEditierbarActionPerformed
-        setAllJtextfeldTextEditableTrue(jTextfeldListe);
-    }//GEN-LAST:event_jButtonMitgliedEditierbarActionPerformed
+    private void jTextPlzVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPlzVorschauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextPlzVorschauActionPerformed
+
+    private void jTextNachnameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNachnameVorschauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNachnameVorschauActionPerformed
+
+    private void jTextVornameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextVornameVorschauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextVornameVorschauActionPerformed
 
     void clearAllMitgliedTabVisibleTextFields() {
         jTextNachname.setText("");
@@ -635,7 +720,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextfeldListe.add(jTextVorname);
         jTextfeldListe.add(jTextPlz);
         jTextfeldListe.add(jTextWohnort);
-        jTextfeldListe.add(jTextAlter);
+        jTextfeldListe.add(jFormattedTextGeburtstag);
+        //jTextfeldListe.add(jTextAlter);
     }
 
     /**
@@ -689,12 +775,15 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMitgliedsdatenSpeichern;
     private javax.swing.JButton jButtonStartHauptprogramm;
     private javax.swing.JDialog jDialogFehlerhafteIDEingabe;
+    private javax.swing.JFormattedTextField jFormattedTextGeburtstag;
+    private javax.swing.JFormattedTextField jFormattedTextGeburtstagVorschau;
     private javax.swing.JLabel jLabelAlter;
     private javax.swing.JLabel jLabelErrechneteMitgliedsnummer;
     private javax.swing.JLabel jLabelHauptprogramm;
     private javax.swing.JLabel jLabelMitgliedsdatenUeberschrift;
     private javax.swing.JLabel jLabelMitgliedsdatenUeberschrift1;
     private javax.swing.JLabel jLabelMitgliedsnummer;
+    private javax.swing.JLabel jLabelMitgliedsnummer1;
     private javax.swing.JLabel jLabelNachName;
     private javax.swing.JLabel jLabelPlz;
     private javax.swing.JLabel jLabelVorname;

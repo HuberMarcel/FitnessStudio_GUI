@@ -5,6 +5,8 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
+import java.util.*;
+
 /**
  *
  * @author Huber, Marcel
@@ -15,8 +17,8 @@ public class Chef extends AbstraktMitarbeiter {
     }
 
     public Chef(String nachName, String vorName, String plz, String wohnort,
-            int alter, IBankDaten bankdaten) {
-        super(nachName, vorName, plz, wohnort, alter, "Chef", bankdaten);
+            GregorianCalendar tagDerGeburt, IBankDaten bankdaten) {
+        super(nachName, vorName, plz, wohnort,tagDerGeburt, "Chef", bankdaten);
     }
 
     @Override

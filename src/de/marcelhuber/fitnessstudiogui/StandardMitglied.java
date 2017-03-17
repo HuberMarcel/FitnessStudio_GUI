@@ -5,6 +5,8 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
+import java.util.*;
+
 /**
  *
  * @author Marcel
@@ -23,8 +25,8 @@ public class StandardMitglied extends AbstraktMitglied {
 
     // --> Abfragen nach Fehlerquellen
     public StandardMitglied(String nachName, String vorName, String plz, String wohnort,
-            int alter, FitnessStudio fitnessStudio) {
-        super(nachName, vorName, plz, wohnort, alter);
+            GregorianCalendar tagDerGeburt, FitnessStudio fitnessStudio) {
+        super(nachName, vorName, plz, wohnort, tagDerGeburt);
         this.monatsBeitrag = monatsBeitrag;
         this.fitnessStudio = fitnessStudio;
         this.mitgliedNummer = (long) (fitnessStudio.getLetzteMitgliedsNummer() + 1);

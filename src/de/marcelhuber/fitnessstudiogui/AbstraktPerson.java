@@ -5,6 +5,8 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
+import java.util.*;
+
 /**
  *
  * @author Huber, Marcel
@@ -16,13 +18,14 @@ abstract class AbstraktPerson {
     private String vorName;
     private String plz;       // bekanntes Kürzel für Postleitzahl
     private String wohnort;
+    private GregorianCalendar tagDerGeburt;
     private int alter;
 
     public AbstraktPerson() {
     }
 
     public AbstraktPerson(String nachName, String vorName, String plz,
-            String wohnort, int alter) {
+            String wohnort, GregorianCalendar tagDerGeburt) {
         this.nachName = nachName;
         this.vorName = vorName;
         this.plz = plz;
@@ -48,6 +51,19 @@ abstract class AbstraktPerson {
 
     public String getWohnort() {
         return wohnort;
+    }
+
+    public GregorianCalendar getTagDerGeburt() {
+        return tagDerGeburt;
+    }
+    
+    public String getTagDerGeburtToString() {
+        String datum;
+        datum = tagDerGeburt.get(tagDerGeburt.DAY_OF_MONTH) + "."
+                + (tagDerGeburt.get(tagDerGeburt.MONTH) + 1) + "."
+                + tagDerGeburt.get(tagDerGeburt.DAY_OF_MONTH);
+        System.out.println(datum);
+        return datum;
     }
 
     public String toString() {

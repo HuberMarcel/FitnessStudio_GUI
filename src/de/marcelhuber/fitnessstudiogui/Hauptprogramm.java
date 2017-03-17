@@ -58,9 +58,10 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier", 2017);
         huberFitness.anzeigeFitnessStudio();
         Chef huberMarcel;
-        huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier", 36,
+        huberMarcel = new Chef("Huber", "Marcel", "54294", "Trier",
+                new GregorianCalendar(1980, 12 - 1, 27),
                 new KontoDaten("bic von huberMarcel", "iban von huberMarcel",
-                        "name (Bank) von huberMarcel")); 
+                        "name (Bank) von huberMarcel"));
         //huberFitness.addChef(huberMarcel);
         System.out.println("Wir haben zur Zeit " + huberFitness.getChefsZaehler()
                 + " Chefs.");
@@ -75,8 +76,8 @@ public class Hauptprogramm {
         FitnessStudio huberFitness = new FitnessStudio("Huber-Fitness", "54294 Trier",
                 2017);
         huberFitness.anzeigeFitnessStudio();
-        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER", 36,
-                new KontoDaten("bic", "iban", "name (Bank)"));
+        Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER",
+                new GregorianCalendar(1980, 12 - 1, 27), new KontoDaten("bic", "iban", "name (Bank)"));
         System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
@@ -118,7 +119,8 @@ public class Hauptprogramm {
         System.out.println("\n\n\n");
         System.out.println("Testfall VERWALTUNGSANGESTELLTER:");
         Verwaltungsangestellter huberS = new Verwaltungsangestellter("Huber",
-                "S.", "54292", "Trier", 38, new KontoDaten("bic von Huber S.",
+                "S.", "54292", "Trier", new GregorianCalendar(1978, 9 - 1, 13),
+                new KontoDaten("bic von Huber S.",
                         "iban von Huber S.", "name (Bank) von Huber S."));
         System.out.println(huberS);
         huberS.addAufgabenbereich("Kundenbetreuung");
@@ -153,7 +155,8 @@ public class Hauptprogramm {
                 + huberFitness.getGruendungsjahr() + "\n");
 
         standardMitglied = new StandardMitglied("Huber", "S.", "54926", "Trier",
-                38, huberFitness);
+                new GregorianCalendar(1978, 9 - 1, 13),
+                huberFitness);
         System.out.println(standardMitglied.toString());
         System.out.println("VORSICHT, das potentielle Mitglied wurde noch nicht "
                 + "geaddet, damit ergibt sich die folgende \n"
@@ -162,7 +165,7 @@ public class Hauptprogramm {
         pause(3);
 
         standardMitglied = new StandardMitglied("Huber", "P.", "54926", "Trier",
-                24, huberFitness);
+                new GregorianCalendar(1992, 9 - 1, 15), huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         System.out.println("Dieses potentielle Mitglied wurde geaddet!");
@@ -170,7 +173,7 @@ public class Hauptprogramm {
         pause(3);
 
         standardMitglied = new StandardMitglied("Huber", "Marcel", "54926", "Trier",
-                36, huberFitness);
+                new GregorianCalendar(1980, 12 - 1, 27), huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();
@@ -182,7 +185,7 @@ public class Hauptprogramm {
         pause(5);
 
         standardMitglied = new StandardMitglied("Huber", "H.", "54926", "Trier",
-                63, huberFitness);
+                new GregorianCalendar(1953, 11 - 1, 14), huberFitness);
         System.out.println(standardMitglied.toString());
         huberFitness.addStandardMitglied(standardMitglied);
         huberFitness.anzeigeStandardMitglieder();

@@ -5,8 +5,7 @@
  */
 package de.marcelhuber.fitnessstudiogui;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -26,8 +25,8 @@ abstract class AbstraktMitarbeiter extends AbstraktPerson {
     }
 
     AbstraktMitarbeiter(String nachName, String vorName, String plz, String wohnort,
-            int alter, String aufgabenbereich, IBankDaten bankdaten) {
-        super(nachName, vorName, plz, wohnort, alter);
+            GregorianCalendar tagDerGeburt, String aufgabenbereich, IBankDaten bankdaten) {
+        super(nachName, vorName, plz, wohnort, tagDerGeburt);
         aufgabenbereiche.add(aufgabenbereich);
         this.bankdaten = bankdaten;
     }

@@ -41,7 +41,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="675" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -82,7 +82,7 @@
                       <Component id="jButtonStartHauptprogramm" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="textMethodenNummer" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace pref="433" max="32767" attributes="0"/>
+                      <EmptySpace pref="475" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -97,7 +97,7 @@
                           </Group>
                           <Component id="jLabelHauptprogramm" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="279" max="32767" attributes="0"/>
+                      <EmptySpace pref="311" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -140,7 +140,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="608" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="650" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -150,7 +150,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="98" max="-2" attributes="0"/>
-                      <EmptySpace pref="148" max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -192,7 +192,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="399" max="-2" attributes="0"/>
-                      <EmptySpace pref="177" max="32767" attributes="0"/>
+                      <EmptySpace pref="219" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -201,7 +201,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="173" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
+                      <EmptySpace pref="128" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -239,67 +239,70 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabelMitgliedsdatenUeberschrift1" min="-2" pref="385" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabelMitgliedsdatenUeberschrift1" min="-2" pref="385" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelPlz" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelMitgliedsnummer1" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="jLabelAlter" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="jButtonDelete_ID" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextAlter" min="-2" pref="228" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jFormattedTextGeburtstag" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextWohnort" alignment="0" pref="226" max="32767" attributes="0"/>
+                                      <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jTextDelete_ID" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jButtonDelete_ID" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextDelete_ID" min="-2" pref="63" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jLabelNachName" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabelVorname" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabelPlz" alignment="0" pref="105" max="32767" attributes="0"/>
-                                                      <Component id="jLabelWohnort" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabelAlter" alignment="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabelMitgliedsnummer" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jButtonMitgliedEditierbar" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="jTextAlter" alignment="0" pref="226" max="32767" attributes="0"/>
-                                                          <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabelErrechneteMitgliedsnummer" alignment="1" min="-2" pref="226" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabelMitgliedsdatenUeberschrift" pref="226" max="32767" attributes="0"/>
+                                          <Component id="jTextNachnameVorschau" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextVornameVorschau" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextPlzVorschau" max="32767" attributes="0"/>
+                                          <Component id="jTextWohnortVorschau" max="32767" attributes="0"/>
+                                          <Component id="jTextAlterVorschau" max="32767" attributes="0"/>
+                                          <Component id="jFormattedTextGeburtstagVorschau" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="54" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabelMitgliedsdatenUeberschrift" max="32767" attributes="0"/>
-                                  <Component id="jButtonMitgliedsdatenSpeichern" alignment="0" pref="169" max="32767" attributes="0"/>
-                                  <Component id="jTextNachnameVorschau" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextVornameVorschau" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextPlzVorschau" max="32767" attributes="0"/>
-                                  <Component id="jTextWohnortVorschau" max="32767" attributes="0"/>
-                                  <Component id="jTextAlterVorschau" max="32767" attributes="0"/>
-                                  <Component id="jTextErrechneteMitgliedsnummer" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="41" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonMitgliedsdatenSpeichern" min="-2" pref="226" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -337,33 +340,36 @@
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextAlter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMitgliedsnummer1" alignment="3" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextGeburtstag" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jFormattedTextGeburtstagVorschau" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelMitgliedsnummer" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextErrechneteMitgliedsnummer" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabelErrechneteMitgliedsnummer" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelAlter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextAlter" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextAlterVorschau" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jTextErrechneteMitgliedsnummer" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jButtonMitgliedVorbereiten" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButtonMitgliedEditierbar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonMitgliedVorbereiten" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonMitgliedEditierbar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -487,21 +493,33 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNachnameVorschauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextVornameVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextVornameVorschauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextPlzVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextPlzVorschauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextWohnortVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextWohnortVorschauActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextAlterVorschau">
               <Properties>
@@ -545,6 +563,32 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMitgliedEditierbarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextGeburtstag">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="2" type="1"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextGeburtstagActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelMitgliedsnummer1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Geburtstag"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jFormattedTextGeburtstagVorschau">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextGeburtstagVorschauActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

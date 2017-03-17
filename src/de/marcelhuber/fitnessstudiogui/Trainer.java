@@ -25,16 +25,16 @@ class Trainer extends AbstraktMitarbeiter {
     Trainer() {
     }
 
-    Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
-            KontoDaten kontodatenTrainer) {
-        super(nachName, vorName, plz, wohnort, alter, "Trainer", kontodatenTrainer);
+    Trainer(String nachName, String vorName, String plz, String wohnort,
+            GregorianCalendar tagDerGeburt, KontoDaten kontodatenTrainer) {
+        super(nachName, vorName, plz, wohnort, tagDerGeburt, "Trainer", kontodatenTrainer);
         this.spezialisierungsbereiche = new ArrayList<>();
     }
 
-    Trainer(String nachName, String vorName, String plz, String wohnort, int alter,
-            String neuerAufgabenbereich, String neuerSpezialisierungsbereich,
-            KontoDaten kontoDaten) {
-        this(nachName, vorName, plz, wohnort, alter, kontoDaten);
+    Trainer(String nachName, String vorName, String plz, String wohnort,
+            GregorianCalendar tagDerGeburt, String neuerAufgabenbereich,
+            String neuerSpezialisierungsbereich, KontoDaten kontoDaten) {
+        this(nachName, vorName, plz, wohnort, tagDerGeburt, kontoDaten);
         /* zum Anlegen eines Trainers, der schon eine Spezialisierungen angegeben 
          hat und zusätzliche Aufgabenbereiche bekommt
          */
