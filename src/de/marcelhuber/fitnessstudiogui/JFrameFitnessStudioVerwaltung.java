@@ -17,7 +17,7 @@ import de.marcelhuber.datenbank.*;
  * @author Huber, Marcel
  */
 public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
-
+    
     private Map<Integer, List<String>> standardMitgliederMap;
     private MyStandardMitgliederListModel msmlm;
     private MyTableModel mtm;
@@ -32,9 +32,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private int dummyAlter;
     private boolean mitgliedErzeugbar;
     private List<JTextField> jTextfeldListe = new ArrayList<>();
+
     /* eigentlich wäre ein Array
      angebrachter, aber ArrayList zum Testen */
-
     /**
      * Creates new form JFrameFitnessStudioVerwaltung
      */
@@ -63,7 +63,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         textMethodenNummer = new javax.swing.JTextField();
         jPanelMitglieder_Listenausgabe = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListMitglieder = new javax.swing.JList<String>();
+        jListMitglieder = new javax.swing.JList<>();
         jPanelMitglieder_Tabelle = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMitglieder = new javax.swing.JTable();
@@ -250,6 +250,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelAlter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelAlter.setText("Alter");
 
+        jTextAlter.setEditable(false);
         jTextAlter.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextAlterFocusGained(evt);
@@ -340,6 +341,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelMitgliedsnummer1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelMitgliedsnummer1.setText("Geburtstag");
 
+        jFormattedTextGeburtstagVorschau.setEditable(false);
         jFormattedTextGeburtstagVorschau.setToolTipText("");
         jFormattedTextGeburtstagVorschau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -481,14 +483,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         final long start = System.currentTimeMillis();
         Timer timer = new Timer(500, null);
         timer.addActionListener(new ActionListener() {
-
+            
             @Override
             public void actionPerformed(ActionEvent ae) {
                 System.out.println("Das Programm läuft seit "
                         + (System.currentTimeMillis() - start) + " Millisekunden.");
             }
         });
-
+        
         try {
             new Hauptprogramm().go((int) Integer.parseInt(textMethodenNummer.getText()));
         } catch (NumberFormatException e) {
@@ -536,7 +538,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             dummyVorname = jTextVorname.getText();
             dummyPlz = jTextPlz.getText();
             dummyWohnort = jTextWohnort.getText();
-
+            
             StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
                     dummyVorname, dummyPlz, dummyWohnort,
                     new GregorianCalendar(dummyJahrDerGeburt, dummyMonatDerGeburt - 1,
@@ -569,12 +571,19 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         dummyTagDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(0, 2));
         dummyMonatDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(3, 5));
         dummyJahrDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(6, 10));
-        Date now = new Date();
-        System.out.println("Aktuelles Datum: "+Calendar.YEAR+"-"+Calendar.MONTH+""
-                + "-"+Calendar.DAY_OF_MONTH);
-        // die letzten zwei Zeilen sind QUATSCH - TODO
-        /* folgende Codezeilen sind reine Testspielereien */
-        /*
+        GregorianCalendar now = new GregorianCalendar();
+        dummyAlter = now.get(Calendar.YEAR) - dummyJahrDerGeburt;
+        if ((now.get(Calendar.MONTH) + 1 < dummyMonatDerGeburt)
+                | ((now.get(Calendar.MONTH) + 1 == dummyMonatDerGeburt)
+                & (now.get(Calendar.DAY_OF_MONTH) < dummyTagDerGeburt))) {
+            dummyAlter += -1;
+        }
+        jTextAlter.setText("" + dummyAlter);
+
+//        System.out.println("Aktuelles Datum: " + now.get(Calendar.YEAR) + "-" 
+//                + now.get(Calendar.MONTH) + "-"
+//                + now.get(Calendar.DAY_OF_MONTH));
+ /*
          jTextfeldListe.set(0, jTextNachname);
          jTextfeldListe.set(1, jTextWohnort);
          jTextfeldListe.set(2, jTextPlz);
@@ -605,7 +614,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 break;
             }
         }
-
+        
         if (mitgliedErzeugbar) {
             try {
                 dummyAlter = (int) Integer.parseInt(jTextAlter.getText());
@@ -679,7 +688,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private void jTextVornameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextVornameVorschauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextVornameVorschauActionPerformed
-
+    
     void clearAllMitgliedTabVisibleTextFields() {
         jTextNachname.setText("");
         jTextVorname.setText("");
@@ -689,7 +698,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextErrechneteMitgliedsnummer.setText("");
         jLabelErrechneteMitgliedsnummer.setText("");
     }
-
+    
     void clearAllMitgliedTabVisibleTextVorschauFields() {
         jTextNachnameVorschau.setText(jTextNachname.getText());
         jTextVornameVorschau.setText(jTextVorname.getText());
@@ -697,24 +706,24 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextWohnortVorschau.setText(jTextWohnort.getText());
         jTextAlterVorschau.setText(jTextAlter.getText());
     }
-
+    
     private String getJtextfeldTextWithFocusRequest(JTextField jTextfeld) {
         jTextfeld.requestFocus();
         return jTextfeld.getText();
     }
-
+    
     private void setAllJtextfeldTextEditableTrue(List<JTextField> jTextfeldListe) {
         for (JTextField jTextfeld : jTextfeldListe) {
             jTextfeld.setEditable(true);
         }
     }
-
+    
     private void setAllJtextfeldTextEditableFalse(List<JTextField> jTextfeldListe) {
         for (JTextField jTextfeld : jTextfeldListe) {
             jTextfeld.setEditable(false);
         }
     }
-
+    
     private void setInitialWertejTextFeldListe() {
         jTextfeldListe.add(jTextNachname);
         jTextfeldListe.add(jTextVorname);
@@ -738,21 +747,21 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);

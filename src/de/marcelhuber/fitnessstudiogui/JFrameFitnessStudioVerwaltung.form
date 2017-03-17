@@ -470,6 +470,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextAlter">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextAlterFocusGained"/>
               </Events>
@@ -585,6 +588,7 @@
             </Component>
             <Component class="javax.swing.JFormattedTextField" name="jFormattedTextGeburtstagVorschau">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
