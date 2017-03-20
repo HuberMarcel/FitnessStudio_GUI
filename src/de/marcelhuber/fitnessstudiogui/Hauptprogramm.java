@@ -93,7 +93,7 @@ public class Hauptprogramm {
         System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
-//        markiereZeile();
+//        markiereZeileMitXen();
         System.out.println(marcelHuber);
         System.out.println("Wir entfernen das Gebiet Krafttraining!");
         s = "Krafttraining";
@@ -283,7 +283,7 @@ public class Hauptprogramm {
         }
     }
 
-    void markiereZeile() {
+    void markiereZeileMitXen() {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                 + "XXXXXXXXXXXXXXXX");
     }

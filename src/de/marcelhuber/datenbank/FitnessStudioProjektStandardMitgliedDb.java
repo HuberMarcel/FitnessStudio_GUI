@@ -272,8 +272,6 @@ public class FitnessStudioProjektStandardMitgliedDb {
         statement();
 
         fitnessstudio = neuesStdMitglied.getFitnessStudio();
-        System.out.println(neuesStdMitglied.getTagDerGeburtToString());
-        System.out.println("XXXXXXXXXXXXXXX");
 
         String mysqlDatenbankTabelle = "fitnessstudioprojektstandardmitglied";
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "

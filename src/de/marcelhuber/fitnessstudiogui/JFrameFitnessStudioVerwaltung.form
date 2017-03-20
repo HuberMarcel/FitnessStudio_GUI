@@ -260,14 +260,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jTextAlter" min="-2" pref="228" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jFormattedTextGeburtstag" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextWohnort" alignment="0" pref="226" max="32767" attributes="0"/>
-                                      <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jFormattedTextGeburtstag" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jTextDelete_ID" alignment="0" max="32767" attributes="0"/>
