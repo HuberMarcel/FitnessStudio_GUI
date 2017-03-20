@@ -27,7 +27,8 @@ class Trainer extends AbstraktMitarbeiter {
 
     Trainer(String nachName, String vorName, String plz, String wohnort,
             GregorianCalendar tagDerGeburt, KontoDaten kontodatenTrainer) {
-        super(nachName, vorName, plz, wohnort, tagDerGeburt, "Trainer", kontodatenTrainer);
+        super(nachName, vorName, plz, wohnort, tagDerGeburt, "Trainer", 
+                kontodatenTrainer);
         this.spezialisierungsbereiche = new ArrayList<>();
     }
 

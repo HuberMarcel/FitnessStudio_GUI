@@ -8,6 +8,7 @@ package de.marcelhuber.datenbank;
 import java.sql.*;
 import java.util.*;
 import de.marcelhuber.fitnessstudiogui.*;
+import java.util.logging.*;
 
 public class FitnessStudioProjektStandardMitgliedDb {
 
@@ -24,7 +25,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
     private String dummyVorname;
     private String dummyPlz;
     private String dummyWohnort;
-    private int dummyAlter;
+    private String dummyGeburtsdatum;
     private FitnessStudio fitnessstudio;
 
     public static void main(String[] args) {
@@ -41,6 +42,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
         select();
         rowCount();
         resultSet();
+        resultSet(6);
+        resultSet(8);
 
         resultSetMetaData();
         databaseMetaData();
@@ -49,7 +52,6 @@ public class FitnessStudioProjektStandardMitgliedDb {
 //        update();
 //        delete();
 //        preparedStatement();
-
         close();
     }
 
@@ -171,9 +173,75 @@ public class FitnessStudioProjektStandardMitgliedDb {
         } catch (SQLException ex) {
             System.out.println(ex);
             return;
+        } finally {
+            try {
+                resultSet.beforeFirst();
+            } catch (SQLException ex) {
+                Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
-        System.out.println("\nresultSet printed");
+        System.out.println("\nresultSet printed\n");
+    }
+
+    private void resultSet(int id) {
+        String zeilenDaten = "no data found for ID="+id;
+        // ein ResultSet steht im Auslieferungszustand VOR dem ersten datensatz
+        try {
+            int cc = resultSet.getMetaData().getColumnCount();
+            while (resultSet.next()) {
+                if (Integer.parseInt(resultSet.getString(1)) == id) {
+                    zeilenDaten = "";
+                    for (int j = 1; j <= cc; j++) {
+//                        System.out.print(resultSet.getString(j) + " ");
+                        zeilenDaten += resultSet.getString(j) + " ";
+                    }
+                }
+//                System.out.println(
+//                    resultSet.getInt("uid") + " " +
+//                    resultSet.getString("anrede") + " " +
+//                    resultSet.getString("vorname") + " " +
+//                    resultSet.getString("nachname") + " " +
+//                    resultSet.getString("strasse") + " " +
+//                    resultSet.getString("plz") + " " +
+//                    resultSet.getString("stadt") + " " +
+//                    resultSet.getString("telefon")
+//                );
+//                System.out.println(
+//                    resultSet.getInt(1) + " " +
+//                    resultSet.getString(2) + " " +
+//                    resultSet.getString(3) + " " +
+//                    resultSet.getString(4) + " " +
+//                    resultSet.getString(5) + " " +
+//                    resultSet.getString(6) + " " +
+//                    resultSet.getString(7) + " " +
+//                    resultSet.getString(8)
+//                );
+//                System.out.println(
+//                    resultSet.getString(1) + " " +
+//                    resultSet.getString(2) + " " +
+//                    resultSet.getString(3) + " " +
+//                    resultSet.getString(4) + " " +
+//                    resultSet.getString(5) + " " +
+//                    resultSet.getString(6) + " " +
+//                    resultSet.getString(7) + " " +
+//                    resultSet.getString(8)
+//                );
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return;
+        } finally {
+            System.out.printf("data for ID="+id+": \n"+zeilenDaten);
+            System.out.println("");
+            try {
+                resultSet.beforeFirst();
+            } catch (SQLException ex) {
+                Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        System.out.println("\n\nthe choosed resultSet printed\n");
     }
 
     private void resultSetMetaData() {
@@ -204,15 +272,17 @@ public class FitnessStudioProjektStandardMitgliedDb {
         statement();
 
         fitnessstudio = neuesStdMitglied.getFitnessStudio();
+        System.out.println(neuesStdMitglied.getTagDerGeburtToString());
+        System.out.println("XXXXXXXXXXXXXXX");
 
         String mysqlDatenbankTabelle = "fitnessstudioprojektstandardmitglied";
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
-                + "Plz, Wohnort, MitgliedsAlter) "
+                + "Plz, Wohnort, Geburtsdatum) "
                 + "VALUES ('" + neuesStdMitglied.getNachname() + "', "
                 + "'" + neuesStdMitglied.getVorname() + "', "
                 + "'" + neuesStdMitglied.getPlz() + "', "
                 + "'" + neuesStdMitglied.getWohnort() + "', "
-                + "'" + neuesStdMitglied.getAlter() + "')";
+                + "'" + neuesStdMitglied.getGeburtsdatum() + "')";
 
         System.out.println("So sieht mein sql-Befehl aus: \n" + sql);
         try {
@@ -234,9 +304,9 @@ public class FitnessStudioProjektStandardMitgliedDb {
         String eingabe = "DummyHuber";
 
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
-                + "Plz, Wohnort, MitgliedsAlter) "
-                + "VALUES ('" + eingabe + "', 'DummyMarcel', 'Dummy54294', 'DummyTrier', 36)";
-
+                + "Plz, Wohnort, Geburtsdatum) "
+                + "VALUES ('" + eingabe + "', 'DummyMarcel', 'Dummy54294', 'DummyTrier', "
+                + "'27.12.1980')";
         try {
             System.out.println("\n" + statement.executeUpdate(sql) + " Sätze eingefügt");
         } catch (SQLException ex) {
@@ -288,7 +358,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
 //        }
 //
 //        System.out.println("\ndatensatz deleted");
-        
+
         // zu Testzwecken kann diese Methode verwendet werden, wobei man die id
         // von Hand einzustellen hat. Da SQL bei 1 mit dem Zählen beginnt, hat
         // die Voreinstellung id = 0 keine Auswirkung

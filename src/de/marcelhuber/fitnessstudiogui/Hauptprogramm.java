@@ -77,7 +77,8 @@ public class Hauptprogramm {
                 2017);
         huberFitness.anzeigeFitnessStudio();
         Trainer marcelHuber = new Trainer("Huber", "Marcel", "54294", "TRIER",
-                new GregorianCalendar(1980, 12 - 1, 27), new KontoDaten("bic", "iban", "name (Bank)"));
+                new GregorianCalendar(1980, 12 - 1, 27), new KontoDaten(
+                        "bic", "iban", "name (Bank)"));
         System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
@@ -92,9 +93,10 @@ public class Hauptprogramm {
         System.out.println(marcelHuber.getSpezialisierungsbereiche());
         System.out.println("Anzahl der Spezialgebiete "
                 + marcelHuber.getAnzahlDerSpezialGebiete());
+//        markiereZeile();
         System.out.println(marcelHuber);
         System.out.println("Wir entfernen das Gebiet Krafttraining!");
-        s = "Krafttrainindfsg";
+        s = "Krafttraining";
         if (marcelHuber.removeSpezialisierungsbereich(s)) {
             System.out.println("Das Entfernen des Spezialisierungsgebietes " + s
                     + " war erfolgreich");
@@ -122,8 +124,7 @@ public class Hauptprogramm {
                 "S.", "54292", "Trier", new GregorianCalendar(1978, 9 - 1, 13),
                 new KontoDaten("bic von Huber S.",
                         "iban von Huber S.", "name (Bank) von Huber S."));
-        System.out.println(huberS);
-        huberS.addAufgabenbereich("Kundenbetreuung");
+
         System.out.println(huberS);
         if (huberS.removeAufgabenbereich("Verwaltung")) {
             System.out.println("Das Entfernen des Bereichs \"Verwaltung "
@@ -141,6 +142,7 @@ public class Hauptprogramm {
                     + "entfernt");
         };
         System.out.println(huberS);
+//        System.out.println(huberS.getGeburtsdatum());
     }
 
     void goTestFallMitglieder() {
@@ -281,4 +283,8 @@ public class Hauptprogramm {
         }
     }
 
+    void markiereZeile() {
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                + "XXXXXXXXXXXXXXXX");
+    }
 }

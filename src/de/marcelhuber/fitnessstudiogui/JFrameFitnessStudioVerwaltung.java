@@ -17,7 +17,7 @@ import de.marcelhuber.datenbank.*;
  * @author Huber, Marcel
  */
 public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
-    
+
     private Map<Integer, List<String>> standardMitgliederMap;
     private MyStandardMitgliederListModel msmlm;
     private MyTableModel mtm;
@@ -63,7 +63,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         textMethodenNummer = new javax.swing.JTextField();
         jPanelMitglieder_Listenausgabe = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jListMitglieder = new javax.swing.JList<>();
+        jListMitglieder = new javax.swing.JList<String>();
         jPanelMitglieder_Tabelle = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMitglieder = new javax.swing.JTable();
@@ -96,6 +96,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jFormattedTextGeburtstag = new javax.swing.JFormattedTextField();
         jLabelMitgliedsnummer1 = new javax.swing.JLabel();
         jFormattedTextGeburtstagVorschau = new javax.swing.JFormattedTextField();
+        jTextLastDeletedID = new javax.swing.JTextField();
+        jLabelLastDeletedID = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialogFehlerhafteIDEingabeLayout = new javax.swing.GroupLayout(jDialogFehlerhafteIDEingabe.getContentPane());
         jDialogFehlerhafteIDEingabe.getContentPane().setLayout(jDialogFehlerhafteIDEingabeLayout);
@@ -133,7 +135,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addComponent(jButtonStartHauptprogramm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addContainerGap(507, Short.MAX_VALUE))
         );
         jPanelDemoAufKonsoleLayout.setVerticalGroup(
             jPanelDemoAufKonsoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +160,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             jPanelMitglieder_ListenausgabeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMitglieder_ListenausgabeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelMitglieder_ListenausgabeLayout.setVerticalGroup(
@@ -181,7 +183,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelMitglieder_TabelleLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         jPanelMitglieder_TabelleLayout.setVerticalGroup(
             jPanelMitglieder_TabelleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,6 +351,17 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             }
         });
 
+        jTextLastDeletedID.setEditable(false);
+        jTextLastDeletedID.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jTextLastDeletedID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextLastDeletedIDActionPerformed(evt);
+            }
+        });
+
+        jLabelLastDeletedID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelLastDeletedID.setText("Letzte gelöschte ID");
+
         javax.swing.GroupLayout jPanelStd_MitgliederVerwaltenLayout = new javax.swing.GroupLayout(jPanelStd_MitgliederVerwalten);
         jPanelStd_MitgliederVerwalten.setLayout(jPanelStd_MitgliederVerwaltenLayout);
         jPanelStd_MitgliederVerwaltenLayout.setHorizontalGroup(
@@ -371,7 +384,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                             .addComponent(jLabelAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButtonDelete_ID))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,9 +393,16 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                                 .addComponent(jTextPlz, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextVorname, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextNachname, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextLastDeletedID)
+                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                        .addComponent(jLabelLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -451,12 +471,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonMitgliedVorbereiten)
-                    .addComponent(jButtonMitgliedEditierbar))
+                    .addComponent(jButtonMitgliedEditierbar)
+                    .addComponent(jLabelLastDeletedID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonDelete_ID)
                     .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -466,7 +488,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,14 +505,14 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         final long start = System.currentTimeMillis();
         Timer timer = new Timer(500, null);
         timer.addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent ae) {
                 System.out.println("Das Programm läuft seit "
                         + (System.currentTimeMillis() - start) + " Millisekunden.");
             }
         });
-        
+
         try {
             new Hauptprogramm().go((int) Integer.parseInt(textMethodenNummer.getText()));
         } catch (NumberFormatException e) {
@@ -520,6 +542,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             if (id >= 1) {
                 EingabeSinnvoll = true;
                 new FitnessStudioProjektStandardMitgliedDb().delete(id);
+                jTextLastDeletedID.setText(jTextDelete_ID.getText());
+                jTextDelete_ID.setText("");
             }
         } catch (NumberFormatException ex) {
             System.out.println("Fehlerhafte ID-Eingabe!");
@@ -538,7 +562,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             dummyVorname = jTextVorname.getText();
             dummyPlz = jTextPlz.getText();
             dummyWohnort = jTextWohnort.getText();
-            
+
             StandardMitglied neuesStandardMitglied = new StandardMitglied(dummyNachname,
                     dummyVorname, dummyPlz, dummyWohnort,
                     new GregorianCalendar(dummyJahrDerGeburt, dummyMonatDerGeburt - 1,
@@ -567,12 +591,17 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         dummyNachname = jTextNachname.getText();
         jFormattedTextGeburtstagVorschau.setText(jFormattedTextGeburtstag.getText());
         dummyGeburtstagsString = jFormattedTextGeburtstag.getText();
+//        System.out.println(""+dummyGeburtstagsString);
         clearAllMitgliedTabVisibleTextVorschauFields();
-        dummyTagDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(0, 2));
-        dummyMonatDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(3, 5));
-        dummyJahrDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(6, 10));
         GregorianCalendar now = new GregorianCalendar();
-        dummyAlter = now.get(Calendar.YEAR) - dummyJahrDerGeburt;
+        dummyAlter = -1;
+        if (!dummyGeburtstagsString.isEmpty()) {
+            dummyTagDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(0, 2));
+
+            dummyMonatDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(3, 5));
+            dummyJahrDerGeburt = (int) Integer.parseInt(dummyGeburtstagsString.substring(6, 10));
+            dummyAlter = now.get(Calendar.YEAR) - dummyJahrDerGeburt;
+        }
         if ((now.get(Calendar.MONTH) + 1 < dummyMonatDerGeburt)
                 | ((now.get(Calendar.MONTH) + 1 == dummyMonatDerGeburt)
                 & (now.get(Calendar.DAY_OF_MONTH) < dummyTagDerGeburt))) {
@@ -614,12 +643,11 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 break;
             }
         }
-        
+
         if (mitgliedErzeugbar) {
             try {
                 dummyAlter = (int) Integer.parseInt(jTextAlter.getText());
                 if (dummyAlter >= 0) {
-                    System.out.println("HALLO");
                     StandardMitglied stdmgld = new StandardMitglied(dummyNachname,
                             dummyVorname, dummyPlz, dummyWohnort,
                             new GregorianCalendar(dummyJahrDerGeburt, dummyMonatDerGeburt - 1,
@@ -688,7 +716,11 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private void jTextVornameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextVornameVorschauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextVornameVorschauActionPerformed
-    
+
+    private void jTextLastDeletedIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextLastDeletedIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextLastDeletedIDActionPerformed
+
     void clearAllMitgliedTabVisibleTextFields() {
         jTextNachname.setText("");
         jTextVorname.setText("");
@@ -697,33 +729,37 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextAlter.setText("");
         jTextErrechneteMitgliedsnummer.setText("");
         jLabelErrechneteMitgliedsnummer.setText("");
+        jFormattedTextGeburtstag.setText("");
+        jTextDelete_ID.setText("");
     }
-    
+
     void clearAllMitgliedTabVisibleTextVorschauFields() {
         jTextNachnameVorschau.setText(jTextNachname.getText());
         jTextVornameVorschau.setText(jTextVorname.getText());
         jTextPlzVorschau.setText(jTextPlz.getText());
         jTextWohnortVorschau.setText(jTextWohnort.getText());
         jTextAlterVorschau.setText(jTextAlter.getText());
+        jFormattedTextGeburtstagVorschau.setText(
+                jFormattedTextGeburtstag.getText());
     }
-    
+
     private String getJtextfeldTextWithFocusRequest(JTextField jTextfeld) {
         jTextfeld.requestFocus();
         return jTextfeld.getText();
     }
-    
+
     private void setAllJtextfeldTextEditableTrue(List<JTextField> jTextfeldListe) {
         for (JTextField jTextfeld : jTextfeldListe) {
             jTextfeld.setEditable(true);
         }
     }
-    
+
     private void setAllJtextfeldTextEditableFalse(List<JTextField> jTextfeldListe) {
         for (JTextField jTextfeld : jTextfeldListe) {
             jTextfeld.setEditable(false);
         }
     }
-    
+
     private void setInitialWertejTextFeldListe() {
         jTextfeldListe.add(jTextNachname);
         jTextfeldListe.add(jTextVorname);
@@ -747,21 +783,21 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JFrameFitnessStudioVerwaltung.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -789,6 +825,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAlter;
     private javax.swing.JLabel jLabelErrechneteMitgliedsnummer;
     private javax.swing.JLabel jLabelHauptprogramm;
+    private javax.swing.JLabel jLabelLastDeletedID;
     private javax.swing.JLabel jLabelMitgliedsdatenUeberschrift;
     private javax.swing.JLabel jLabelMitgliedsdatenUeberschrift1;
     private javax.swing.JLabel jLabelMitgliedsnummer;
@@ -809,6 +846,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JTextField jTextAlterVorschau;
     private javax.swing.JTextField jTextDelete_ID;
     private javax.swing.JTextField jTextErrechneteMitgliedsnummer;
+    private javax.swing.JTextField jTextLastDeletedID;
     private javax.swing.JTextField jTextNachname;
     private javax.swing.JTextField jTextNachnameVorschau;
     private javax.swing.JTextField jTextPlz;

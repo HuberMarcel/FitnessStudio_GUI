@@ -27,7 +27,7 @@ public class Verwaltungsangestellter extends AbstraktMitarbeiter {
     public String toString() {
         String rueckgabeString;
         rueckgabeString = getNachname() + ", " + getVorname() + ", " + getWohnort()
-                + ", " + getAlter() + ", " + getAufgabenbereiche();
+                + ", " + getGeburtsdatum() + ", " + getAufgabenbereiche();
         return rueckgabeString;
     }
 }

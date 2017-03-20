@@ -19,6 +19,7 @@ abstract class AbstraktPerson {
     private String plz;       // bekanntes Kürzel für Postleitzahl
     private String wohnort;
     private GregorianCalendar tagDerGeburt;
+    private String geburtsdatum;
     private int alter;
 
     public AbstraktPerson() {
@@ -30,7 +31,8 @@ abstract class AbstraktPerson {
         this.vorName = vorName;
         this.plz = plz;
         this.wohnort = wohnort;
-        this.alter = alter;
+        this.tagDerGeburt = tagDerGeburt;
+        this.alter = calculateAlter();
     }
 
     public String getNachname() {
@@ -42,6 +44,7 @@ abstract class AbstraktPerson {
     }
 
     public int getAlter() {
+        alter = calculateAlter();
         return alter;
     }
 
@@ -56,13 +59,13 @@ abstract class AbstraktPerson {
     public GregorianCalendar getTagDerGeburt() {
         return tagDerGeburt;
     }
-    
+
     public String getTagDerGeburtToString() {
         String datum;
         datum = tagDerGeburt.get(tagDerGeburt.DAY_OF_MONTH) + "."
                 + (tagDerGeburt.get(tagDerGeburt.MONTH) + 1) + "."
-                + tagDerGeburt.get(tagDerGeburt.DAY_OF_MONTH);
-        System.out.println(datum);
+                + tagDerGeburt.get(tagDerGeburt.YEAR);
+//        System.out.println(datum);
         return datum;
     }
 
@@ -70,7 +73,27 @@ abstract class AbstraktPerson {
 
 //        return (getNachname() + ", " + getVorname() + ", " + getAlter() + ", "
 //                + "" + getPlz() + ", " + getWohnort());
-        return (nachName + ", " + vorName + ", " + alter + ", "
+        return (nachName + ", " + vorName + ", " + getTagDerGeburtToString() + ", "
                 + "" + plz + ", " + wohnort);
+    }
+
+    public String getGeburtsdatum() {
+        return this.getTagDerGeburtToString();
+    }
+
+    private int calculateAlter() {
+        int calculatedAlter;
+        GregorianCalendar now = new GregorianCalendar();
+        int dummyJahrDerGeburt = tagDerGeburt.get(tagDerGeburt.YEAR);
+        calculatedAlter = now.get(Calendar.YEAR) - dummyJahrDerGeburt;
+        int dummyTagDerGeburt = tagDerGeburt.get(tagDerGeburt.DAY_OF_MONTH);
+        int dummyMonatDerGeburt = tagDerGeburt.get(tagDerGeburt.MONTH);
+        
+        if ((now.get(Calendar.MONTH) + 1 < dummyMonatDerGeburt)
+                | ((now.get(Calendar.MONTH) + 1 == dummyMonatDerGeburt)
+                & (now.get(Calendar.DAY_OF_MONTH) < dummyTagDerGeburt))) {
+            calculatedAlter += -1;
+        }
+        return calculatedAlter;
     }
 }

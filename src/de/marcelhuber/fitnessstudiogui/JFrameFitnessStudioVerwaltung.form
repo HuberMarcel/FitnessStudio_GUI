@@ -41,7 +41,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" pref="675" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" pref="707" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -82,7 +82,7 @@
                       <Component id="jButtonStartHauptprogramm" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="textMethodenNummer" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace pref="475" max="32767" attributes="0"/>
+                      <EmptySpace pref="507" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -140,7 +140,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="650" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="682" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -192,7 +192,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="399" max="-2" attributes="0"/>
-                      <EmptySpace pref="219" max="32767" attributes="0"/>
+                      <EmptySpace pref="251" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -258,7 +258,7 @@
                                   <Component id="jButtonDelete_ID" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jTextAlter" min="-2" pref="228" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
@@ -268,9 +268,19 @@
                                       <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextDelete_ID" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jTextDelete_ID" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jTextLastDeletedID" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelLastDeletedID" min="-2" pref="107" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -362,12 +372,14 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButtonMitgliedVorbereiten" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonMitgliedEditierbar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelLastDeletedID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" max="32767" attributes="0"/>
+                          <Component id="jTextLastDeletedID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -594,6 +606,21 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextGeburtstagVorschauActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextLastDeletedID">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="horizontalAlignment" type="int" value="11"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextLastDeletedIDActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelLastDeletedID">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Letzte gel&#xf6;schte ID"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
