@@ -11,7 +11,9 @@ import de.marcelhuber.fitnessstudiogui.*;
 import java.util.logging.*;
 
 public class FitnessStudioProjektStandardMitgliedDb {
-
+//    TODO: resultSet(id) (zwischen Zeile 345 und 355 wahrscheinlich) mit in
+//          die delete(int i)-Methode einbauen
+//    
     // Verbindungs-Objekt
     private Connection connection;
 
