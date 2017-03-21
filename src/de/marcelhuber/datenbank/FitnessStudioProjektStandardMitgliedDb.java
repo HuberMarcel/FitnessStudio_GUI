@@ -346,7 +346,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
 //              merkwürdigerweise nicht
 //        String idDaten = resultSet(id);
 //        resultSet(id); // Testfall, der auch schiefgeht 
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
+//        System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
 //        System.out.println(idDaten);
         String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
         boolean bool = false;
