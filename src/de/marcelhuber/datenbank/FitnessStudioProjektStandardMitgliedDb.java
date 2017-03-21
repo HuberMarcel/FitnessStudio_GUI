@@ -185,7 +185,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
     }
 
     private void resultSet(int id) {
-        String zeilenDaten = "no data found for ID="+id;
+        String zeilenDaten = "no data found for ID=" + id;
         // ein ResultSet steht im Auslieferungszustand VOR dem ersten datensatz
         try {
             int cc = resultSet.getMetaData().getColumnCount();
@@ -232,7 +232,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
             System.out.println(ex);
             return;
         } finally {
-            System.out.printf("data for ID="+id+": \n"+zeilenDaten);
+            System.out.printf("data for ID=" + id + ": \n" + zeilenDaten);
             System.out.println("");
             try {
                 resultSet.beforeFirst();
@@ -328,19 +328,25 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\ndatensatz updated");
     }
 
-    public void delete(int id) { // connect() und close() mit einfügen
+    public boolean delete(int id) { // connect() und close() mit einfügen
         connect();
         statement();
         String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
+        boolean bool = false;
 
         try {
-            System.out.println("\n" + statement.executeUpdate(sql) + " Sätze gelöscht");
+            int i = statement.executeUpdate(sql);
+            System.out.println("\n" + i + " Sätze gelöscht");
+            if (i == 1) {
+                bool = true;
+                System.out.println("bool");
+            } 
         } catch (SQLException ex) {
             System.out.println(ex);
-            return;
         } finally {
             close();
         }
+        return bool;
 
     }
 

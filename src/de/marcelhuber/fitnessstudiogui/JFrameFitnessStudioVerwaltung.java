@@ -90,8 +90,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextWohnortVorschau = new javax.swing.JTextField();
         jTextAlterVorschau = new javax.swing.JTextField();
         jLabelMitgliedsdatenUeberschrift1 = new javax.swing.JLabel();
-        jButtonDelete_ID = new javax.swing.JButton();
-        jTextDelete_ID = new javax.swing.JTextField();
+        jButtonDeleteID = new javax.swing.JButton();
+        jTextDeleteID = new javax.swing.JTextField();
         jButtonMitgliedEditierbar = new javax.swing.JButton();
         jFormattedTextGeburtstag = new javax.swing.JFormattedTextField();
         jLabelMitgliedsnummer1 = new javax.swing.JLabel();
@@ -300,24 +300,24 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelMitgliedsdatenUeberschrift1.setText("Mitgliedsdateneingabe");
         jLabelMitgliedsdatenUeberschrift1.setPreferredSize(new java.awt.Dimension(69, 18));
 
-        jButtonDelete_ID.setText("Delete (ID)");
-        jButtonDelete_ID.setActionCommand("jButtonDelete (ID)");
-        jButtonDelete_ID.addActionListener(new java.awt.event.ActionListener() {
+        jButtonDeleteID.setText("Delete (ID)");
+        jButtonDeleteID.setActionCommand("jButtonDelete (ID)");
+        jButtonDeleteID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDelete_IDActionPerformed(evt);
+                jButtonDeleteIDActionPerformed(evt);
             }
         });
 
-        jTextDelete_ID.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextDelete_ID.setText("0");
-        jTextDelete_ID.addFocusListener(new java.awt.event.FocusAdapter() {
+        jTextDeleteID.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextDeleteID.setText("0");
+        jTextDeleteID.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextDelete_IDFocusGained(evt);
+                jTextDeleteIDFocusGained(evt);
             }
         });
-        jTextDelete_ID.addActionListener(new java.awt.event.ActionListener() {
+        jTextDeleteID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextDelete_IDActionPerformed(evt);
+                jTextDeleteIDActionPerformed(evt);
             }
         });
 
@@ -329,9 +329,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         });
 
         jFormattedTextGeburtstag.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
-        jFormattedTextGeburtstag.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextGeburtstagActionPerformed(evt);
+        jFormattedTextGeburtstag.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jFormattedTextGeburtstagFocusGained(evt);
             }
         });
 
@@ -373,7 +373,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelMitgliedsnummer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabelAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonDelete_ID))
+                    .addComponent(jButtonDeleteID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
@@ -386,7 +386,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                         .addComponent(jTextNachname)
                         .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextDeleteID, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,8 +463,8 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                     .addComponent(jLabelLastDeletedID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonDelete_ID)
-                    .addComponent(jTextDelete_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDeleteID)
+                    .addComponent(jTextDeleteID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -512,26 +512,30 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         setAllJtextfeldTextEditableTrue(jTextfeldListe);
     }//GEN-LAST:event_jButtonMitgliedEditierbarActionPerformed
 
-    private void jTextDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDelete_IDActionPerformed
-        jTextDelete_ID.selectAll();
-    }//GEN-LAST:event_jTextDelete_IDActionPerformed
+    private void jTextDeleteIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDeleteIDActionPerformed
+        jTextDeleteID.selectAll();
+    }//GEN-LAST:event_jTextDeleteIDActionPerformed
 
-    private void jTextDelete_IDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDelete_IDFocusGained
-        jTextDelete_ID.selectAll();
-    }//GEN-LAST:event_jTextDelete_IDFocusGained
+    private void jTextDeleteIDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextDeleteIDFocusGained
+        jTextDeleteID.selectAll();
+    }//GEN-LAST:event_jTextDeleteIDFocusGained
 
-    private void jButtonDelete_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDelete_IDActionPerformed
+    private void jButtonDeleteIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteIDActionPerformed
         boolean EingabeSinnvoll = false;
         // boolsche Variable, um zu sehen, ob die Eingabe
         // syntaktisch sinvoll ist
-        System.out.println("Boolsche Variable hat momentan den Wert: " + EingabeSinnvoll);
+        System.out.println("Boolsche Variable (sinnvolle Eingabe?) hat momentan "
+                + "den Wert: " + EingabeSinnvoll);
         try {
-            int id = Integer.parseInt(jTextDelete_ID.getText());
+            int id = Integer.parseInt(jTextDeleteID.getText());
             if (id >= 1) {
                 EingabeSinnvoll = true;
-                new FitnessStudioProjektStandardMitgliedDb().delete(id);
-                jTextLastDeletedID.setText(jTextDelete_ID.getText());
-                jTextDelete_ID.setText("");
+                if (new FitnessStudioProjektStandardMitgliedDb().delete(id)) {
+                    jTextLastDeletedID.setText(jTextDeleteID.getText());
+                    jTextDeleteID.setText("");
+                } else {
+                    jTextDeleteID.setText("");
+                }
             }
         } catch (NumberFormatException ex) {
             System.out.println("Fehlerhafte ID-Eingabe!");
@@ -540,10 +544,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jDialogFehlerhafteIDEingabe, "Ihre ID-"
                     + "Eingabe ist entweder \nSINNFREI oder FEHLERHAFT!",
                     "Eingabe-Fehler!!", JOptionPane.WARNING_MESSAGE);
-            jTextDelete_ID.setText("0");
-            jTextDelete_ID.requestFocus();
+            jTextDeleteID.setText("0");
+            jTextDeleteID.requestFocus();
         }
-    }//GEN-LAST:event_jButtonDelete_IDActionPerformed
+    }//GEN-LAST:event_jButtonDeleteIDActionPerformed
 
     private void jButtonMitgliedsdatenSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedsdatenSpeichernActionPerformed
         if (mitgliedErzeugbar) {
@@ -573,6 +577,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private void jButtonMitgliedVorbereitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedVorbereitenActionPerformed
         mitgliedErzeugbar = true;
         dummyNachname = jTextNachname.getText();
+        jFormattedTextGeburtstag.requestFocus();
         jFormattedTextGeburtstagVorschau.setText(jFormattedTextGeburtstag.getText());
         dummyGeburtstagsString = jFormattedTextGeburtstag.getText();
 //        System.out.println(""+dummyGeburtstagsString);
@@ -677,10 +682,6 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextNachname.selectAll();
     }//GEN-LAST:event_jTextNachnameFocusGained
 
-    private void jFormattedTextGeburtstagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagActionPerformed
-        jFormattedTextGeburtstag.selectAll();
-    }//GEN-LAST:event_jFormattedTextGeburtstagActionPerformed
-
     private void jFormattedTextGeburtstagVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagVorschauActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextGeburtstagVorschauActionPerformed
@@ -705,6 +706,10 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextLastDeletedIDActionPerformed
 
+    private void jFormattedTextGeburtstagFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagFocusGained
+       jFormattedTextGeburtstag.selectAll();
+    }//GEN-LAST:event_jFormattedTextGeburtstagFocusGained
+
     void clearAllMitgliedTabVisibleTextFields() {
         jTextNachname.setText("");
         jTextVorname.setText("");
@@ -715,7 +720,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelErrechneteMitgliedsnummer.setText("");
         //jFormattedTextGeburtstag.setText("01.01.1800");
         jFormattedTextGeburtstag.setText("");
-        jTextDelete_ID.setText("");
+        jTextDeleteID.setText("");
     }
 
     void clearAllMitgliedTabVisibleTextVorschauFields() {
@@ -799,7 +804,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDelete_ID;
+    private javax.swing.JButton jButtonDeleteID;
     private javax.swing.JButton jButtonMitgliedEditierbar;
     private javax.swing.JButton jButtonMitgliedVorbereiten;
     private javax.swing.JButton jButtonMitgliedsdatenSpeichern;
@@ -829,7 +834,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private javax.swing.JTable jTableMitglieder;
     private javax.swing.JTextField jTextAlter;
     private javax.swing.JTextField jTextAlterVorschau;
-    private javax.swing.JTextField jTextDelete_ID;
+    private javax.swing.JTextField jTextDeleteID;
     private javax.swing.JTextField jTextErrechneteMitgliedsnummer;
     private javax.swing.JTextField jTextLastDeletedID;
     private javax.swing.JTextField jTextNachname;

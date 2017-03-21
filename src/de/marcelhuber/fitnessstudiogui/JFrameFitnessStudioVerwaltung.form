@@ -249,7 +249,7 @@
                               <Component id="jLabelMitgliedsnummer1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jLabelAlter" min="-2" pref="105" max="-2" attributes="0"/>
-                          <Component id="jButtonDelete_ID" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonDeleteID" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -263,7 +263,7 @@
                               <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextDelete_ID" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextDeleteID" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -363,8 +363,8 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextDelete_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonDeleteID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextDeleteID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonMitgliedsdatenSpeichern" alignment="3" max="32767" attributes="0"/>
                           <Component id="jTextLastDeletedID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -537,23 +537,23 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonDelete_ID">
+            <Component class="javax.swing.JButton" name="jButtonDeleteID">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete (ID)"/>
                 <Property name="actionCommand" type="java.lang.String" value="jButtonDelete (ID)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDelete_IDActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDeleteIDActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextDelete_ID">
+            <Component class="javax.swing.JTextField" name="jTextDeleteID">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextDelete_IDFocusGained"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextDelete_IDActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextDeleteIDFocusGained"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextDeleteIDActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonMitgliedEditierbar">
@@ -571,7 +571,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextGeburtstagActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jFormattedTextGeburtstagFocusGained"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelMitgliedsnummer1">
