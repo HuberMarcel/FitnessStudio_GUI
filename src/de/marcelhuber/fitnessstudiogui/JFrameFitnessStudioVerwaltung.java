@@ -135,7 +135,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addComponent(jButtonStartHauptprogramm)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textMethodenNummer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(507, Short.MAX_VALUE))
+                .addContainerGap(550, Short.MAX_VALUE))
         );
         jPanelDemoAufKonsoleLayout.setVerticalGroup(
             jPanelDemoAufKonsoleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +160,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             jPanelMitglieder_ListenausgabeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMitglieder_ListenausgabeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanelMitglieder_ListenausgabeLayout.setVerticalGroup(
@@ -183,7 +183,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             .addGroup(jPanelMitglieder_TabelleLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(251, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanelMitglieder_TabelleLayout.setVerticalGroup(
             jPanelMitglieder_TabelleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,11 +253,6 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jLabelAlter.setText("Alter");
 
         jTextAlter.setEditable(false);
-        jTextAlter.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextAlterFocusGained(evt);
-            }
-        });
 
         jTextErrechneteMitgliedsnummer.setEditable(false);
         jTextErrechneteMitgliedsnummer.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -359,6 +354,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
             }
         });
 
+        jLabelLastDeletedID.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
         jLabelLastDeletedID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLastDeletedID.setText("Letzte gelöschte ID");
 
@@ -367,63 +363,55 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jPanelStd_MitgliederVerwaltenLayout.setHorizontalGroup(
             jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelMitgliedsnummer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabelAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDelete_ID))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabelNachName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelVorname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelPlz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelWohnort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelMitgliedsnummer1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonDelete_ID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextErrechneteMitgliedsnummer)
+                        .addComponent(jFormattedTextGeburtstag)
+                        .addComponent(jTextWohnort)
+                        .addComponent(jTextPlz)
+                        .addComponent(jTextVorname)
+                        .addComponent(jTextNachname)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
                             .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextErrechneteMitgliedsnummer, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jFormattedTextGeburtstag, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextWohnort, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                .addComponent(jTextPlz, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextVorname, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextNachname, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextLastDeletedID)
-                                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                        .addComponent(jLabelLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextDelete_ID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextLastDeletedID)
+                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                    .addComponent(jLabelLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jTextAlter)))
+                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                .addGap(39, 39, 39)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                    .addComponent(jTextNachnameVorschau)
+                                    .addComponent(jLabelMitgliedsdatenUeberschrift, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                                     .addComponent(jTextVornameVorschau)
                                     .addComponent(jTextPlzVorschau)
                                     .addComponent(jTextWohnortVorschau)
                                     .addComponent(jTextAlterVorschau)
-                                    .addComponent(jFormattedTextGeburtstagVorschau))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonMitgliedVorbereiten)
-                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))))
+                                    .addComponent(jFormattedTextGeburtstagVorschau)
+                                    .addComponent(jTextNachnameVorschau))
+                                .addComponent(jButtonMitgliedVorbereiten, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jButtonMitgliedsdatenSpeichern, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelStd_MitgliederVerwaltenLayout.setVerticalGroup(
             jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,7 +476,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -581,10 +569,6 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                     + "-Button!");
         }
     }//GEN-LAST:event_jButtonMitgliedsdatenSpeichernActionPerformed
-
-    private void jTextAlterFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAlterFocusGained
-        jTextAlter.selectAll();
-    }//GEN-LAST:event_jTextAlterFocusGained
 
     private void jButtonMitgliedVorbereitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMitgliedVorbereitenActionPerformed
         mitgliedErzeugbar = true;
@@ -694,7 +678,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextNachnameFocusGained
 
     private void jFormattedTextGeburtstagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagActionPerformed
-        // TODO add your handling code here:
+        jFormattedTextGeburtstag.selectAll();
     }//GEN-LAST:event_jFormattedTextGeburtstagActionPerformed
 
     private void jFormattedTextGeburtstagVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagVorschauActionPerformed
@@ -729,6 +713,7 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         jTextAlter.setText("");
         jTextErrechneteMitgliedsnummer.setText("");
         jLabelErrechneteMitgliedsnummer.setText("");
+        //jFormattedTextGeburtstag.setText("01.01.1800");
         jFormattedTextGeburtstag.setText("");
         jTextDelete_ID.setText("");
     }
