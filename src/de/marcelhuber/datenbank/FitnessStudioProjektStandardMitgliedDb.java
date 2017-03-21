@@ -42,8 +42,12 @@ public class FitnessStudioProjektStandardMitgliedDb {
         select();
         rowCount();
         resultSet();
+        resultSet(1);
         resultSet(6);
-        resultSet(8);
+//        resultSet(27);
+//        System.out.println("XXXXXXXXXXXXX");
+        delete(27);
+//        System.out.println("XXXXXXXXXXXXX");
 
         resultSetMetaData();
         databaseMetaData();
@@ -184,7 +188,13 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\nresultSet printed\n");
     }
 
-    private void resultSet(int id) {
+    public String resultSet(int id) {
+        try {
+            //        connect();
+            resultSet.beforeFirst();
+        } catch (SQLException ex) {
+            Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String zeilenDaten = "no data found for ID=" + id;
         // ein ResultSet steht im Auslieferungszustand VOR dem ersten datensatz
         try {
@@ -230,7 +240,6 @@ public class FitnessStudioProjektStandardMitgliedDb {
             }
         } catch (SQLException ex) {
             System.out.println(ex);
-            return;
         } finally {
             System.out.printf("data for ID=" + id + ": \n" + zeilenDaten);
             System.out.println("");
@@ -240,8 +249,9 @@ public class FitnessStudioProjektStandardMitgliedDb {
                 Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-
         System.out.println("\n\nthe choosed resultSet printed\n");
+//        close();
+        return zeilenDaten;
     }
 
     private void resultSetMetaData() {
@@ -331,6 +341,13 @@ public class FitnessStudioProjektStandardMitgliedDb {
     public boolean delete(int id) { // connect() und close() mit einfügen
         connect();
         statement();
+//        TODO: Eigentlich würde ich gerne die Daten der entsprechenden Zeile
+//              mit der resultSet(int i)-Methode auslesen - aber das funktioniert
+//              merkwürdigerweise nicht
+//        String idDaten = resultSet(id);
+//        resultSet(id); // Testfall, der auch schiefgeht 
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
+//        System.out.println(idDaten);
         String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
         boolean bool = false;
 
@@ -340,7 +357,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
             if (i == 1) {
                 bool = true;
                 System.out.println("bool");
-            } 
+            }
         } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
