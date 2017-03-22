@@ -375,7 +375,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
         try {
             int i = statement.executeUpdate(sql);
             System.out.println("\n" + i + " Sätze gelöscht");
-            System.out.println("\nUnd zwar die folgenden der nächsten Zeile: "
+            System.out.println("\nUnd zwar die folgenden der nächsten Zeile:\n"
                     + idDaten);
             if (i == 1) {
                 bool = true;
