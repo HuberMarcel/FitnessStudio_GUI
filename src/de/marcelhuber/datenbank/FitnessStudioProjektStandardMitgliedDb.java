@@ -11,10 +11,7 @@ import de.marcelhuber.fitnessstudiogui.*;
 import java.util.logging.*;
 
 public class FitnessStudioProjektStandardMitgliedDb {
-//    TODO: resultSet(id) (zwischen Zeile 345 und 355 wahrscheinlich) mit in
-//          die delete(int i)-Methode einbauen
-//    
-    // Verbindungs-Objekt
+
     private Connection connection;
 
     // Statement-Objekt / Transport von Informationen ZUR Datenbank
@@ -54,7 +51,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
         resultSetMetaData();
         databaseMetaData();
 
-//        insert();
+        insert();
 //        update();
 //        delete();
 //        preparedStatement();
@@ -83,6 +80,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
         try {
             connection = DriverManager.getConnection(url, user, pass);
+            statement = connection.createStatement();
         } catch (SQLException ex) {
             System.out.println(ex);
             return;
@@ -105,7 +103,18 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     private void select() {
         String sql = "SELECT * FROM fitnessstudioprojektstandardmitglied";
+        try {
+            resultSet = statement.executeQuery(sql);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return;
+        }
 
+        System.out.println("\nquery executed");
+    }
+
+    private void select(int id) {
+        String sql = "SELECT * FROM fitnessstudioprojektstandardmitglied WHERE ID='" + id + "'";
         try {
             resultSet = statement.executeQuery(sql);
         } catch (SQLException ex) {
@@ -190,13 +199,19 @@ public class FitnessStudioProjektStandardMitgliedDb {
         System.out.println("\nresultSet printed\n");
     }
 
-    public String resultSet(int id) {
+    private String resultSet(int id) {
+        String sql = "SELECT * FROM fitnessstudioprojektstandardmitglied";
         try {
-            //        connect();
-            resultSet.beforeFirst();
+            resultSet = statement.executeQuery(sql);
         } catch (SQLException ex) {
-            Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
+//        try {
+//            //        connect();
+//            resultSet.beforeFirst();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(FitnessStudioProjektStandardMitgliedDb.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         String zeilenDaten = "no data found for ID=" + id;
         // ein ResultSet steht im Auslieferungszustand VOR dem ersten datensatz
         try {
@@ -311,6 +326,8 @@ public class FitnessStudioProjektStandardMitgliedDb {
 
     private void insert() {
 //        String eingabe = "\'); DROP TABLE kontakt; #";
+        connect();
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         String eingabe = "DummyHuber";
 
         String sql = "INSERT INTO fitnessstudioprojektstandardmitglied (Nachname, Vorname, "
@@ -325,6 +342,7 @@ public class FitnessStudioProjektStandardMitgliedDb {
         }
 
         System.out.println("\ndatensatz eingefügt");
+        close();
     }
 
     private void update() {
@@ -343,19 +361,22 @@ public class FitnessStudioProjektStandardMitgliedDb {
     public boolean delete(int id) { // connect() und close() mit einfügen
         connect();
         statement();
-//        TODO: Eigentlich würde ich gerne die Daten der entsprechenden Zeile
-//              mit der resultSet(int i)-Methode auslesen - aber das funktioniert
-//              merkwürdigerweise nicht
-//        String idDaten = resultSet(id);
-//        resultSet(id); // Testfall, der auch schiefgeht 
-//        System.out.println("XXXXXXXXXXXXXXXXXXXXXX");
-//        System.out.println(idDaten);
+
         String sql = "DELETE FROM fitnessstudioprojektstandardmitglied WHERE id = '" + id + "'";
+        String idDaten = resultSet(id);
+//        select(id);
+        try {
+            resultSet = statement.executeQuery(sql);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
         boolean bool = false;
 
         try {
             int i = statement.executeUpdate(sql);
             System.out.println("\n" + i + " Sätze gelöscht");
+            System.out.println("\nUnd zwar die folgenden der nächsten Zeile: "
+                    + idDaten);
             if (i == 1) {
                 bool = true;
                 System.out.println("bool");
