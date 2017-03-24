@@ -266,32 +266,12 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
         });
 
         jTextNachnameVorschau.setEditable(false);
-        jTextNachnameVorschau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNachnameVorschauActionPerformed(evt);
-            }
-        });
 
         jTextVornameVorschau.setEditable(false);
-        jTextVornameVorschau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextVornameVorschauActionPerformed(evt);
-            }
-        });
 
         jTextPlzVorschau.setEditable(false);
-        jTextPlzVorschau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextPlzVorschauActionPerformed(evt);
-            }
-        });
 
         jTextWohnortVorschau.setEditable(false);
-        jTextWohnortVorschau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextWohnortVorschauActionPerformed(evt);
-            }
-        });
 
         jTextAlterVorschau.setEditable(false);
 
@@ -340,19 +320,9 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
 
         jFormattedTextGeburtstagVorschau.setEditable(false);
         jFormattedTextGeburtstagVorschau.setToolTipText("");
-        jFormattedTextGeburtstagVorschau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextGeburtstagVorschauActionPerformed(evt);
-            }
-        });
 
         jTextLastDeletedID.setEditable(false);
         jTextLastDeletedID.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
-        jTextLastDeletedID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextLastDeletedIDActionPerformed(evt);
-            }
-        });
 
         jLabelLastDeletedID.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
         jLabelLastDeletedID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -377,24 +347,23 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelMitgliedsdatenUeberschrift1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextErrechneteMitgliedsnummer)
-                        .addComponent(jFormattedTextGeburtstag)
-                        .addComponent(jTextWohnort)
-                        .addComponent(jTextPlz)
-                        .addComponent(jTextVorname)
-                        .addComponent(jTextNachname)
-                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextDeleteID, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextLastDeletedID)
-                                .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
-                                    .addComponent(jLabelLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addComponent(jTextAlter)))
+                    .addComponent(jTextErrechneteMitgliedsnummer)
+                    .addComponent(jFormattedTextGeburtstag)
+                    .addComponent(jTextWohnort)
+                    .addComponent(jTextPlz)
+                    .addComponent(jTextVorname)
+                    .addComponent(jTextNachname)
+                    .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextDeleteID, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonMitgliedEditierbar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextLastDeletedID)
+                            .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
+                                .addComponent(jLabelLastDeletedID, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jTextAlter))
                 .addGroup(jPanelStd_MitgliederVerwaltenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelErrechneteMitgliedsnummer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelStd_MitgliederVerwaltenLayout.createSequentialGroup()
@@ -681,30 +650,6 @@ public class JFrameFitnessStudioVerwaltung extends javax.swing.JFrame {
     private void jTextNachnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNachnameFocusGained
         jTextNachname.selectAll();
     }//GEN-LAST:event_jTextNachnameFocusGained
-
-    private void jFormattedTextGeburtstagVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagVorschauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextGeburtstagVorschauActionPerformed
-
-    private void jTextWohnortVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextWohnortVorschauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextWohnortVorschauActionPerformed
-
-    private void jTextPlzVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPlzVorschauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPlzVorschauActionPerformed
-
-    private void jTextNachnameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNachnameVorschauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNachnameVorschauActionPerformed
-
-    private void jTextVornameVorschauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextVornameVorschauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextVornameVorschauActionPerformed
-
-    private void jTextLastDeletedIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextLastDeletedIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextLastDeletedIDActionPerformed
 
     private void jFormattedTextGeburtstagFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jFormattedTextGeburtstagFocusGained
        jFormattedTextGeburtstag.selectAll();

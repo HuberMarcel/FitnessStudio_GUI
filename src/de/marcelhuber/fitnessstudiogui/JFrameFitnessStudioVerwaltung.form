@@ -254,29 +254,27 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabelMitgliedsdatenUeberschrift1" pref="288" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jFormattedTextGeburtstag" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextDeleteID" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextLastDeletedID" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabelLastDeletedID" min="-2" pref="107" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                          <Component id="jTextErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jFormattedTextGeburtstag" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextWohnort" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextPlz" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextVorname" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextNachname" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jTextDeleteID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButtonMitgliedEditierbar" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextLastDeletedID" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelLastDeletedID" min="-2" pref="107" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jTextAlter" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="jTextAlter" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabelErrechneteMitgliedsnummer" alignment="0" max="32767" attributes="0"/>
@@ -492,33 +490,21 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNachnameVorschauActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextVornameVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextVornameVorschauActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextPlzVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextPlzVorschauActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextWohnortVorschau">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextWohnortVorschauActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextAlterVorschau">
               <Properties>
@@ -587,18 +573,12 @@
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextGeburtstagVorschauActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextLastDeletedID">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="horizontalAlignment" type="int" value="11"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextLastDeletedIDActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelLastDeletedID">
               <Properties>
